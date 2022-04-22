@@ -2,6 +2,7 @@ from PyQt5 import QtWidgets , QtGui , QtCore
 from views_mangers.loginView_manger import  Login_Manager
 from views_mangers.main_manger import Main_manger
 from views_mangers.newOrderView_manger import NewOrderView_manger
+from views_mangers.chooseDesign_manger import ChooseDesign_manger
 from views_mangers.newOrderDataView_manger import NewOrderDataView_manger
 
 
@@ -11,12 +12,14 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.login_manger = Login_Manager()
         self.main_manger = Main_manger()
         self.newOrder_manger=NewOrderView_manger()
+        self.chooseDesign_manger = ChooseDesign_manger()
         self.newOrderData_manger=NewOrderDataView_manger()
 
         # add widgets to the stack
         self.addWidget(self.login_manger)
         self.addWidget(self.main_manger)
         self.addWidget(self.newOrder_manger)
+        self.addWidget(self.chooseDesign_manger)
         self.addWidget(self.newOrderData_manger)
 
         # install signals
@@ -31,6 +34,10 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         new order view signals
         '''
         self.newOrder_manger.next_btn.clicked.connect(self.handle_newOrder)
+        '''
+        choose design signals
+        '''
+        self.chooseDesign_manger.checkAcceptedSignal.connect(self.handle_chooseDesignClient)
         # self.predict_manager.back_btn.clicked.connect(lambda : self.setCurrentIndex(1))
 
     def handle_login_accepted(self):
@@ -39,6 +46,8 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.setCurrentIndex(2)
     def handle_newOrder(self):
         self.setCurrentIndex(3)
+    def handle_chooseDesignClient(self):
+        self.setCurrentIndex(4)
 
 
 if __name__ == "__main__":
