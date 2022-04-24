@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(1094, 665)
+        Form.resize(1094, 662)
         self.gridLayout_3 = QtWidgets.QGridLayout(Form)
         self.gridLayout_3.setObjectName("gridLayout_3")
         spacerItem = QtWidgets.QSpacerItem(414, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -37,145 +37,136 @@ class Ui_Form(object):
         self.frame.setObjectName("frame")
         self.gridLayout_2 = QtWidgets.QGridLayout(self.frame)
         self.gridLayout_2.setObjectName("gridLayout_2")
-        self.splitter = QtWidgets.QSplitter(self.frame)
-        self.splitter.setOrientation(QtCore.Qt.Vertical)
-        self.splitter.setObjectName("splitter")
-        self.layoutWidget = QtWidgets.QWidget(self.splitter)
-        self.layoutWidget.setObjectName("layoutWidget")
-        self.gridLayout_4 = QtWidgets.QGridLayout(self.layoutWidget)
-        self.gridLayout_4.setContentsMargins(6, 6, 6, 6)
-        self.gridLayout_4.setObjectName("gridLayout_4")
-        self.end = QtWidgets.QPushButton(self.layoutWidget)
+        self.frame_2 = QtWidgets.QFrame(self.frame)
+        self.frame_2.setMaximumSize(QtCore.QSize(160, 16777215))
+        self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_2.setObjectName("frame_2")
+        self.gridLayout = QtWidgets.QGridLayout(self.frame_2)
+        self.gridLayout.setObjectName("gridLayout")
+        self.end_btn = QtWidgets.QPushButton(self.frame_2)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.MinimumExpanding, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.end.sizePolicy().hasHeightForWidth())
-        self.end.setSizePolicy(sizePolicy)
-        self.end.setMinimumSize(QtCore.QSize(100, 40))
+        sizePolicy.setHeightForWidth(self.end_btn.sizePolicy().hasHeightForWidth())
+        self.end_btn.setSizePolicy(sizePolicy)
+        self.end_btn.setMinimumSize(QtCore.QSize(100, 40))
+        self.end_btn.setMaximumSize(QtCore.QSize(100, 40))
         font = QtGui.QFont()
         font.setFamily("Acumin Pro")
         font.setPointSize(13)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
-        self.end.setFont(font)
-        self.end.setStyleSheet("\n"
+        self.end_btn.setFont(font)
+        self.end_btn.setStyleSheet("\n"
 " transition-duration: 0.4s;\n"
 " color: white;\n"
 " background-color :rgb(50, 85, 127);\n"
 " border: 2px solid #rgb(50, 85, 127)\n"
 "\n"
 " box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);")
-        self.end.setObjectName("end")
-        self.gridLayout_4.addWidget(self.end, 0, 0, 1, 1)
-        self.new_2 = QtWidgets.QPushButton(self.layoutWidget)
+        self.end_btn.setObjectName("end_btn")
+        self.gridLayout.addWidget(self.end_btn, 0, 0, 1, 1)
+        self.new_btn = QtWidgets.QPushButton(self.frame_2)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.MinimumExpanding, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.new_2.sizePolicy().hasHeightForWidth())
-        self.new_2.setSizePolicy(sizePolicy)
-        self.new_2.setMinimumSize(QtCore.QSize(100, 40))
+        sizePolicy.setHeightForWidth(self.new_btn.sizePolicy().hasHeightForWidth())
+        self.new_btn.setSizePolicy(sizePolicy)
+        self.new_btn.setMinimumSize(QtCore.QSize(100, 40))
+        self.new_btn.setMaximumSize(QtCore.QSize(100, 40))
         font = QtGui.QFont()
         font.setFamily("Acumin Pro")
         font.setPointSize(13)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
-        self.new_2.setFont(font)
-        self.new_2.setStyleSheet("\n"
+        self.new_btn.setFont(font)
+        self.new_btn.setStyleSheet("\n"
 " transition-duration: 0.4s;\n"
 " color: white;\n"
 " background-color :rgb(50, 85, 127);\n"
 " border: 2px solid #rgb(50, 85, 127)\n"
 "\n"
 " box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);")
-        self.new_2.setObjectName("new_2")
-        self.gridLayout_4.addWidget(self.new_2, 1, 0, 1, 1)
-        self.delete_2 = QtWidgets.QPushButton(self.layoutWidget)
+        self.new_btn.setObjectName("new_btn")
+        self.gridLayout.addWidget(self.new_btn, 1, 0, 1, 1)
+        self.edit_btn = QtWidgets.QPushButton(self.frame_2)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.MinimumExpanding, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.delete_2.sizePolicy().hasHeightForWidth())
-        self.delete_2.setSizePolicy(sizePolicy)
-        self.delete_2.setMinimumSize(QtCore.QSize(100, 40))
+        sizePolicy.setHeightForWidth(self.edit_btn.sizePolicy().hasHeightForWidth())
+        self.edit_btn.setSizePolicy(sizePolicy)
+        self.edit_btn.setMinimumSize(QtCore.QSize(100, 40))
+        self.edit_btn.setMaximumSize(QtCore.QSize(100, 40))
         font = QtGui.QFont()
         font.setFamily("Acumin Pro")
         font.setPointSize(13)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
-        self.delete_2.setFont(font)
-        self.delete_2.setStyleSheet("\n"
+        self.edit_btn.setFont(font)
+        self.edit_btn.setStyleSheet("\n"
 " transition-duration: 0.4s;\n"
 " color: white;\n"
 " background-color :rgb(50, 85, 127);\n"
 " border: 2px solid #rgb(50, 85, 127)\n"
 "\n"
 " box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);")
-        self.delete_2.setObjectName("delete_2")
-        self.gridLayout_4.addWidget(self.delete_2, 2, 0, 1, 1)
-        self.edit = QtWidgets.QPushButton(self.layoutWidget)
+        self.edit_btn.setObjectName("edit_btn")
+        self.gridLayout.addWidget(self.edit_btn, 2, 0, 1, 1)
+        self.delete_btn = QtWidgets.QPushButton(self.frame_2)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.MinimumExpanding, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.edit.sizePolicy().hasHeightForWidth())
-        self.edit.setSizePolicy(sizePolicy)
-        self.edit.setMinimumSize(QtCore.QSize(100, 40))
+        sizePolicy.setHeightForWidth(self.delete_btn.sizePolicy().hasHeightForWidth())
+        self.delete_btn.setSizePolicy(sizePolicy)
+        self.delete_btn.setMinimumSize(QtCore.QSize(100, 40))
+        self.delete_btn.setMaximumSize(QtCore.QSize(100, 40))
         font = QtGui.QFont()
         font.setFamily("Acumin Pro")
         font.setPointSize(13)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
-        self.edit.setFont(font)
-        self.edit.setStyleSheet("\n"
+        self.delete_btn.setFont(font)
+        self.delete_btn.setStyleSheet("\n"
 " transition-duration: 0.4s;\n"
 " color: white;\n"
 " background-color :rgb(50, 85, 127);\n"
 " border: 2px solid #rgb(50, 85, 127)\n"
 "\n"
 " box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);")
-        self.edit.setObjectName("edit")
-        self.gridLayout_4.addWidget(self.edit, 3, 0, 1, 1)
-        self.print = QtWidgets.QPushButton(self.layoutWidget)
+        self.delete_btn.setObjectName("delete_btn")
+        self.gridLayout.addWidget(self.delete_btn, 3, 0, 1, 1)
+        self.print_btn = QtWidgets.QPushButton(self.frame_2)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.MinimumExpanding, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.print.sizePolicy().hasHeightForWidth())
-        self.print.setSizePolicy(sizePolicy)
-        self.print.setMinimumSize(QtCore.QSize(100, 40))
+        sizePolicy.setHeightForWidth(self.print_btn.sizePolicy().hasHeightForWidth())
+        self.print_btn.setSizePolicy(sizePolicy)
+        self.print_btn.setMinimumSize(QtCore.QSize(100, 40))
+        self.print_btn.setMaximumSize(QtCore.QSize(100, 40))
         font = QtGui.QFont()
         font.setFamily("Acumin Pro")
         font.setPointSize(13)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
-        self.print.setFont(font)
-        self.print.setStyleSheet("\n"
+        self.print_btn.setFont(font)
+        self.print_btn.setStyleSheet("\n"
 " transition-duration: 0.4s;\n"
 " color: white;\n"
 " background-color :rgb(50, 85, 127);\n"
 " border: 2px solid #rgb(50, 85, 127)\n"
 "\n"
 " box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);")
-        self.print.setObjectName("print")
-        self.gridLayout_4.addWidget(self.print, 4, 0, 1, 1)
-        self.gridLayout_2.addWidget(self.splitter, 0, 0, 2, 1)
-        self.oreders_scrollArea = QtWidgets.QScrollArea(self.frame)
-        self.oreders_scrollArea.setStyleSheet("background-color:rgba(0, 0, 0, 0);\n"
-"border:none;\n"
-"border-bottom:2px solid rgba(46, 82, 101, 200);\n"
-"\n"
-"padding-bottom:7px;\n"
-"font: 11pt \"Acumin Pro\";")
-        self.oreders_scrollArea.setWidgetResizable(True)
-        self.oreders_scrollArea.setObjectName("oreders_scrollArea")
-        self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 920, 530))
-        self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
-        self.oreders_scrollArea.setWidget(self.scrollAreaWidgetContents)
-        self.gridLayout_2.addWidget(self.oreders_scrollArea, 1, 1, 1, 1)
+        self.print_btn.setObjectName("print_btn")
+        self.gridLayout.addWidget(self.print_btn, 4, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.frame_2, 0, 0, 3, 1)
         self.search_lineEdit = QtWidgets.QLineEdit(self.frame)
+        self.search_lineEdit.setMinimumSize(QtCore.QSize(800, 35))
         self.search_lineEdit.setStyleSheet("background-color:rgba(0, 0, 0, 0);\n"
 "border:none;\n"
 "border-bottom:2px solid rgba(46, 82, 101, 200);\n"
@@ -183,7 +174,37 @@ class Ui_Form(object):
 "padding-bottom:7px;\n"
 "font: 14pt \"Acumin Pro\";")
         self.search_lineEdit.setObjectName("search_lineEdit")
-        self.gridLayout_2.addWidget(self.search_lineEdit, 0, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.search_lineEdit, 0, 1, 1, 3)
+        self.listWidget = QtWidgets.QListWidget(self.frame)
+        font = QtGui.QFont()
+        font.setFamily("Bahnschrift SemiBold")
+        font.setPointSize(23)
+        font.setBold(True)
+        font.setWeight(75)
+        self.listWidget.setFont(font)
+        self.listWidget.setLayoutDirection(QtCore.Qt.RightToLeft)
+        self.listWidget.setTextElideMode(QtCore.Qt.ElideRight)
+        self.listWidget.setVerticalScrollMode(QtWidgets.QAbstractItemView.ScrollPerItem)
+        self.listWidget.setMovement(QtWidgets.QListView.Static)
+        self.listWidget.setFlow(QtWidgets.QListView.TopToBottom)
+        self.listWidget.setViewMode(QtWidgets.QListView.ListMode)
+        self.listWidget.setObjectName("listWidget")
+        self.gridLayout_2.addWidget(self.listWidget, 1, 1, 1, 3)
+        spacerItem2 = QtWidgets.QSpacerItem(336, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_2.addItem(spacerItem2, 2, 1, 1, 1)
+        self.details_btn = QtWidgets.QPushButton(self.frame)
+        self.details_btn.setMinimumSize(QtCore.QSize(200, 60))
+        self.details_btn.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.details_btn.setStyleSheet("font: 11pt \"Acumin Pro\";\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: rgb(50, 85, 127);\n"
+"\n"
+" border-radius: 12px;\n"
+"")
+        self.details_btn.setObjectName("details_btn")
+        self.gridLayout_2.addWidget(self.details_btn, 2, 2, 1, 1)
+        spacerItem3 = QtWidgets.QSpacerItem(336, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_2.addItem(spacerItem3, 2, 3, 1, 1)
         self.gridLayout_3.addWidget(self.frame, 1, 0, 1, 3)
 
         self.retranslateUi(Form)
@@ -193,9 +214,10 @@ class Ui_Form(object):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
         self.label.setText(_translate("Form", "متابعة امر الشغل"))
-        self.end.setText(_translate("Form", "انتهى"))
-        self.new_2.setText(_translate("Form", "جديد"))
-        self.delete_2.setText(_translate("Form", "مسح"))
-        self.edit.setText(_translate("Form", "تعديل"))
-        self.print.setText(_translate("Form", "طباعة"))
+        self.end_btn.setText(_translate("Form", "انتهى"))
+        self.new_btn.setText(_translate("Form", "جديد"))
+        self.edit_btn.setText(_translate("Form", "تعديل"))
+        self.delete_btn.setText(_translate("Form", "مسح"))
+        self.print_btn.setText(_translate("Form", "طباعة"))
         self.search_lineEdit.setPlaceholderText(_translate("Form", "    بحث . . ."))
+        self.details_btn.setText(_translate("Form", "تفاصيل الامر"))
