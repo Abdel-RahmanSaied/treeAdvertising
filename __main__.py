@@ -50,7 +50,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.chooseDesign_manger.checkAcceptedSignal.connect(self.handle_chooseDesignClient)
         self.chooseDesign_manger.officeDesign_btn.clicked.connect(self.handle_officeDesign)
 
-        # self.predict_manager.back_btn.clicked.connect(lambda : self.setCurrentIndex(1))
+        #self.predict_manager.back_btn.clicked.connect(lambda : self.setCurrentIndex(1))
 
 
     def handle_login_accepted(self):
