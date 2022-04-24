@@ -9,8 +9,6 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
         super(NewOrderView_manger, self).__init__()
         self.setupUi(self)
 
-
-
 if __name__ == "__main__":
     import qdarkstyle
 

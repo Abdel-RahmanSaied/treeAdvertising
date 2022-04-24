@@ -49,7 +49,6 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
     def handle_chooseDesignClient(self):
         self.setCurrentIndex(4)
 
-
 if __name__ == "__main__":
     import qdarkstyle
     app = QtWidgets.QApplication([])
