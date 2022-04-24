@@ -10,8 +10,6 @@ class FinishedOrders(QtWidgets.QWidget, finishedOrders_view.Ui_Form):
         self.setupUi(self)
 
 
-
-
 if __name__ == "__main__":
     import qdarkstyle
 
