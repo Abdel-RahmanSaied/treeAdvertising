@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'forms/officeDesigne_view.ui'
+# Form implementation generated from reading ui file 'forms/officeDesign_view.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.6
 #
