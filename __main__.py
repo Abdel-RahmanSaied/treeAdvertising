@@ -5,6 +5,8 @@ from views_mangers.newOrderView_manger import NewOrderView_manger
 from views_mangers.chooseDesign_manger import ChooseDesign_manger
 from views_mangers.newOrderDataView_manger import NewOrderDataView_manger
 
+from views_mangers.followOrder_manger import FollowOrder
+from views_mangers.officeDesigne_manger import OfficeDesigne
 
 class Tree_Advertising(QtWidgets.QStackedWidget):
     def __init__(self):
@@ -15,12 +17,19 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.chooseDesign_manger = ChooseDesign_manger()
         self.newOrderData_manger=NewOrderDataView_manger()
 
+        self.followOrder_manger = FollowOrder()
+        self.officeDesign_manger = OfficeDesigne()
+
         # add widgets to the stack
-        self.addWidget(self.login_manger)
-        self.addWidget(self.main_manger)
-        self.addWidget(self.newOrder_manger)
-        self.addWidget(self.chooseDesign_manger)
-        self.addWidget(self.newOrderData_manger)
+        self.addWidget(self.login_manger) #0
+        self.addWidget(self.main_manger) #1
+        self.addWidget(self.newOrder_manger) #2
+        self.addWidget(self.chooseDesign_manger) #3
+        self.addWidget(self.newOrderData_manger)  #4
+        self.addWidget(self.followOrder_manger)  #5
+        self.addWidget(self.officeDesign_manger)  #6
+
+
 
         # install signals
         self.login_manger.loginAcceptedSignal.connect(self.handle_login_accepted)
@@ -29,6 +38,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         main view signals
         '''
         self.main_manger.workOrder_btn.clicked.connect(self.handle_workOrder)
+        self.main_manger.followOrders_btn.clicked.connect(self.handle_followOrder)
 
         '''
         new order view signals
@@ -38,7 +48,10 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         choose design signals
         '''
         self.chooseDesign_manger.checkAcceptedSignal.connect(self.handle_chooseDesignClient)
+        self.chooseDesign_manger.officeDesign_btn.clicked.connect(self.handle_officeDesign)
+
         # self.predict_manager.back_btn.clicked.connect(lambda : self.setCurrentIndex(1))
+
 
     def handle_login_accepted(self):
         self.setCurrentIndex(1)
@@ -48,6 +61,10 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.setCurrentIndex(3)
     def handle_chooseDesignClient(self):
         self.setCurrentIndex(4)
+    def handle_followOrder(self):
+        self.setCurrentIndex(5)
+    def handle_officeDesign(self):
+        self.setCurrentIndex(6)
 
 if __name__ == "__main__":
     import qdarkstyle
