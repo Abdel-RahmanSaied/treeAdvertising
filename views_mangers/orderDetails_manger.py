@@ -9,9 +9,6 @@ class OrderDetails(QtWidgets.QWidget, orderDetails_view.Ui_Form):
         super(OrderDetails, self).__init__()
         self.setupUi(self)
 
-
-
-
 if __name__ == "__main__":
     import qdarkstyle
 

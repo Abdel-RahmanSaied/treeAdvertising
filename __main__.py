@@ -9,6 +9,8 @@ from views_mangers.followOrder_manger import FollowOrder
 from views_mangers.officeDesign_manger import OfficeDesign
 from views_mangers.finishedOrders_manger import FinishedOrders
 
+from views_mangers.orderDetails_manger import OrderDetails
+
 class Tree_Advertising(QtWidgets.QStackedWidget):
     def __init__(self):
         super(Tree_Advertising, self).__init__()
@@ -22,6 +24,8 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.officeDesign_manger = OfficeDesign()
         self.finishedOrders_manger = FinishedOrders()
 
+        self.orderDetails_manger = OrderDetails()
+
         # add widgets to the stack
         self.addWidget(self.login_manger) #0
         self.addWidget(self.main_manger) #1
@@ -31,30 +35,54 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.addWidget(self.followOrder_manger)  #5
         self.addWidget(self.officeDesign_manger)  #6
         self.addWidget(self.finishedOrders_manger) #7
-
+        self.addWidget(self.orderDetails_manger) #8
 
 
         # install signals
         self.login_manger.loginAcceptedSignal.connect(self.handle_login_accepted)
-        # self.main_manger.cs_btn.clicked.connect(self.handle_cs_process)
         '''
         main view signals
         '''
         self.main_manger.workOrder_btn.clicked.connect(self.handle_workOrder)
         self.main_manger.followOrders_btn.clicked.connect(self.handle_followOrder)
+        self.main_manger.finishedOrders_btn.clicked.connect(self.handle_finishedOrders)
 
         '''
         new order view signals
         '''
         self.newOrder_manger.next_btn.clicked.connect(self.handle_newOrder)
+        self.newOrder_manger.bck_btn.clicked.connect(lambda : self.setCurrentIndex(1))
+
+        '''
+        new order data screen signals 
+        '''
+        self.newOrderData_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(3))
         '''
         choose design signals
         '''
         self.chooseDesign_manger.checkAcceptedSignal.connect(self.handle_chooseDesignClient)
         self.chooseDesign_manger.officeDesign_btn.clicked.connect(self.handle_officeDesign)
-        self.main_manger.finishedOrders_btn.clicked.connect(self.handle_finishedOrders)
+        self.chooseDesign_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(2))
 
-        #self.predict_manager.back_btn.clicked.connect(lambda : self.setCurrentIndex(1))
+        '''
+        office design screen
+        '''
+        self.officeDesign_manger.next_btn.clicked.connect(self.handle_chooseDesignClient)
+        self.officeDesign_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(3))
+        '''
+        follow Orders screen 
+        '''
+        self.followOrder_manger.details_btn.clicked.connect(self.handle_DetailsOrder)
+        self.followOrder_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(1))
+
+        '''
+        followed order detail screen 
+        '''
+        self.orderDetails_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(5))
+        '''
+        finished orders screen
+        '''
+        self.finishedOrders_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(1))
 
 
     def handle_login_accepted(self):
@@ -71,6 +99,8 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.setCurrentIndex(6)
     def handle_finishedOrders(self):
         self.setCurrentIndex(7)
+    def handle_DetailsOrder(self):
+        self.setCurrentIndex(8)
 
 if __name__ == "__main__":
     import qdarkstyle
