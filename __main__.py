@@ -46,6 +46,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.main_manger.workOrder_btn.clicked.connect(self.handle_workOrder)
         self.main_manger.followOrders_btn.clicked.connect(self.handle_followOrder)
         self.main_manger.finishedOrders_btn.clicked.connect(self.handle_finishedOrders)
+        self.main_manger.logOut_btn.clicked.connect(lambda : self.setCurrentIndex(0))
 
         '''
         new order view signals
