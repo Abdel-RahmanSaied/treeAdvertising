@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_login(object):
     def setupUi(self, login):
         login.setObjectName("login")
-        login.resize(414, 662)
+        login.resize(875, 641)
         self.gridLayout_3 = QtWidgets.QGridLayout(login)
         self.gridLayout_3.setObjectName("gridLayout_3")
         self.groupBox = QtWidgets.QGroupBox(login)
@@ -29,7 +29,7 @@ class Ui_login(object):
         spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem1)
         self.label = QtWidgets.QLabel(self.groupBox)
-        self.label.setMaximumSize(QtCore.QSize(121, 121))
+        self.label.setMaximumSize(QtCore.QSize(200, 200))
         self.label.setText("")
         self.label.setPixmap(QtGui.QPixmap(":/logo/images/logo.png"))
         self.label.setScaledContents(True)

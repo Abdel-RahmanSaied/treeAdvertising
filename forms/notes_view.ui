@@ -133,7 +133,7 @@ font: 13pt &quot;Acumin Pro&quot;;</string>
     </spacer>
    </item>
    <item row="2" column="2">
-    <widget class="QPushButton" name="next_btn">
+    <widget class="QPushButton" name="end_btn">
      <property name="minimumSize">
       <size>
        <width>183</width>

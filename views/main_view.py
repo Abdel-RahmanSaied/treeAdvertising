@@ -116,7 +116,7 @@ class Ui_main(object):
         self.logOut_btn = QtWidgets.QPushButton(main)
         self.logOut_btn.setMinimumSize(QtCore.QSize(50, 50))
         self.logOut_btn.setMaximumSize(QtCore.QSize(50, 50))
-        self.logOut_btn.setStyleSheet("background-color: rgb(255, 170, 255,4);")
+        self.logOut_btn.setStyleSheet("background-color: rgb(0, 0, 0,0);")
         self.logOut_btn.setText("")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/logo/images/icons8-logout-80.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)

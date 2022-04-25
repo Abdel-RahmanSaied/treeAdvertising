@@ -4,6 +4,7 @@ from views_mangers.main_manger import Main_manger
 from views_mangers.newOrderView_manger import NewOrderView_manger
 from views_mangers.chooseDesign_manger import ChooseDesign_manger
 from views_mangers.newOrderDataView_manger import NewOrderDataView_manger
+from views_mangers.notes_manger import NotesManger
 
 from views_mangers.followOrder_manger import FollowOrder
 from views_mangers.officeDesign_manger import OfficeDesign
@@ -18,6 +19,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.newOrder_manger=NewOrderView_manger()
         self.chooseDesign_manger = ChooseDesign_manger()
         self.newOrderData_manger=NewOrderDataView_manger()
+        self.notes_manger = NotesManger()
 
         self.followOrder_manger = FollowOrder()
         self.officeDesign_manger = OfficeDesign()
@@ -35,6 +37,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.addWidget(self.officeDesign_manger)  #6
         self.addWidget(self.finishedOrders_manger) #7
         self.addWidget(self.orderDetails_manger) #8
+        self.addWidget(self.notes_manger) #9
 
 
         # install signals
@@ -57,6 +60,8 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         new order data screen signals 
         '''
         self.newOrderData_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(3))
+        self.newOrderData_manger.next_btn.clicked.connect(self.handle_notes)
+
         '''
         choose design signals
         '''
@@ -83,6 +88,11 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         finished orders screen
         '''
         self.finishedOrders_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(1))
+        '''
+        notes screen
+        '''
+        self.notes_manger.end_btn.clicked.connect(self.handle_login_accepted)
+        self.notes_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(4))
 
 
     def handle_login_accepted(self):
@@ -101,6 +111,8 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.setCurrentIndex(7)
     def handle_DetailsOrder(self):
         self.setCurrentIndex(8)
+    def handle_notes(self):
+        self.setCurrentIndex(9)
 
 if __name__ == "__main__":
     import qdarkstyle

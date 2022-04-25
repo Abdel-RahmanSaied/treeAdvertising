@@ -20,7 +20,7 @@ class Ui_Form(object):
         self.bck_btn = QtWidgets.QPushButton(Form)
         self.bck_btn.setMinimumSize(QtCore.QSize(31, 39))
         self.bck_btn.setMaximumSize(QtCore.QSize(31, 39))
-        self.bck_btn.setStyleSheet("background-color: rgb(255, 170, 0,4);")
+        self.bck_btn.setStyleSheet("background-color: rgb(0, 0, 0,0);")
         self.bck_btn.setText("")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/logo/images/icons8-back-67.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -59,6 +59,12 @@ class Ui_Form(object):
         font.setBold(True)
         font.setWeight(75)
         self.bookName_lbl.setFont(font)
+        self.bookName_lbl.setStyleSheet("background-color:rgba(0, 0, 0, 0);\n"
+"border:none;\n"
+"border-bottom:2px solid rgba(46, 82, 101, 200);\n"
+"\n"
+" border-radius: 12px;\n"
+"padding-bottom:7px;")
         self.bookName_lbl.setText("")
         self.bookName_lbl.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.bookName_lbl.setObjectName("bookName_lbl")
@@ -86,6 +92,12 @@ class Ui_Form(object):
         font.setBold(True)
         font.setWeight(75)
         self.authorName_lbl.setFont(font)
+        self.authorName_lbl.setStyleSheet("background-color:rgba(0, 0, 0, 0);\n"
+"border:none;\n"
+"border-bottom:2px solid rgba(46, 82, 101, 200);\n"
+"\n"
+" border-radius: 12px;\n"
+"padding-bottom:7px;")
         self.authorName_lbl.setText("")
         self.authorName_lbl.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.authorName_lbl.setObjectName("authorName_lbl")
@@ -113,6 +125,12 @@ class Ui_Form(object):
         font.setBold(True)
         font.setWeight(75)
         self.price_lbl.setFont(font)
+        self.price_lbl.setStyleSheet("background-color:rgba(0, 0, 0, 0);\n"
+"border:none;\n"
+"border-bottom:2px solid rgba(46, 82, 101, 200);\n"
+"\n"
+" border-radius: 12px;\n"
+"padding-bottom:7px;")
         self.price_lbl.setText("")
         self.price_lbl.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.price_lbl.setObjectName("price_lbl")
@@ -140,6 +158,12 @@ class Ui_Form(object):
         font.setBold(True)
         font.setWeight(75)
         self.dateCreated_lbl.setFont(font)
+        self.dateCreated_lbl.setStyleSheet("background-color:rgba(0, 0, 0, 0);\n"
+"border:none;\n"
+"border-bottom:2px solid rgba(46, 82, 101, 200);\n"
+"\n"
+" border-radius: 12px;\n"
+"padding-bottom:7px;")
         self.dateCreated_lbl.setText("")
         self.dateCreated_lbl.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.dateCreated_lbl.setObjectName("dateCreated_lbl")
@@ -174,7 +198,13 @@ class Ui_Form(object):
         font.setBold(True)
         font.setWeight(75)
         self.label_3.setFont(font)
-        self.label_3.setStyleSheet("background-color: rgb(0, 170, 255);")
+        self.label_3.setStyleSheet("\n"
+" border-radius: 12px;\n"
+"background-color:rgba(0, 0, 0, 0);\n"
+"border:none;\n"
+"border-bottom:2px solid rgba(46, 82, 101, 200);\n"
+"\n"
+"padding-bottom:7px;")
         self.label_3.setText("")
         self.label_3.setWordWrap(False)
         self.label_3.setObjectName("label_3")
@@ -197,7 +227,13 @@ class Ui_Form(object):
         font.setBold(True)
         font.setWeight(75)
         self.label_2.setFont(font)
-        self.label_2.setStyleSheet("background-color: rgb(255, 170, 0);")
+        self.label_2.setStyleSheet("\n"
+" border-radius: 12px;\n"
+"background-color:rgba(0, 0, 0, 0);\n"
+"border:none;\n"
+"border-bottom:2px solid rgba(46, 82, 101, 200);\n"
+"\n"
+"padding-bottom:7px;")
         self.label_2.setText("")
         self.label_2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.label_2.setWordWrap(True)
@@ -221,7 +257,13 @@ class Ui_Form(object):
         font.setBold(True)
         font.setWeight(75)
         self.label_8.setFont(font)
-        self.label_8.setStyleSheet("background-color: rgb(255, 0, 255);")
+        self.label_8.setStyleSheet("\n"
+" border-radius: 12px;\n"
+"background-color:rgba(0, 0, 0, 0);\n"
+"border:none;\n"
+"border-bottom:2px solid rgba(46, 82, 101, 200);\n"
+"\n"
+"padding-bottom:7px;")
         self.label_8.setText("")
         self.label_8.setWordWrap(True)
         self.label_8.setObjectName("label_8")
@@ -237,6 +279,13 @@ class Ui_Form(object):
         font.setBold(True)
         font.setWeight(75)
         self.available_lbl.setFont(font)
+        self.available_lbl.setStyleSheet("\n"
+" border-radius: 12px;\n"
+"background-color:rgba(0, 0, 0, 0);\n"
+"border:none;\n"
+"border-bottom:2px solid rgba(46, 82, 101, 200);\n"
+"\n"
+"padding-bottom:7px;")
         self.available_lbl.setText("")
         self.available_lbl.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.available_lbl.setObjectName("available_lbl")

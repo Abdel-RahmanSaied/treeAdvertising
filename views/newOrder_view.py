@@ -20,7 +20,7 @@ class Ui_Form(object):
         self.bck_btn = QtWidgets.QPushButton(Form)
         self.bck_btn.setMinimumSize(QtCore.QSize(31, 39))
         self.bck_btn.setMaximumSize(QtCore.QSize(31, 39))
-        self.bck_btn.setStyleSheet("background-color: rgb(255, 170, 0,4);")
+        self.bck_btn.setStyleSheet("background-color: rgb(0, 0, 0,0);")
         self.bck_btn.setText("")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/logo/images/icons8-back-67.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
