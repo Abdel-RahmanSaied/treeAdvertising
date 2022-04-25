@@ -150,7 +150,7 @@
           </property>
           <layout class="QGridLayout" name="gridLayout">
            <item row="0" column="0">
-            <widget class="QCheckBox" name="logo">
+            <widget class="QCheckBox" name="logo_checkBox">
              <property name="font">
               <font>
                <family>Gill Sans MT</family>
@@ -168,7 +168,7 @@
             </widget>
            </item>
            <item row="0" column="1">
-            <widget class="QCheckBox" name="menu">
+            <widget class="QCheckBox" name="menu_checkBox">
              <property name="font">
               <font>
                <family>Gill Sans MT</family>
@@ -186,7 +186,7 @@
             </widget>
            </item>
            <item row="0" column="2">
-            <widget class="QCheckBox" name="label_2">
+            <widget class="QCheckBox" name="label_checkBox">
              <property name="font">
               <font>
                <family>Gill Sans MT</family>
@@ -204,7 +204,7 @@
             </widget>
            </item>
            <item row="1" column="0">
-            <widget class="QCheckBox" name="businessCard">
+            <widget class="QCheckBox" name="businessCard_checkBox">
              <property name="font">
               <font>
                <family>Gill Sans MT</family>
@@ -222,7 +222,7 @@
             </widget>
            </item>
            <item row="1" column="1">
-            <widget class="QCheckBox" name="flyer">
+            <widget class="QCheckBox" name="flyer_checkBox">
              <property name="font">
               <font>
                <family>Gill Sans MT</family>
@@ -240,7 +240,7 @@
             </widget>
            </item>
            <item row="1" column="2">
-            <widget class="QCheckBox" name="certificate">
+            <widget class="QCheckBox" name="certificate_checkBox">
              <property name="font">
               <font>
                <family>Gill Sans MT</family>
@@ -258,7 +258,7 @@
             </widget>
            </item>
            <item row="2" column="0">
-            <widget class="QCheckBox" name="banner">
+            <widget class="QCheckBox" name="banner_checkBox">
              <property name="font">
               <font>
                <family>Gill Sans MT</family>
@@ -276,7 +276,7 @@
             </widget>
            </item>
            <item row="2" column="1">
-            <widget class="QCheckBox" name="poster">
+            <widget class="QCheckBox" name="poster_checkBox">
              <property name="font">
               <font>
                <family>Gill Sans MT</family>
@@ -294,7 +294,7 @@
             </widget>
            </item>
            <item row="2" column="2">
-            <widget class="QCheckBox" name="cover">
+            <widget class="QCheckBox" name="cover_checkBox">
              <property name="font">
               <font>
                <family>Gill Sans MT</family>
@@ -312,7 +312,7 @@
             </widget>
            </item>
            <item row="3" column="0">
-            <widget class="QCheckBox" name="brochure">
+            <widget class="QCheckBox" name="brochure_checkBox">
              <property name="font">
               <font>
                <family>Gill Sans MT</family>
@@ -330,7 +330,7 @@
             </widget>
            </item>
            <item row="3" column="1">
-            <widget class="QCheckBox" name="rollUp">
+            <widget class="QCheckBox" name="rollUp_checkBox">
              <property name="font">
               <font>
                <family>Gill Sans MT</family>
@@ -348,7 +348,7 @@
             </widget>
            </item>
            <item row="3" column="2">
-            <widget class="QLineEdit" name="other">
+            <widget class="QLineEdit" name="other_lineEdit">
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -371,7 +371,10 @@
               </font>
              </property>
              <property name="cursor">
-              <cursorShape>SizeHorCursor</cursorShape>
+              <cursorShape>IBeamCursor</cursorShape>
+             </property>
+             <property name="mouseTracking">
+              <bool>true</bool>
              </property>
              <property name="accessibleName">
               <string/>
