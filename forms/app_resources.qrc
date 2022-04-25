@@ -6,6 +6,10 @@
     <file>images/Untitled-1.png</file>
     <file>images/images.jpg</file>
   </qresource>
+  <qresource prefix="logo">
+    <file>images/icons8-back-67.png</file>
+    <file>images/logo.png</file>
+  </qresource>
   <qresource prefix="icons">
     <file>images/back_icon.png</file>
     <file>images/done_icon.png</file>

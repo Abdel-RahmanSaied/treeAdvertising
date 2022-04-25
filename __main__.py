@@ -8,7 +8,6 @@ from views_mangers.newOrderDataView_manger import NewOrderDataView_manger
 from views_mangers.followOrder_manger import FollowOrder
 from views_mangers.officeDesign_manger import OfficeDesign
 from views_mangers.finishedOrders_manger import FinishedOrders
-from views_mangers.orderDetails_manger import OrderDetails
 
 class Tree_Advertising(QtWidgets.QStackedWidget):
     def __init__(self):
@@ -22,7 +21,6 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.followOrder_manger = FollowOrder()
         self.officeDesign_manger = OfficeDesign()
         self.finishedOrders_manger = FinishedOrders()
-        self.orderDetails_manger = OrderDetails()
 
         # add widgets to the stack
         self.addWidget(self.login_manger) #0
@@ -33,7 +31,6 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.addWidget(self.followOrder_manger)  #5
         self.addWidget(self.officeDesign_manger)  #6
         self.addWidget(self.finishedOrders_manger) #7
-        self.addWidget(self.orderDetails_manger) #8
 
 
 
@@ -45,7 +42,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         '''
         self.main_manger.workOrder_btn.clicked.connect(self.handle_workOrder)
         self.main_manger.followOrders_btn.clicked.connect(self.handle_followOrder)
-        self.main_manger.finishedOrders_btn.clicked.connect(self.handle_finishedOrders)
+
         '''
         new order view signals
         '''
@@ -55,12 +52,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         '''
         self.chooseDesign_manger.checkAcceptedSignal.connect(self.handle_chooseDesignClient)
         self.chooseDesign_manger.officeDesign_btn.clicked.connect(self.handle_officeDesign)
-        '''
-        follow orders signals
-        '''
-        self.followOrder_manger.details_btn.clicked.connect(self.handle_orderDetails)
-
-
+        self.main_manger.finishedOrders_btn.clicked.connect(self.handle_finishedOrders)
 
         #self.predict_manager.back_btn.clicked.connect(lambda : self.setCurrentIndex(1))
 
@@ -79,8 +71,6 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.setCurrentIndex(6)
     def handle_finishedOrders(self):
         self.setCurrentIndex(7)
-    def handle_orderDetails(self):
-        self.setCurrentIndex(8)
 
 if __name__ == "__main__":
     import qdarkstyle

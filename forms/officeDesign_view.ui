@@ -15,6 +15,38 @@
   </property>
   <layout class="QGridLayout" name="gridLayout_3">
    <item row="0" column="0">
+    <widget class="QPushButton" name="bck_btn">
+     <property name="minimumSize">
+      <size>
+       <width>31</width>
+       <height>39</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>31</width>
+       <height>39</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0,4);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="app_resources.qrc">
+       <normaloff>:/logo/images/icons8-back-67.png</normaloff>:/logo/images/icons8-back-67.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>31</width>
+       <height>39</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
     <spacer name="horizontalSpacer_10">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -27,7 +59,7 @@
      </property>
     </spacer>
    </item>
-   <item row="0" column="1">
+   <item row="0" column="2">
     <widget class="QLabel" name="label">
      <property name="maximumSize">
       <size>
@@ -50,7 +82,7 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="2">
+   <item row="0" column="3">
     <spacer name="horizontalSpacer_11">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -63,7 +95,7 @@
      </property>
     </spacer>
    </item>
-   <item row="1" column="0" colspan="3">
+   <item row="1" column="0" rowspan="2" colspan="4">
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <spacer name="horizontalSpacer_3">
@@ -387,7 +419,7 @@ font: 13pt &quot;Acumin Pro&quot;;</string>
      </item>
     </layout>
    </item>
-   <item row="2" column="1">
+   <item row="2" column="2">
     <spacer name="verticalSpacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -403,7 +435,7 @@ font: 13pt &quot;Acumin Pro&quot;;</string>
      </property>
     </spacer>
    </item>
-   <item row="3" column="0">
+   <item row="3" column="0" colspan="2">
     <spacer name="horizontalSpacer">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -416,7 +448,7 @@ font: 13pt &quot;Acumin Pro&quot;;</string>
      </property>
     </spacer>
    </item>
-   <item row="3" column="1">
+   <item row="3" column="2">
     <widget class="QPushButton" name="next_btn">
      <property name="minimumSize">
       <size>
@@ -443,7 +475,7 @@ background-color: rgb(50, 85, 127);
      </property>
     </widget>
    </item>
-   <item row="3" column="2">
+   <item row="3" column="3">
     <spacer name="horizontalSpacer_2">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -458,6 +490,8 @@ background-color: rgb(50, 85, 127);
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="app_resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

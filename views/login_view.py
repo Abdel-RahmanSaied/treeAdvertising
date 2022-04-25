@@ -31,7 +31,7 @@ class Ui_login(object):
         self.label = QtWidgets.QLabel(self.groupBox)
         self.label.setMaximumSize(QtCore.QSize(121, 121))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap(":/logos/images/ver 2-White.png"))
+        self.label.setPixmap(QtGui.QPixmap(":/logo/images/logo.png"))
         self.label.setScaledContents(True)
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")

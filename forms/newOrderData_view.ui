@@ -7,21 +7,53 @@
     <x>0</x>
     <y>0</y>
     <width>848</width>
-    <height>598</height>
+    <height>604</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
-   <item row="0" column="3">
-    <spacer name="horizontalSpacer_11">
+   <item row="0" column="0">
+    <widget class="QPushButton" name="bck_btn">
+     <property name="minimumSize">
+      <size>
+       <width>31</width>
+       <height>39</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>31</width>
+       <height>39</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 170, 0,4);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="app_resources.qrc">
+       <normaloff>:/logo/images/icons8-back-67.png</normaloff>:/logo/images/icons8-back-67.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>31</width>
+       <height>39</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <spacer name="horizontalSpacer_10">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
      <property name="sizeHint" stdset="0">
       <size>
-       <width>386</width>
+       <width>384</width>
        <height>20</height>
       </size>
      </property>
@@ -50,21 +82,8 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="0" colspan="2">
-    <spacer name="horizontalSpacer_10">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>384</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="2" column="3">
-    <spacer name="horizontalSpacer_2">
+   <item row="0" column="3">
+    <spacer name="horizontalSpacer_11">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
@@ -75,46 +94,6 @@
       </size>
      </property>
     </spacer>
-   </item>
-   <item row="2" column="0">
-    <spacer name="horizontalSpacer">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>384</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="2" column="1" colspan="2">
-    <widget class="QPushButton" name="next_btn">
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>60</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>16777215</height>
-      </size>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font: 11pt &quot;Acumin Pro&quot;;
-color: rgb(255, 255, 255);
-background-color: rgb(50, 85, 127);
-
- border-radius: 12px;
-</string>
-     </property>
-     <property name="text">
-      <string>التالي</string>
-     </property>
-    </widget>
    </item>
    <item row="1" column="0" colspan="4">
     <widget class="QGroupBox" name="groupBox">
@@ -807,8 +786,63 @@ padding-bottom:7px;</string>
      </layout>
     </widget>
    </item>
+   <item row="2" column="0" colspan="2">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>384</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="2" column="2">
+    <widget class="QPushButton" name="next_btn">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>60</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 11pt &quot;Acumin Pro&quot;;
+color: rgb(255, 255, 255);
+background-color: rgb(50, 85, 127);
+
+ border-radius: 12px;
+</string>
+     </property>
+     <property name="text">
+      <string>التالي</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="3">
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>386</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="app_resources.qrc"/>
+ </resources>
  <connections/>
 </ui>
