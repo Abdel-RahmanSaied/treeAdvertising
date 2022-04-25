@@ -8,7 +8,6 @@ from views_mangers.newOrderDataView_manger import NewOrderDataView_manger
 from views_mangers.followOrder_manger import FollowOrder
 from views_mangers.officeDesign_manger import OfficeDesign
 from views_mangers.finishedOrders_manger import FinishedOrders
-
 from views_mangers.orderDetails_manger import OrderDetails
 
 class Tree_Advertising(QtWidgets.QStackedWidget):
@@ -110,13 +109,3 @@ if __name__ == "__main__":
     w.show()
     app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
     app.exec_()
-
-
-
-
-
-
-
-
-
-

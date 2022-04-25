@@ -11,7 +11,6 @@ class OrderDetails(QtWidgets.QWidget, orderDetails_view.Ui_Form):
 
 if __name__ == "__main__":
     import qdarkstyle
-
     app = QtWidgets.QApplication([])
     w = OrderDetails()
     w.show()

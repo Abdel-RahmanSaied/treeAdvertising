@@ -12,7 +12,6 @@ class FinishedOrders(QtWidgets.QWidget, finishedOrders_view.Ui_Form):
 
 if __name__ == "__main__":
     import qdarkstyle
-
     app = QtWidgets.QApplication([])
     w = FinishedOrders()
     w.show()
