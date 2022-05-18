@@ -3,7 +3,7 @@ from views import login_view
 import json
 import os
 
-class Login_Manager(QtWidgets.QWidget, login_view.Ui_login):
+class Login_Manager(QtWidgets.QWidget, login_view.Ui_Form):
     loginAcceptedSignal = QtCore.pyqtSignal()
     def __init__(self):
         super(Login_Manager, self).__init__()
@@ -62,5 +62,5 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication([])
     w = Login_Manager()
     w.show()
-    app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
+    #app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
     app.exec_()

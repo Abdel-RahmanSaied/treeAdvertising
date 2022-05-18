@@ -14,12 +14,10 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_main(object):
     def setupUi(self, main):
         main.setObjectName("main")
-        main.resize(1037, 662)
-        self.gridLayout_2 = QtWidgets.QGridLayout(main)
-        self.gridLayout_2.setObjectName("gridLayout_2")
-        spacerItem = QtWidgets.QSpacerItem(399, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_2.addItem(spacerItem, 0, 1, 1, 1)
+        main.resize(1340, 810)
+        main.setMinimumSize(QtCore.QSize(1340, 810))
         self.label = QtWidgets.QLabel(main)
+        self.label.setGeometry(QtCore.QRect(540, 30, 231, 41))
         self.label.setMaximumSize(QtCore.QSize(271, 71))
         font = QtGui.QFont()
         font.setPointSize(20)
@@ -28,92 +26,113 @@ class Ui_main(object):
         self.label.setFont(font)
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
-        self.gridLayout_2.addWidget(self.label, 0, 2, 1, 1)
-        spacerItem1 = QtWidgets.QSpacerItem(399, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_2.addItem(spacerItem1, 0, 3, 1, 1)
         self.frame = QtWidgets.QFrame(main)
+        self.frame.setGeometry(QtCore.QRect(830, 120, 461, 611))
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
-        self.gridLayout = QtWidgets.QGridLayout(self.frame)
+        self.gridLayout_2 = QtWidgets.QGridLayout(self.frame)
+        self.gridLayout_2.setObjectName("gridLayout_2")
+        self.gridLayout = QtWidgets.QGridLayout()
         self.gridLayout.setObjectName("gridLayout")
-        self.gridLayout_3 = QtWidgets.QGridLayout()
-        self.gridLayout_3.setObjectName("gridLayout_3")
         self.workOrder_btn = QtWidgets.QPushButton(self.frame)
-        self.workOrder_btn.setMinimumSize(QtCore.QSize(165, 85))
-        self.workOrder_btn.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.workOrder_btn.setStyleSheet("font: 11pt \"Acumin Pro\";\n"
-"color: rgb(255, 255, 255);\n"
-"background-color: rgb(50, 85, 127);\n"
-"\n"
-" border-radius: 12px;\n"
-"")
+        self.workOrder_btn.setMinimumSize(QtCore.QSize(161, 161))
+        self.workOrder_btn.setMaximumSize(QtCore.QSize(161, 161))
+        self.workOrder_btn.setStyleSheet("QPushButton {\n"
+"    \n"
+"    background-color: rgb(0, 110, 127,180);\n"
+"    color: #FFFFFF;\n"
+"    padding: 2px;\n"
+"    font: bold 15px;\n"
+"    border-width: 6px;\n"
+"    border-radius: 10px;\n"
+"    border-color: #2752B8;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #A0BCC2;\n"
+"}")
         self.workOrder_btn.setObjectName("workOrder_btn")
-        self.gridLayout_3.addWidget(self.workOrder_btn, 0, 1, 1, 1)
-        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_3.addItem(spacerItem2, 0, 4, 1, 1)
-        spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_3.addItem(spacerItem3, 0, 2, 1, 1)
-        spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_3.addItem(spacerItem4, 0, 6, 1, 1)
+        self.gridLayout.addWidget(self.workOrder_btn, 0, 0, 1, 1)
         self.clients_btn = QtWidgets.QPushButton(self.frame)
-        self.clients_btn.setMinimumSize(QtCore.QSize(165, 81))
-        self.clients_btn.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.clients_btn.setStyleSheet("font: 11pt \"Acumin Pro\";\n"
-"color: rgb(255, 255, 255);\n"
-"background-color: rgb(50, 85, 127);\n"
+        self.clients_btn.setMinimumSize(QtCore.QSize(161, 161))
+        self.clients_btn.setMaximumSize(QtCore.QSize(161, 161))
+        self.clients_btn.setStyleSheet("QPushButton {\n"
 "\n"
-" border-radius: 12px;\n"
-"")
+"    background-color: rgb(17, 43, 60,180);\n"
+"    color: #FFFFFF;\n"
+"    padding: 2px;\n"
+"    font: bold 15px;\n"
+"    border-width: 6px;\n"
+"    border-radius: 10px;\n"
+"    border-color: #2752B8;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #EFEAD8;\n"
+"}")
         self.clients_btn.setObjectName("clients_btn")
-        self.gridLayout_3.addWidget(self.clients_btn, 0, 5, 1, 1)
-        self.followOrders_btn = QtWidgets.QPushButton(self.frame)
-        self.followOrders_btn.setMinimumSize(QtCore.QSize(165, 81))
-        self.followOrders_btn.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.followOrders_btn.setStyleSheet("font: 11pt \"Acumin Pro\";\n"
-"color: rgb(255, 255, 255);\n"
-"background-color: rgb(50, 85, 127);\n"
-"\n"
-" border-radius: 12px;\n"
-"")
-        self.followOrders_btn.setObjectName("followOrders_btn")
-        self.gridLayout_3.addWidget(self.followOrders_btn, 0, 3, 1, 1)
-        spacerItem5 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_3.addItem(spacerItem5, 0, 0, 1, 1)
-        self.gridLayout.addLayout(self.gridLayout_3, 0, 0, 1, 1)
-        self.gridLayout_4 = QtWidgets.QGridLayout()
-        self.gridLayout_4.setObjectName("gridLayout_4")
-        spacerItem6 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_4.addItem(spacerItem6, 0, 2, 1, 1)
-        self.finishedOrders_btn = QtWidgets.QPushButton(self.frame)
-        self.finishedOrders_btn.setMinimumSize(QtCore.QSize(161, 85))
-        self.finishedOrders_btn.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.finishedOrders_btn.setStyleSheet("font: 11pt \"Acumin Pro\";\n"
-"color: rgb(255, 255, 255);\n"
-"background-color: rgb(50, 85, 127);\n"
-"\n"
-" border-radius: 12px;\n"
-"")
-        self.finishedOrders_btn.setObjectName("finishedOrders_btn")
-        self.gridLayout_4.addWidget(self.finishedOrders_btn, 0, 3, 1, 1)
+        self.gridLayout.addWidget(self.clients_btn, 0, 1, 1, 1)
         self.ordersReq_btn = QtWidgets.QPushButton(self.frame)
-        self.ordersReq_btn.setMinimumSize(QtCore.QSize(161, 85))
-        self.ordersReq_btn.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.ordersReq_btn.setStyleSheet("font: 11pt \"Acumin Pro\";\n"
-"color: rgb(255, 255, 255);\n"
-"background-color: rgb(50, 85, 127);\n"
-"\n"
-" border-radius: 12px;\n"
-"")
+        self.ordersReq_btn.setMinimumSize(QtCore.QSize(161, 161))
+        self.ordersReq_btn.setMaximumSize(QtCore.QSize(161, 161))
+        self.ordersReq_btn.setStyleSheet("QPushButton {\n"
+"    \n"
+"    background-color: rgb(85, 132, 172,180);\n"
+"    color: #FFFFFF;\n"
+"    padding: 2px;\n"
+"    font: bold 15px;\n"
+"    border-width: 6px;\n"
+"    border-radius: 10px;\n"
+"    border-color: #2752B8;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #EFEAD8;\n"
+"}")
         self.ordersReq_btn.setObjectName("ordersReq_btn")
-        self.gridLayout_4.addWidget(self.ordersReq_btn, 0, 1, 1, 1)
-        spacerItem7 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_4.addItem(spacerItem7, 0, 0, 1, 1)
-        spacerItem8 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_4.addItem(spacerItem8, 0, 4, 1, 1)
-        self.gridLayout.addLayout(self.gridLayout_4, 1, 0, 1, 1)
-        self.gridLayout_2.addWidget(self.frame, 1, 0, 1, 4)
+        self.gridLayout.addWidget(self.ordersReq_btn, 1, 0, 1, 1)
+        self.finishedOrders_btn = QtWidgets.QPushButton(self.frame)
+        self.finishedOrders_btn.setMinimumSize(QtCore.QSize(161, 161))
+        self.finishedOrders_btn.setMaximumSize(QtCore.QSize(161, 161))
+        self.finishedOrders_btn.setStyleSheet("QPushButton {\n"
+"    background-color: rgb(178, 39, 39,180);\n"
+"    color: #FFFFFF;\n"
+"    padding: 2px;\n"
+"    font: bold 15px;\n"
+"    border-width: 6px;\n"
+"    border-radius: 10px;\n"
+"    border-color: #2752B8;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #827397;\n"
+"}")
+        self.finishedOrders_btn.setObjectName("finishedOrders_btn")
+        self.gridLayout.addWidget(self.finishedOrders_btn, 1, 1, 1, 1)
+        self.followOrders_btn = QtWidgets.QPushButton(self.frame)
+        self.followOrders_btn.setMinimumSize(QtCore.QSize(161, 161))
+        self.followOrders_btn.setMaximumSize(QtCore.QSize(161, 161))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setItalic(False)
+        font.setWeight(75)
+        self.followOrders_btn.setFont(font)
+        self.followOrders_btn.setStyleSheet("QPushButton {\n"
+"    \n"
+"    background-color: rgb(149, 209, 204,140);\n"
+"    color: #FFFFFF;\n"
+"    padding: 2px;\n"
+"    font: bold 15px;\n"
+"    border-width: 6px;\n"
+"    border-radius: 10px;\n"
+"    border-color: #2752B8;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #EFEAD8;\n"
+"}")
+        self.followOrders_btn.setObjectName("followOrders_btn")
+        self.gridLayout.addWidget(self.followOrders_btn, 2, 1, 1, 1)
+        self.gridLayout_2.addLayout(self.gridLayout, 0, 0, 1, 1)
         self.logOut_btn = QtWidgets.QPushButton(main)
+        self.logOut_btn.setGeometry(QtCore.QRect(20, 20, 50, 50))
         self.logOut_btn.setMinimumSize(QtCore.QSize(50, 50))
         self.logOut_btn.setMaximumSize(QtCore.QSize(50, 50))
         self.logOut_btn.setStyleSheet("background-color: rgb(0, 0, 0,0);")
@@ -123,7 +142,54 @@ class Ui_main(object):
         self.logOut_btn.setIcon(icon)
         self.logOut_btn.setIconSize(QtCore.QSize(50, 50))
         self.logOut_btn.setObjectName("logOut_btn")
-        self.gridLayout_2.addWidget(self.logOut_btn, 0, 0, 1, 1)
+        self.label_3 = QtWidgets.QLabel(main)
+        self.label_3.setGeometry(QtCore.QRect(0, 0, 1361, 821))
+        self.label_3.setMinimumSize(QtCore.QSize(1361, 821))
+        self.label_3.setMaximumSize(QtCore.QSize(1361, 821))
+        self.label_3.setText("")
+        self.label_3.setPixmap(QtGui.QPixmap(":/login/images/30663.jpg"))
+        self.label_3.setScaledContents(True)
+        self.label_3.setObjectName("label_3")
+        self.groupBox = QtWidgets.QGroupBox(main)
+        self.groupBox.setGeometry(QtCore.QRect(10, 710, 341, 87))
+        self.groupBox.setObjectName("groupBox")
+        self.gridLayout_3 = QtWidgets.QGridLayout(self.groupBox)
+        self.gridLayout_3.setObjectName("gridLayout_3")
+        self.label_2 = QtWidgets.QLabel(self.groupBox)
+        font = QtGui.QFont()
+        font.setPointSize(15)
+        self.label_2.setFont(font)
+        self.label_2.setStyleSheet("color: rgb(255, 255, 255);")
+        self.label_2.setObjectName("label_2")
+        self.gridLayout_3.addWidget(self.label_2, 0, 0, 1, 1)
+        self.label_4 = QtWidgets.QLabel(self.groupBox)
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.label_4.setFont(font)
+        self.label_4.setStyleSheet("color: rgb(255, 255, 255);")
+        self.label_4.setText("")
+        self.label_4.setObjectName("label_4")
+        self.gridLayout_3.addWidget(self.label_4, 0, 1, 1, 1)
+        self.label_7 = QtWidgets.QLabel(self.groupBox)
+        font = QtGui.QFont()
+        font.setPointSize(15)
+        self.label_7.setFont(font)
+        self.label_7.setStyleSheet("color: rgb(255, 255, 255);")
+        self.label_7.setObjectName("label_7")
+        self.gridLayout_3.addWidget(self.label_7, 1, 0, 1, 1)
+        self.label_8 = QtWidgets.QLabel(self.groupBox)
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.label_8.setFont(font)
+        self.label_8.setStyleSheet("color: rgb(255, 255, 255);")
+        self.label_8.setText("")
+        self.label_8.setObjectName("label_8")
+        self.gridLayout_3.addWidget(self.label_8, 1, 1, 1, 1)
+        self.label_3.raise_()
+        self.label.raise_()
+        self.frame.raise_()
+        self.logOut_btn.raise_()
+        self.groupBox.raise_()
 
         self.retranslateUi(main)
         QtCore.QMetaObject.connectSlotsByName(main)
@@ -134,7 +200,10 @@ class Ui_main(object):
         self.label.setText(_translate("main", "الوجهه الرئيسيه"))
         self.workOrder_btn.setText(_translate("main", "امر الشغل"))
         self.clients_btn.setText(_translate("main", "العملاء"))
-        self.followOrders_btn.setText(_translate("main", "متابعه اوامر الشغل"))
-        self.finishedOrders_btn.setText(_translate("main", "اوامر الشغل المنتهيه"))
         self.ordersReq_btn.setText(_translate("main", "متطلبات اوامر الشغل"))
+        self.finishedOrders_btn.setText(_translate("main", "اوامر الشغل المنتهيه"))
+        self.followOrders_btn.setText(_translate("main", "متابعه اوامر الشغل"))
+        self.groupBox.setTitle(_translate("main", "User Info"))
+        self.label_2.setText(_translate("main", "User Name :"))
+        self.label_7.setText(_translate("main", "Session time :"))
 import app_resources_rc
