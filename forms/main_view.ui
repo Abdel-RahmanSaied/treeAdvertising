@@ -118,8 +118,8 @@ QPushButton:hover {
         </property>
         <property name="iconSize">
          <size>
-          <width>150</width>
-          <height>150</height>
+          <width>300</width>
+          <height>300</height>
          </size>
         </property>
        </widget>
@@ -323,7 +323,7 @@ QPushButton:hover {
         </property>
         <property name="icon">
          <iconset resource="app_resources.qrc">
-          <normaloff>:/icons/icons/search.png</normaloff>:/icons/icons/search.png</iconset>
+          <normaloff>:/icons/icons/icons8-important-delivery-96.png</normaloff>:/icons/icons/icons8-important-delivery-96.png</iconset>
         </property>
         <property name="iconSize">
          <size>

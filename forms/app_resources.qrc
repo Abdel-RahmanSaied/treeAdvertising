@@ -13,6 +13,7 @@
     <file>images/logo.png</file>
   </qresource>
   <qresource prefix="icons">
+    <file>icons/icons8-important-delivery-96.png</file>
     <file>icons/checklist.png</file>
     <file>icons/icons8-add-list-64.png</file>
     <file>icons/icons8-printer-maintenance-100.png</file>
