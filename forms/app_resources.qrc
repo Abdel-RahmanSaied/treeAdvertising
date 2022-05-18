@@ -13,6 +13,12 @@
     <file>images/logo.png</file>
   </qresource>
   <qresource prefix="icons">
+    <file>icons/checklist.png</file>
+    <file>icons/icons8-add-list-64.png</file>
+    <file>icons/icons8-printer-maintenance-100.png</file>
+    <file>icons/list.png</file>
+    <file>icons/search.png</file>
+    <file>icons/user.png</file>
     <file>images/back_icon.png</file>
     <file>images/done_icon.png</file>
     <file>images/good_email.png</file>

@@ -1,5 +1,5 @@
-from PyQt5 import QtWidgets , QtGui , QtCore
-from views_mangers.loginView_manger import  Login_Manager
+from PyQt5 import QtWidgets, QtGui, QtCore
+from views_mangers.loginView_manger import Login_Manager
 from views_mangers.main_manger import Main_manger
 from views_mangers.newOrderView_manger import NewOrderView_manger
 from views_mangers.chooseDesign_manger import ChooseDesign_manger

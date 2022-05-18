@@ -22,10 +22,10 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>540</x>
+     <x>560</x>
      <y>30</y>
      <width>231</width>
-     <height>41</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="maximumSize">
@@ -36,6 +36,7 @@
    </property>
    <property name="font">
     <font>
+     <family>Thunder Lord</family>
      <pointsize>20</pointsize>
      <weight>75</weight>
      <bold>true</bold>
@@ -51,10 +52,10 @@
   <widget class="QFrame" name="frame">
    <property name="geometry">
     <rect>
-     <x>830</x>
-     <y>120</y>
-     <width>461</width>
-     <height>611</height>
+     <x>810</x>
+     <y>90</y>
+     <width>511</width>
+     <height>681</height>
     </rect>
    </property>
    <property name="frameShape">
@@ -63,10 +64,23 @@
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
-   <layout class="QGridLayout" name="gridLayout_2">
+   <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
-     <layout class="QGridLayout" name="gridLayout">
-      <item row="0" column="0">
+     <spacer name="horizontalSpacer_4">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>44</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="1">
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
        <widget class="QPushButton" name="workOrder_btn">
         <property name="minimumSize">
          <size>
@@ -96,11 +110,62 @@ QPushButton:hover {
 }</string>
         </property>
         <property name="text">
-         <string>امر الشغل</string>
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="app_resources.qrc">
+          <normaloff>:/icons/icons/icons8-add-list-64.png</normaloff>:/icons/icons/icons8-add-list-64.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>150</width>
+          <height>150</height>
+         </size>
         </property>
        </widget>
       </item>
-      <item row="0" column="1">
+      <item>
+       <widget class="QLabel" name="label_6">
+        <property name="maximumSize">
+         <size>
+          <width>161</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Thunder Lord</family>
+          <pointsize>19</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>امر الشغل</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="2">
+     <spacer name="horizontalSpacer_5">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>44</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="3">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
        <widget class="QPushButton" name="clients_btn">
         <property name="minimumSize">
          <size>
@@ -130,11 +195,101 @@ QPushButton:hover {
 }</string>
         </property>
         <property name="text">
-         <string>العملاء</string>
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="app_resources.qrc">
+          <normaloff>:/icons/icons/user.png</normaloff>:/icons/icons/user.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>100</width>
+          <height>100</height>
+         </size>
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
+      <item>
+       <widget class="QLabel" name="label_9">
+        <property name="maximumSize">
+         <size>
+          <width>161</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Thunder Lord</family>
+          <pointsize>19</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>العملاء</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="4">
+     <spacer name="horizontalSpacer_6">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>44</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="1" column="1">
+     <spacer name="horizontalSpacer_7">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>24</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="1" column="3">
+     <spacer name="horizontalSpacer_8">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>24</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="2" column="0">
+     <spacer name="horizontalSpacer_3">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>44</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="2" column="1">
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
        <widget class="QPushButton" name="ordersReq_btn">
         <property name="minimumSize">
          <size>
@@ -164,11 +319,62 @@ QPushButton:hover {
 }</string>
         </property>
         <property name="text">
-         <string>متطلبات اوامر الشغل</string>
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="app_resources.qrc">
+          <normaloff>:/icons/icons/search.png</normaloff>:/icons/icons/search.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>100</width>
+          <height>100</height>
+         </size>
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
+      <item>
+       <widget class="QLabel" name="label_11">
+        <property name="maximumSize">
+         <size>
+          <width>161</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Thunder Lord</family>
+          <pointsize>14</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>متطلبات اوامر الشغل</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="2">
+     <spacer name="horizontalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>44</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="2" column="3">
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
        <widget class="QPushButton" name="finishedOrders_btn">
         <property name="minimumSize">
          <size>
@@ -197,11 +403,75 @@ QPushButton:hover {
 }</string>
         </property>
         <property name="text">
-         <string>اوامر الشغل المنتهيه</string>
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="app_resources.qrc">
+          <normaloff>:/icons/icons/list.png</normaloff>:/icons/icons/list.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>100</width>
+          <height>100</height>
+         </size>
         </property>
        </widget>
       </item>
-      <item row="2" column="1">
+      <item>
+       <widget class="QLabel" name="label_10">
+        <property name="maximumSize">
+         <size>
+          <width>161</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Thunder Lord</family>
+          <pointsize>14</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>اوامر الشغل المنتهيه</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="4">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>44</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="3" column="3">
+     <spacer name="horizontalSpacer_9">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>24</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="4" column="3">
+     <layout class="QVBoxLayout" name="verticalLayout_5">
+      <item>
        <widget class="QPushButton" name="followOrders_btn">
         <property name="minimumSize">
          <size>
@@ -239,7 +509,41 @@ QPushButton:hover {
 }</string>
         </property>
         <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="app_resources.qrc">
+          <normaloff>:/icons/icons/icons8-printer-maintenance-100.png</normaloff>:/icons/icons/icons8-printer-maintenance-100.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>150</width>
+          <height>150</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_12">
+        <property name="maximumSize">
+         <size>
+          <width>161</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Thunder Lord</family>
+          <pointsize>14</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
          <string>متابعه اوامر الشغل</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
