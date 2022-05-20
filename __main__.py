@@ -2,12 +2,12 @@ from PyQt5 import QtWidgets, QtGui, QtCore
 from views_mangers.loginView_manger import Login_Manager
 from views_mangers.main_manger import Main_manger
 from views_mangers.newOrderView_manger import NewOrderView_manger
-from views_mangers.chooseDesign_manger import ChooseDesign_manger
-from views_mangers.newOrderDataView_manger import NewOrderDataView_manger
+# from views_mangers.chooseDesign_manger import ChooseDesign_manger
+# from views_mangers.newOrderDataView_manger import NewOrderDataView_manger
 from views_mangers.notes_manger import NotesManger
 
 from views_mangers.followOrder_manger import FollowOrder
-from views_mangers.officeDesign_manger import OfficeDesign
+# from views_mangers.officeDesign_manger import OfficeDesign
 from views_mangers.finishedOrders_manger import FinishedOrders
 from views_mangers.orderDetails_manger import OrderDetails
 
@@ -17,12 +17,12 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.login_manger = Login_Manager()
         self.main_manger = Main_manger()
         self.newOrder_manger=NewOrderView_manger()
-        self.chooseDesign_manger = ChooseDesign_manger()
-        self.newOrderData_manger=NewOrderDataView_manger()
+#         self.chooseDesign_manger = ChooseDesign_manger()
+#         self.newOrderData_manger=NewOrderDataView_manger()
         self.notes_manger = NotesManger()
 
         self.followOrder_manger = FollowOrder()
-        self.officeDesign_manger = OfficeDesign()
+#         self.officeDesign_manger = OfficeDesign()
         self.finishedOrders_manger = FinishedOrders()
 
         self.orderDetails_manger = OrderDetails()
@@ -31,10 +31,10 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.addWidget(self.login_manger) #0
         self.addWidget(self.main_manger) #1
         self.addWidget(self.newOrder_manger) #2
-        self.addWidget(self.chooseDesign_manger) #3
+#         self.addWidget(self.chooseDesign_manger) #3
 
         self.addWidget(self.followOrder_manger)  #4  !!!
-        self.addWidget(self.officeDesign_manger)  #5 delete
+#         self.addWidget(self.officeDesign_manger)  #5 delete
         self.addWidget(self.finishedOrders_manger) #6  !!!
         self.addWidget(self.orderDetails_manger) #7  !!!
         self.addWidget(self.notes_manger) #8
@@ -53,27 +53,27 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         '''
         new order view signals
         '''
-        self.newOrder_manger.next_btn.clicked.connect(self.handle_newOrder)
+        self.newOrder_manger.next_btn.clicked.connect(self.handle_notes)
         self.newOrder_manger.bck_btn.clicked.connect(lambda : self.setCurrentIndex(1))
 
         '''
         new order data screen signals 
         '''
-        self.newOrderData_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(3))
-        self.newOrderData_manger.next_btn.clicked.connect(self.handle_notes)
+#         self.newOrderData_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(3))
+#         self.newOrderData_manger.next_btn.clicked.connect(self.handle_notes)
 
         '''
         choose design signals
         '''
-        self.chooseDesign_manger.checkAcceptedSignal.connect(self.handle_chooseDesignClient)
-        self.chooseDesign_manger.officeDesign_btn.clicked.connect(self.handle_officeDesign)
-        self.chooseDesign_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(2))
+#         self.chooseDesign_manger.checkAcceptedSignal.connect(self.handle_chooseDesignClient)
+#         self.chooseDesign_manger.officeDesign_btn.clicked.connect(self.handle_officeDesign)
+#         self.chooseDesign_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(2))
 
         '''
         office design screen
         '''
-        self.officeDesign_manger.next_btn.clicked.connect(self.handle_chooseDesignClient)
-        self.officeDesign_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(3))
+#         self.officeDesign_manger.next_btn.clicked.connect(self.handle_chooseDesignClient)
+#         self.officeDesign_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(3))
         '''
         follow Orders screen 
         '''
@@ -92,7 +92,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         notes screen
         '''
         self.notes_manger.end_btn.clicked.connect(self.handle_login_accepted)
-        self.notes_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(4))
+        self.notes_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(2))
 
 
     def handle_login_accepted(self):
