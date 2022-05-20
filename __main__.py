@@ -98,18 +98,18 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.setCurrentIndex(1)
     def handle_workOrder(self):
         self.setCurrentIndex(2)
-    def handle_newOrder(self):
-        self.setCurrentIndex(3)
-    def handle_chooseDesignClient(self):
-        self.setCurrentIndex(4)
+#     def handle_newOrder(self):
+#         self.setCurrentIndex(3)
+#     def handle_chooseDesignClient(self):
+#         self.setCurrentIndex(4)
     def handle_followOrder(self):
-        self.setCurrentIndex(5)
-    def handle_officeDesign(self):
-        self.setCurrentIndex(6)
+        self.setCurrentIndex(3)
+#     def handle_officeDesign(self):
+#         self.setCurrentIndex(6)
     def handle_finishedOrders(self):
-        self.setCurrentIndex(7)
+        self.setCurrentIndex(4)
     def handle_DetailsOrder(self):
-        self.setCurrentIndex(8)
+        self.setCurrentIndex(5)
     def handle_notes(self):
         self.setCurrentIndex(6)
 
