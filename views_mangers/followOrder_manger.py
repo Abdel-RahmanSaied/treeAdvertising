@@ -15,5 +15,5 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication([])
     w = FollowOrder()
     w.show()
-    app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
+    #app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
     app.exec_()

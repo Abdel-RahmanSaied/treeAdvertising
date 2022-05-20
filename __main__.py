@@ -32,12 +32,12 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.addWidget(self.main_manger) #1
         self.addWidget(self.newOrder_manger) #2
         self.addWidget(self.chooseDesign_manger) #3
-        self.addWidget(self.newOrderData_manger)  #4
-        self.addWidget(self.followOrder_manger)  #5
-        self.addWidget(self.officeDesign_manger)  #6
-        self.addWidget(self.finishedOrders_manger) #7
-        self.addWidget(self.orderDetails_manger) #8
-        self.addWidget(self.notes_manger) #9
+
+        self.addWidget(self.followOrder_manger)  #4  !!!
+        self.addWidget(self.officeDesign_manger)  #5 delete
+        self.addWidget(self.finishedOrders_manger) #6  !!!
+        self.addWidget(self.orderDetails_manger) #7  !!!
+        self.addWidget(self.notes_manger) #8
 
 
         # install signals
