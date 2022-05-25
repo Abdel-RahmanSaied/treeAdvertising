@@ -364,7 +364,7 @@ class Ui_Form(object):
         self.label_12.setMinimumSize(QtCore.QSize(1361, 821))
         self.label_12.setMaximumSize(QtCore.QSize(1361, 821))
         self.label_12.setText("")
-        self.label_12.setPixmap(QtGui.QPixmap(":/login/images/30663.jpg"))
+        self.label_12.setPixmap(QtGui.QPixmap(":/login/images/backgroung/3433814.jpg"))
         self.label_12.setScaledContents(True)
         self.label_12.setObjectName("label_12")
         self.label_12.raise_()

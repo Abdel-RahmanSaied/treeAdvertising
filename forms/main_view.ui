@@ -97,7 +97,7 @@
         <property name="styleSheet">
          <string notr="true">QPushButton {
     
-	background-color: rgb(0, 110, 127,180);
+	background-color: rgb(0, 110, 127,100);
     color: #FFFFFF;
     padding: 2px;
     font: bold 15px;
@@ -182,7 +182,7 @@ QPushButton:hover {
         <property name="styleSheet">
          <string notr="true">QPushButton {
 
-    background-color: rgb(17, 43, 60,180);
+    background-color: rgb(17, 43, 60,100);
     color: #FFFFFF;
     padding: 2px;
     font: bold 15px;
@@ -306,7 +306,7 @@ QPushButton:hover {
         <property name="styleSheet">
          <string notr="true">QPushButton {
 	
-	background-color: rgb(85, 132, 172,180);
+	background-color: rgb(85, 132, 220,100);
     color: #FFFFFF;
     padding: 2px;
     font: bold 15px;
@@ -390,7 +390,7 @@ QPushButton:hover {
         </property>
         <property name="styleSheet">
          <string notr="true">QPushButton {
-	background-color: rgb(178, 39, 39,180);
+	background-color: rgb(178, 39, 39,100);
     color: #FFFFFF;
     padding: 2px;
     font: bold 15px;
@@ -496,7 +496,7 @@ QPushButton:hover {
         <property name="styleSheet">
          <string notr="true">QPushButton {
 	
-	background-color: rgb(149, 209, 204,140);
+	background-color: rgb(149, 209, 204,100);
     color: #FFFFFF;
     padding: 2px;
     font: bold 15px;
@@ -614,7 +614,7 @@ QPushButton:hover {
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="app_resources.qrc">:/login/images/30663.jpg</pixmap>
+    <pixmap resource="app_resources.qrc">:/login/images/backgroung/3433814.jpg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -641,7 +641,7 @@ QPushButton:hover {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(255, 255, 255);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>User Name :</string>
@@ -656,10 +656,10 @@ QPushButton:hover {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(255, 255, 255);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
-       <string/>
+       <string>Abdel-Rahman</string>
       </property>
      </widget>
     </item>
@@ -671,7 +671,7 @@ QPushButton:hover {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(255, 255, 255);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>Session time :</string>
@@ -686,10 +686,10 @@ QPushButton:hover {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(255, 255, 255);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
-       <string/>
+       <string>2 m</string>
       </property>
      </widget>
     </item>

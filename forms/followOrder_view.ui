@@ -513,6 +513,9 @@ font: 14pt &quot;Acumin Pro&quot;;</string>
       <property name="layoutDirection">
        <enum>Qt::RightToLeft</enum>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255,100);</string>
+      </property>
       <property name="textElideMode">
        <enum>Qt::ElideRight</enum>
       </property>
@@ -626,7 +629,7 @@ background-color: rgb(50, 85, 127);
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="app_resources.qrc">:/login/images/30663.jpg</pixmap>
+    <pixmap resource="app_resources.qrc">:/login/images/backgroung/3433814.jpg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>

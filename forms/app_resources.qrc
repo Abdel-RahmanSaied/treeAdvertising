@@ -1,5 +1,8 @@
 <RCC>
   <qresource prefix="login">
+    <file>images/backgroung/3433814.jpg</file>
+    <file>images/logo-.png</file>
+    <file>images/logo-.png</file>
     <file>images/30663.jpg</file>
     <file>images/main_app_image.jpg</file>
     <file>images/ARE.jpg</file>

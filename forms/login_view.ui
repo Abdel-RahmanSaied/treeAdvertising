@@ -50,7 +50,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="app_resources.qrc">:/login/images/30663.jpg</pixmap>
+    <pixmap resource="app_resources.qrc">:/login/images/backgroung/3433814.jpg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -109,7 +109,7 @@
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap resource="app_resources.qrc">:/logo/images/logo.png</pixmap>
+         <pixmap resource="app_resources.qrc">:/login/images/logo-.png</pixmap>
         </property>
         <property name="scaledContents">
          <bool>true</bool>

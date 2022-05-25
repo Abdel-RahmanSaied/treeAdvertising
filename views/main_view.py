@@ -43,7 +43,7 @@ class Ui_main(object):
         self.workOrder_btn.setMaximumSize(QtCore.QSize(161, 161))
         self.workOrder_btn.setStyleSheet("QPushButton {\n"
 "    \n"
-"    background-color: rgb(0, 110, 127,180);\n"
+"    background-color: rgb(0, 110, 127,100);\n"
 "    color: #FFFFFF;\n"
 "    padding: 2px;\n"
 "    font: bold 15px;\n"
@@ -82,7 +82,7 @@ class Ui_main(object):
         self.clients_btn.setMaximumSize(QtCore.QSize(161, 161))
         self.clients_btn.setStyleSheet("QPushButton {\n"
 "\n"
-"    background-color: rgb(17, 43, 60,180);\n"
+"    background-color: rgb(17, 43, 60,100);\n"
 "    color: #FFFFFF;\n"
 "    padding: 2px;\n"
 "    font: bold 15px;\n"
@@ -127,7 +127,7 @@ class Ui_main(object):
         self.ordersReq_btn.setMaximumSize(QtCore.QSize(161, 161))
         self.ordersReq_btn.setStyleSheet("QPushButton {\n"
 "    \n"
-"    background-color: rgb(85, 132, 172,180);\n"
+"    background-color: rgb(85, 132, 220,100);\n"
 "    color: #FFFFFF;\n"
 "    padding: 2px;\n"
 "    font: bold 15px;\n"
@@ -165,7 +165,7 @@ class Ui_main(object):
         self.finishedOrders_btn.setMinimumSize(QtCore.QSize(161, 161))
         self.finishedOrders_btn.setMaximumSize(QtCore.QSize(161, 161))
         self.finishedOrders_btn.setStyleSheet("QPushButton {\n"
-"    background-color: rgb(178, 39, 39,180);\n"
+"    background-color: rgb(178, 39, 39,100);\n"
 "    color: #FFFFFF;\n"
 "    padding: 2px;\n"
 "    font: bold 15px;\n"
@@ -212,7 +212,7 @@ class Ui_main(object):
         self.followOrders_btn.setFont(font)
         self.followOrders_btn.setStyleSheet("QPushButton {\n"
 "    \n"
-"    background-color: rgb(149, 209, 204,140);\n"
+"    background-color: rgb(149, 209, 204,100);\n"
 "    color: #FFFFFF;\n"
 "    padding: 2px;\n"
 "    font: bold 15px;\n"
@@ -258,7 +258,7 @@ class Ui_main(object):
         self.label_3.setMinimumSize(QtCore.QSize(1361, 821))
         self.label_3.setMaximumSize(QtCore.QSize(1361, 821))
         self.label_3.setText("")
-        self.label_3.setPixmap(QtGui.QPixmap(":/login/images/30663.jpg"))
+        self.label_3.setPixmap(QtGui.QPixmap(":/login/images/backgroung/3433814.jpg"))
         self.label_3.setScaledContents(True)
         self.label_3.setObjectName("label_3")
         self.groupBox = QtWidgets.QGroupBox(main)
@@ -270,30 +270,28 @@ class Ui_main(object):
         font = QtGui.QFont()
         font.setPointSize(15)
         self.label_2.setFont(font)
-        self.label_2.setStyleSheet("color: rgb(255, 255, 255);")
+        self.label_2.setStyleSheet("")
         self.label_2.setObjectName("label_2")
         self.gridLayout_3.addWidget(self.label_2, 0, 0, 1, 1)
         self.label_4 = QtWidgets.QLabel(self.groupBox)
         font = QtGui.QFont()
         font.setPointSize(12)
         self.label_4.setFont(font)
-        self.label_4.setStyleSheet("color: rgb(255, 255, 255);")
-        self.label_4.setText("")
+        self.label_4.setStyleSheet("")
         self.label_4.setObjectName("label_4")
         self.gridLayout_3.addWidget(self.label_4, 0, 1, 1, 1)
         self.label_7 = QtWidgets.QLabel(self.groupBox)
         font = QtGui.QFont()
         font.setPointSize(15)
         self.label_7.setFont(font)
-        self.label_7.setStyleSheet("color: rgb(255, 255, 255);")
+        self.label_7.setStyleSheet("")
         self.label_7.setObjectName("label_7")
         self.gridLayout_3.addWidget(self.label_7, 1, 0, 1, 1)
         self.label_8 = QtWidgets.QLabel(self.groupBox)
         font = QtGui.QFont()
         font.setPointSize(12)
         self.label_8.setFont(font)
-        self.label_8.setStyleSheet("color: rgb(255, 255, 255);")
-        self.label_8.setText("")
+        self.label_8.setStyleSheet("")
         self.label_8.setObjectName("label_8")
         self.gridLayout_3.addWidget(self.label_8, 1, 1, 1, 1)
         self.label_3.raise_()
@@ -316,5 +314,7 @@ class Ui_main(object):
         self.label_12.setText(_translate("main", "متابعه اوامر الشغل"))
         self.groupBox.setTitle(_translate("main", "User Info"))
         self.label_2.setText(_translate("main", "User Name :"))
+        self.label_4.setText(_translate("main", "Abdel-Rahman"))
         self.label_7.setText(_translate("main", "Session time :"))
+        self.label_8.setText(_translate("main", "2 m"))
 import app_resources_rc

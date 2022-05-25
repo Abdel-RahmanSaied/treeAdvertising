@@ -885,7 +885,7 @@ background-color: rgb(50, 85, 127);
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="app_resources.qrc">:/login/images/30663.jpg</pixmap>
+    <pixmap resource="app_resources.qrc">:/login/images/backgroung/3433814.jpg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -899,7 +899,7 @@ background-color: rgb(50, 85, 127);
  </widget>
  <resources>
   <include location="app_resources.qrc"/>
-  <include location="C:/Program Files (x86)/Qt Designer/app_resources.qrc"/>
+  <include location="app_resources.qrc"/>
  </resources>
  <connections/>
 </ui>

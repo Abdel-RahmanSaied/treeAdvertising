@@ -37,6 +37,7 @@ class Ui_Form(object):
         self.tableWidget = QtWidgets.QTableWidget(self.frame)
         self.tableWidget.setLayoutDirection(QtCore.Qt.RightToLeft)
         self.tableWidget.setAutoFillBackground(False)
+        self.tableWidget.setStyleSheet("background-color: rgb(255, 255, 255,100);")
         self.tableWidget.setObjectName("tableWidget")
         self.tableWidget.setColumnCount(3)
         self.tableWidget.setRowCount(0)
@@ -77,7 +78,7 @@ class Ui_Form(object):
         self.label_3.setMinimumSize(QtCore.QSize(1361, 821))
         self.label_3.setMaximumSize(QtCore.QSize(1361, 821))
         self.label_3.setText("")
-        self.label_3.setPixmap(QtGui.QPixmap(":/login/images/30663.jpg"))
+        self.label_3.setPixmap(QtGui.QPixmap(":/login/images/backgroung/3433814.jpg"))
         self.label_3.setScaledContents(True)
         self.label_3.setObjectName("label_3")
         self.label_3.raise_()
@@ -85,6 +86,12 @@ class Ui_Form(object):
         self.frame.raise_()
         self.details_btn.raise_()
         self.bck_btn.raise_()
+
+        header = self.tableWidget.horizontalHeader()
+        header.setSectionResizeMode(0, QtWidgets.QHeaderView.Stretch)
+        header.setSectionResizeMode(1, QtWidgets.QHeaderView.Stretch)
+        header.setSectionResizeMode(2, QtWidgets.QHeaderView.Stretch)
+
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
