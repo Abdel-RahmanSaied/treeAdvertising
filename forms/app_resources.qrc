@@ -15,6 +15,11 @@
     <file>images/icons8-back-67.png</file>
     <file>images/logo.png</file>
   </qresource>
+  <qresource prefix="background">
+    <file>images/backgroung/4890950.jpg</file>
+    <file>images/backgroung/5570863.jpg</file>
+    <file>images/backgroung/3433814.jpg</file>
+  </qresource>
   <qresource prefix="icons">
     <file>icons/checklist.png</file>
     <file>icons/icons8-add-list-64.png</file>
