@@ -51,10 +51,15 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.main_manger.ordersReq_btn.clicked.connect(self.handle_orderRequirment)
         self.main_manger.logOut_btn.clicked.connect(lambda : self.setCurrentIndex(0))
 
+        self.main_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
+        self.main_manger.exit_btn.clicked.connect(lambda : sys.exit())
+
         '''
         new order view signals
         '''
         self.newOrder_manger.next_btn.clicked.connect(self.handle_notes)
+        self.newOrder_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
+        self.newOrder_manger.exit_btn.clicked.connect(lambda : sys.exit())
         self.newOrder_manger.bck_btn.clicked.connect(lambda : self.setCurrentIndex(1))
 
         '''
@@ -80,25 +85,35 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         '''
         self.followOrder_manger.details_btn.clicked.connect(self.handle_DetailsOrder)
         self.followOrder_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(1))
+        self.followOrder_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
+        self.followOrder_manger.exit_btn.clicked.connect(lambda : sys.exit())
 
         '''
         followed order detail screen 
         '''
         self.orderDetails_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(5))
+        self.orderDetails_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
+        self.orderDetails_manger.exit_btn.clicked.connect(lambda : sys.exit())
         '''
         finished orders screen
         '''
         self.finishedOrders_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(1))
+        self.finishedOrders_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
+        self.finishedOrders_manger.exit_btn.clicked.connect(lambda : sys.exit())
 
         '''
         order Requirment screen
         '''
         self.orderRequirment_manger.bck_btn.clicked.connect(lambda : self.setCurrentIndex(1))
+        self.orderRequirment_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
+        self.orderRequirment_manger.exit_btn.clicked.connect(lambda : sys.exit())
         '''
         notes screen
         '''
         self.notes_manger.end_btn.clicked.connect(self.handle_login_accepted)
         self.notes_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(2))
+        self.notes_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
+        self.notes_manger.exit_btn.clicked.connect(lambda : sys.exit())
 
 
     def handle_login_accepted(self):

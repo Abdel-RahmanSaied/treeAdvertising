@@ -304,11 +304,57 @@ class Ui_main(object):
         self.label_8.setStyleSheet("")
         self.label_8.setObjectName("label_8")
         self.gridLayout_3.addWidget(self.label_8, 1, 1, 1, 1)
+        self.exit_btn = QtWidgets.QPushButton(main)
+        self.exit_btn.setGeometry(QtCore.QRect(1830, 30, 30, 30))
+        self.exit_btn.setMinimumSize(QtCore.QSize(30, 30))
+        self.exit_btn.setMaximumSize(QtCore.QSize(161, 161))
+        self.exit_btn.setStyleSheet("QPushButton {\n"
+"    background-color: rgb(178, 39, 39,100);\n"
+"    color: #FFFFFF;\n"
+"    padding: 2px;\n"
+"    font: bold 15px;\n"
+"    border-width: 6px;\n"
+"    border-radius: 10px;\n"
+"    border-color: #2752B8;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #827397;\n"
+"}")
+        self.exit_btn.setText("")
+        icon6 = QtGui.QIcon()
+        icon6.addPixmap(QtGui.QPixmap(":/icons/icons/icons8-close-window-96.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.exit_btn.setIcon(icon6)
+        self.exit_btn.setIconSize(QtCore.QSize(20, 20))
+        self.exit_btn.setObjectName("exit_btn")
+        self.minimize_btn = QtWidgets.QPushButton(main)
+        self.minimize_btn.setGeometry(QtCore.QRect(1780, 30, 30, 30))
+        self.minimize_btn.setMinimumSize(QtCore.QSize(30, 30))
+        self.minimize_btn.setMaximumSize(QtCore.QSize(161, 161))
+        self.minimize_btn.setStyleSheet("QPushButton {\n"
+"    background-color: rgb(255, 229, 32,100);\n"
+"    color: #FFFFFF;\n"
+"    padding: 2px;\n"
+"    font: bold 15px;\n"
+"    border-width: 6px;\n"
+"    border-radius: 10px;\n"
+"    border-color: #2752B8;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #827397;\n"
+"}")
+        self.minimize_btn.setText("")
+        icon7 = QtGui.QIcon()
+        icon7.addPixmap(QtGui.QPixmap(":/icons/icons/icons8-subtract-16.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.minimize_btn.setIcon(icon7)
+        self.minimize_btn.setIconSize(QtCore.QSize(30, 30))
+        self.minimize_btn.setObjectName("minimize_btn")
         self.label_3.raise_()
         self.label.raise_()
         self.frame.raise_()
         self.logOut_btn.raise_()
         self.groupBox.raise_()
+        self.exit_btn.raise_()
+        self.minimize_btn.raise_()
 
         self.retranslateUi(main)
         QtCore.QMetaObject.connectSlotsByName(main)

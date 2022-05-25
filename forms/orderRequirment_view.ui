@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1340</width>
-    <height>810</height>
+    <width>1920</width>
+    <height>1045</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -22,7 +22,7 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>550</x>
+     <x>790</x>
      <y>20</y>
      <width>271</width>
      <height>51</height>
@@ -54,8 +54,8 @@
     <rect>
      <x>50</x>
      <y>70</y>
-     <width>1271</width>
-     <height>651</height>
+     <width>1851</width>
+     <height>811</height>
     </rect>
    </property>
    <property name="frameShape">
@@ -107,8 +107,8 @@
   <widget class="QPushButton" name="details_btn">
    <property name="geometry">
     <rect>
-     <x>720</x>
-     <y>730</y>
+     <x>1010</x>
+     <y>920</y>
      <width>200</width>
      <height>60</height>
     </rect>
@@ -140,8 +140,8 @@ background-color: rgb(50, 85, 127);
   <widget class="QPushButton" name="bck_btn">
    <property name="geometry">
     <rect>
-     <x>410</x>
-     <y>730</y>
+     <x>700</x>
+     <y>920</y>
      <width>200</width>
      <height>60</height>
     </rect>
@@ -175,8 +175,8 @@ background-color: rgb(50, 85, 127);
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1361</width>
-     <height>821</height>
+     <width>1920</width>
+     <height>1080</height>
     </rect>
    </property>
    <property name="minimumSize">
@@ -187,8 +187,8 @@ background-color: rgb(50, 85, 127);
    </property>
    <property name="maximumSize">
     <size>
-     <width>1361</width>
-     <height>821</height>
+     <width>16777215</width>
+     <height>16777215</height>
     </size>
    </property>
    <property name="text">
@@ -201,11 +201,111 @@ background-color: rgb(50, 85, 127);
     <bool>true</bool>
    </property>
   </widget>
+  <widget class="QPushButton" name="exit_btn">
+   <property name="geometry">
+    <rect>
+     <x>1860</x>
+     <y>20</y>
+     <width>30</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>161</width>
+     <height>161</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	background-color: rgb(178, 39, 39,100);
+    color: #FFFFFF;
+    padding: 2px;
+    font: bold 15px;
+    border-width: 6px;
+    border-radius: 10px;
+    border-color: #2752B8;
+}
+QPushButton:hover {
+    background-color: #827397;
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="app_resources.qrc">
+     <normaloff>:/icons/icons/icons8-close-window-96.png</normaloff>:/icons/icons/icons8-close-window-96.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="minimize_btn">
+   <property name="geometry">
+    <rect>
+     <x>1810</x>
+     <y>20</y>
+     <width>30</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>161</width>
+     <height>161</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	background-color: rgb(255, 229, 32,100);
+    color: #FFFFFF;
+    padding: 2px;
+    font: bold 15px;
+    border-width: 6px;
+    border-radius: 10px;
+    border-color: #2752B8;
+}
+QPushButton:hover {
+    background-color: #827397;
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="app_resources.qrc">
+     <normaloff>:/icons/icons/icons8-subtract-16.png</normaloff>:/icons/icons/icons8-subtract-16.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+  </widget>
   <zorder>label_3</zorder>
   <zorder>label</zorder>
   <zorder>frame</zorder>
   <zorder>details_btn</zorder>
   <zorder>bck_btn</zorder>
+  <zorder>exit_btn</zorder>
+  <zorder>minimize_btn</zorder>
  </widget>
  <resources>
   <include location="app_resources.qrc"/>

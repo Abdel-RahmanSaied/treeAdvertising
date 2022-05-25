@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1340</width>
-    <height>810</height>
+    <width>1920</width>
+    <height>1080</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -18,8 +18,8 @@
   </property>
   <property name="maximumSize">
    <size>
-    <width>1340</width>
-    <height>810</height>
+    <width>16777215</width>
+    <height>16777215</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -28,7 +28,7 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>600</x>
+     <x>1060</x>
      <y>10</y>
      <width>183</width>
      <height>33</height>
@@ -57,8 +57,8 @@
   <widget class="QPushButton" name="next_btn">
    <property name="geometry">
     <rect>
-     <x>770</x>
-     <y>720</y>
+     <x>1060</x>
+     <y>920</y>
      <width>191</width>
      <height>60</height>
     </rect>
@@ -92,8 +92,8 @@ background-color: rgb(50, 85, 127);
     <rect>
      <x>20</x>
      <y>60</y>
-     <width>1311</width>
-     <height>641</height>
+     <width>1861</width>
+     <height>821</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -107,8 +107,8 @@ background-color: rgb(50, 85, 127);
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>1309</width>
-      <height>639</height>
+      <width>1859</width>
+      <height>819</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_7">
@@ -806,7 +806,7 @@ background-color: rgb(50, 85, 127);
             </widget>
            </item>
            <item row="5" column="3">
-            <widget class="QLineEdit" name="other_design_lineEdit">
+            <widget class="QLineEdit" name="other_lineEdit">
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -1100,66 +1100,7 @@ background-color: rgb(50, 85, 127);
            <set>Qt::AlignCenter</set>
           </property>
           <layout class="QGridLayout" name="gridLayout_5">
-           <item row="1" column="4">
-            <widget class="QDoubleSpinBox" name="doubleSpinBox">
-             <property name="styleSheet">
-              <string notr="true">background-color:rgba(0, 0, 0, 0);
-border:none;
-border-bottom:2px solid rgba(46, 82, 101, 200);
-
-padding-bottom:7px;
-font: 13pt &quot;Acumin Pro&quot;;</string>
-             </property>
-             <property name="prefix">
-              <string/>
-             </property>
-             <property name="suffix">
-              <string>       مل</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="5">
-            <widget class="QLabel" name="label_2">
-             <property name="font">
-              <font>
-               <pointsize>14</pointsize>
-               <weight>50</weight>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true"/>
-             </property>
-             <property name="text">
-              <string>النوع : </string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="2">
-            <widget class="QCheckBox" name="logo_checkBox_13">
-             <property name="font">
-              <font>
-               <family>Gill Sans MT</family>
-               <pointsize>13</pointsize>
-               <weight>50</weight>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="layoutDirection">
-              <enum>Qt::RightToLeft</enum>
-             </property>
-             <property name="styleSheet">
-              <string notr="true"/>
-             </property>
-             <property name="text">
-              <string>بلاستيك</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
+           <item row="0" column="0">
             <widget class="QCheckBox" name="logo_checkBox_12">
              <property name="font">
               <font>
@@ -1180,7 +1121,28 @@ font: 13pt &quot;Acumin Pro&quot;;</string>
              </property>
             </widget>
            </item>
-           <item row="0" column="4">
+           <item row="0" column="1">
+            <widget class="QCheckBox" name="logo_checkBox_13">
+             <property name="font">
+              <font>
+               <family>Gill Sans MT</family>
+               <pointsize>13</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>بلاستيك</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
             <widget class="QCheckBox" name="logo_checkBox_11">
              <property name="font">
               <font>
@@ -1198,87 +1160,6 @@ font: 13pt &quot;Acumin Pro&quot;;</string>
              </property>
              <property name="text">
               <string>خشب</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="0">
-            <widget class="QLineEdit" name="other_details_lineEdit">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>130</width>
-               <height>30</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <family>Acumin Pro</family>
-               <pointsize>13</pointsize>
-               <weight>50</weight>
-               <italic>false</italic>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="cursor">
-              <cursorShape>IBeamCursor</cursorShape>
-             </property>
-             <property name="mouseTracking">
-              <bool>true</bool>
-             </property>
-             <property name="accessibleName">
-              <string/>
-             </property>
-             <property name="accessibleDescription">
-              <string/>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">background-color:rgba(0, 0, 0, 0);
-border:none;
-border-bottom:2px solid rgba(46, 82, 101, 200);
-
-padding-bottom:7px;
-font: 13pt &quot;Acumin Pro&quot;;</string>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-             <property name="placeholderText">
-              <string>   آخر . .</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="5">
-            <widget class="QLabel" name="label_7">
-             <property name="font">
-              <font>
-               <pointsize>14</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>السُمك : </string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="1">
-            <widget class="QLabel" name="label_8">
-             <property name="font">
-              <font>
-               <pointsize>14</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>اللون : </string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
              </property>
             </widget>
            </item>
@@ -1511,8 +1392,8 @@ font: 13pt &quot;Acumin Pro&quot;;</string>
   <widget class="QPushButton" name="bck_btn">
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>720</y>
+     <x>720</x>
+     <y>920</y>
      <width>191</width>
      <height>60</height>
     </rect>
@@ -1544,10 +1425,10 @@ background-color: rgb(50, 85, 127);
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>-20</x>
-     <y>10</y>
-     <width>1361</width>
-     <height>821</height>
+     <x>0</x>
+     <y>0</y>
+     <width>1920</width>
+     <height>1080</height>
     </rect>
    </property>
    <property name="minimumSize">
@@ -1558,8 +1439,8 @@ background-color: rgb(50, 85, 127);
    </property>
    <property name="maximumSize">
     <size>
-     <width>1361</width>
-     <height>821</height>
+     <width>16777215</width>
+     <height>16777215</height>
     </size>
    </property>
    <property name="text">
@@ -1572,11 +1453,111 @@ background-color: rgb(50, 85, 127);
     <bool>true</bool>
    </property>
   </widget>
+  <widget class="QPushButton" name="exit_btn">
+   <property name="geometry">
+    <rect>
+     <x>1840</x>
+     <y>10</y>
+     <width>30</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>161</width>
+     <height>161</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	background-color: rgb(178, 39, 39,100);
+    color: #FFFFFF;
+    padding: 2px;
+    font: bold 15px;
+    border-width: 6px;
+    border-radius: 10px;
+    border-color: #2752B8;
+}
+QPushButton:hover {
+    background-color: #827397;
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="app_resources.qrc">
+     <normaloff>:/icons/icons/icons8-close-window-96.png</normaloff>:/icons/icons/icons8-close-window-96.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="minimize_btn">
+   <property name="geometry">
+    <rect>
+     <x>1790</x>
+     <y>10</y>
+     <width>30</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>161</width>
+     <height>161</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	background-color: rgb(255, 229, 32,100);
+    color: #FFFFFF;
+    padding: 2px;
+    font: bold 15px;
+    border-width: 6px;
+    border-radius: 10px;
+    border-color: #2752B8;
+}
+QPushButton:hover {
+    background-color: #827397;
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="app_resources.qrc">
+     <normaloff>:/icons/icons/icons8-subtract-16.png</normaloff>:/icons/icons/icons8-subtract-16.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+  </widget>
   <zorder>label_6</zorder>
   <zorder>label</zorder>
   <zorder>next_btn</zorder>
   <zorder>scrollArea</zorder>
   <zorder>bck_btn</zorder>
+  <zorder>exit_btn</zorder>
+  <zorder>minimize_btn</zorder>
  </widget>
  <resources>
   <include location="app_resources.qrc"/>

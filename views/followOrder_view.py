@@ -14,11 +14,11 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(1340, 810)
+        Form.resize(1920, 1080)
         Form.setMinimumSize(QtCore.QSize(1340, 810))
-        Form.setMaximumSize(QtCore.QSize(1340, 810))
+        Form.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.label = QtWidgets.QLabel(Form)
-        self.label.setGeometry(QtCore.QRect(620, 10, 218, 33))
+        self.label.setGeometry(QtCore.QRect(910, 20, 218, 33))
         self.label.setMaximumSize(QtCore.QSize(271, 71))
         font = QtGui.QFont()
         font.setPointSize(20)
@@ -28,7 +28,7 @@ class Ui_Form(object):
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
         self.frame = QtWidgets.QFrame(Form)
-        self.frame.setGeometry(QtCore.QRect(9, 54, 1291, 671))
+        self.frame.setGeometry(QtCore.QRect(70, 110, 1811, 781))
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
@@ -256,7 +256,7 @@ class Ui_Form(object):
         self.listWidget.setObjectName("listWidget")
         self.gridLayout_2.addWidget(self.listWidget, 1, 1, 1, 10)
         self.details_btn = QtWidgets.QPushButton(Form)
-        self.details_btn.setGeometry(QtCore.QRect(750, 730, 200, 60))
+        self.details_btn.setGeometry(QtCore.QRect(1120, 930, 200, 60))
         self.details_btn.setMinimumSize(QtCore.QSize(200, 60))
         self.details_btn.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.details_btn.setStyleSheet("font: 11pt \"Acumin Pro\";\n"
@@ -267,7 +267,7 @@ class Ui_Form(object):
 "")
         self.details_btn.setObjectName("details_btn")
         self.bck_btn = QtWidgets.QPushButton(Form)
-        self.bck_btn.setGeometry(QtCore.QRect(480, 730, 200, 60))
+        self.bck_btn.setGeometry(QtCore.QRect(760, 930, 200, 60))
         self.bck_btn.setMinimumSize(QtCore.QSize(200, 60))
         self.bck_btn.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.bck_btn.setStyleSheet("font: 11pt \"Acumin Pro\";\n"
@@ -278,18 +278,64 @@ class Ui_Form(object):
 "")
         self.bck_btn.setObjectName("bck_btn")
         self.label_4 = QtWidgets.QLabel(Form)
-        self.label_4.setGeometry(QtCore.QRect(0, 0, 1361, 821))
-        self.label_4.setMinimumSize(QtCore.QSize(1361, 821))
-        self.label_4.setMaximumSize(QtCore.QSize(1361, 821))
+        self.label_4.setGeometry(QtCore.QRect(0, 0, 1920, 1080))
+        self.label_4.setMinimumSize(QtCore.QSize(1920, 1080))
+        self.label_4.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.label_4.setText("")
         self.label_4.setPixmap(QtGui.QPixmap(":/login/images/backgroung/3433814.jpg"))
         self.label_4.setScaledContents(True)
         self.label_4.setObjectName("label_4")
+        self.exit_btn = QtWidgets.QPushButton(Form)
+        self.exit_btn.setGeometry(QtCore.QRect(1860, 20, 30, 30))
+        self.exit_btn.setMinimumSize(QtCore.QSize(30, 30))
+        self.exit_btn.setMaximumSize(QtCore.QSize(161, 161))
+        self.exit_btn.setStyleSheet("QPushButton {\n"
+"    background-color: rgb(178, 39, 39,100);\n"
+"    color: #FFFFFF;\n"
+"    padding: 2px;\n"
+"    font: bold 15px;\n"
+"    border-width: 6px;\n"
+"    border-radius: 10px;\n"
+"    border-color: #2752B8;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #827397;\n"
+"}")
+        self.exit_btn.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/icons/icons/icons8-close-window-96.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.exit_btn.setIcon(icon)
+        self.exit_btn.setIconSize(QtCore.QSize(20, 20))
+        self.exit_btn.setObjectName("exit_btn")
+        self.minimize_btn = QtWidgets.QPushButton(Form)
+        self.minimize_btn.setGeometry(QtCore.QRect(1810, 20, 30, 30))
+        self.minimize_btn.setMinimumSize(QtCore.QSize(30, 30))
+        self.minimize_btn.setMaximumSize(QtCore.QSize(161, 161))
+        self.minimize_btn.setStyleSheet("QPushButton {\n"
+"    background-color: rgb(255, 229, 32,100);\n"
+"    color: #FFFFFF;\n"
+"    padding: 2px;\n"
+"    font: bold 15px;\n"
+"    border-width: 6px;\n"
+"    border-radius: 10px;\n"
+"    border-color: #2752B8;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #827397;\n"
+"}")
+        self.minimize_btn.setText("")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap(":/icons/icons/icons8-subtract-16.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.minimize_btn.setIcon(icon1)
+        self.minimize_btn.setIconSize(QtCore.QSize(30, 30))
+        self.minimize_btn.setObjectName("minimize_btn")
         self.label_4.raise_()
         self.label.raise_()
         self.frame.raise_()
         self.details_btn.raise_()
         self.bck_btn.raise_()
+        self.exit_btn.raise_()
+        self.minimize_btn.raise_()
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
