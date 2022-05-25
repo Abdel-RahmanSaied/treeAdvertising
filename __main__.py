@@ -2,7 +2,7 @@ from PyQt5 import QtWidgets, QtGui, QtCore
 from views_mangers.loginView_manger import Login_Manager
 from views_mangers.main_manger import Main_manger
 from views_mangers.newOrderView_manger import NewOrderView_manger
-
+import sys
 from views_mangers.notes_manger import NotesManger
 
 from views_mangers.followOrder_manger import FollowOrder
@@ -22,6 +22,9 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.orderDetails_manger = OrderDetails()
         self.orderRequirment_manger = OrderRequirment()
 
+        self.showFullScreen()
+
+
         # add widgets to the stack
         self.addWidget(self.login_manger) #0
         self.addWidget(self.main_manger) #1
@@ -37,6 +40,8 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
 
         # install signals
         self.login_manger.loginAcceptedSignal.connect(self.handle_login_accepted)
+        self.login_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
+        self.login_manger.exit_btn.clicked.connect(lambda : sys.exit())
         '''
         main view signals
         '''

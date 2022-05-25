@@ -14,19 +14,19 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(1340, 810)
+        Form.resize(1920, 1088)
         Form.setMinimumSize(QtCore.QSize(1340, 810))
-        Form.setMaximumSize(QtCore.QSize(1340, 810))
+        Form.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.label_3 = QtWidgets.QLabel(Form)
-        self.label_3.setGeometry(QtCore.QRect(-21, -11, 1361, 821))
-        self.label_3.setMinimumSize(QtCore.QSize(1361, 821))
-        self.label_3.setMaximumSize(QtCore.QSize(1361, 821))
+        self.label_3.setGeometry(QtCore.QRect(0, -11, 1920, 1080))
+        self.label_3.setMinimumSize(QtCore.QSize(1920, 1080))
+        self.label_3.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.label_3.setText("")
         self.label_3.setPixmap(QtGui.QPixmap(":/login/images/backgroung/3433814.jpg"))
         self.label_3.setScaledContents(True)
         self.label_3.setObjectName("label_3")
         self.groupBox = QtWidgets.QGroupBox(Form)
-        self.groupBox.setGeometry(QtCore.QRect(320, 50, 731, 691))
+        self.groupBox.setGeometry(QtCore.QRect(580, 90, 771, 871))
         self.groupBox.setTitle("")
         self.groupBox.setObjectName("groupBox")
         self.gridLayout_3 = QtWidgets.QGridLayout(self.groupBox)
@@ -115,6 +115,50 @@ class Ui_Form(object):
         spacerItem11 = QtWidgets.QSpacerItem(58, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_14.addItem(spacerItem11)
         self.gridLayout_3.addLayout(self.horizontalLayout_14, 6, 0, 1, 4)
+        self.exit_btn = QtWidgets.QPushButton(Form)
+        self.exit_btn.setGeometry(QtCore.QRect(1870, 10, 30, 30))
+        self.exit_btn.setMinimumSize(QtCore.QSize(30, 30))
+        self.exit_btn.setMaximumSize(QtCore.QSize(161, 161))
+        self.exit_btn.setStyleSheet("QPushButton {\n"
+"    background-color: rgb(178, 39, 39,100);\n"
+"    color: #FFFFFF;\n"
+"    padding: 2px;\n"
+"    font: bold 15px;\n"
+"    border-width: 6px;\n"
+"    border-radius: 10px;\n"
+"    border-color: #2752B8;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #827397;\n"
+"}")
+        self.exit_btn.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/icons/icons/icons8-close-window-96.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.exit_btn.setIcon(icon)
+        self.exit_btn.setIconSize(QtCore.QSize(20, 20))
+        self.exit_btn.setObjectName("exit_btn")
+        self.minimize_btn = QtWidgets.QPushButton(Form)
+        self.minimize_btn.setGeometry(QtCore.QRect(1820, 10, 30, 30))
+        self.minimize_btn.setMinimumSize(QtCore.QSize(30, 30))
+        self.minimize_btn.setMaximumSize(QtCore.QSize(161, 161))
+        self.minimize_btn.setStyleSheet("QPushButton {\n"
+"    background-color: rgb(255, 229, 32,100);\n"
+"    color: #FFFFFF;\n"
+"    padding: 2px;\n"
+"    font: bold 15px;\n"
+"    border-width: 6px;\n"
+"    border-radius: 10px;\n"
+"    border-color: #2752B8;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #827397;\n"
+"}")
+        self.minimize_btn.setText("")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap(":/icons/icons/icons8-subtract-16.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.minimize_btn.setIcon(icon1)
+        self.minimize_btn.setIconSize(QtCore.QSize(30, 30))
+        self.minimize_btn.setObjectName("minimize_btn")
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
