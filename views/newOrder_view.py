@@ -14,11 +14,11 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(1340, 810)
+        Form.resize(1920, 1080)
         Form.setMinimumSize(QtCore.QSize(1340, 810))
-        Form.setMaximumSize(QtCore.QSize(1340, 810))
+        Form.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.label = QtWidgets.QLabel(Form)
-        self.label.setGeometry(QtCore.QRect(600, 10, 183, 33))
+        self.label.setGeometry(QtCore.QRect(1060, 10, 183, 33))
         self.label.setMaximumSize(QtCore.QSize(271, 71))
         font = QtGui.QFont()
         font.setPointSize(20)
@@ -28,7 +28,7 @@ class Ui_Form(object):
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
         self.next_btn = QtWidgets.QPushButton(Form)
-        self.next_btn.setGeometry(QtCore.QRect(770, 720, 191, 60))
+        self.next_btn.setGeometry(QtCore.QRect(1060, 920, 191, 60))
         self.next_btn.setMinimumSize(QtCore.QSize(0, 60))
         self.next_btn.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.next_btn.setStyleSheet("font: 11pt \"Acumin Pro\";\n"
@@ -39,12 +39,12 @@ class Ui_Form(object):
 "")
         self.next_btn.setObjectName("next_btn")
         self.scrollArea = QtWidgets.QScrollArea(Form)
-        self.scrollArea.setGeometry(QtCore.QRect(20, 60, 1311, 641))
+        self.scrollArea.setGeometry(QtCore.QRect(20, 60, 1861, 821))
         self.scrollArea.setStyleSheet("background-color: rgb(0, 0, 0,0);")
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 1309, 639))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 1859, 819))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.gridLayout_7 = QtWidgets.QGridLayout(self.scrollAreaWidgetContents)
         self.gridLayout_7.setObjectName("gridLayout_7")
@@ -608,7 +608,7 @@ class Ui_Form(object):
         self.gridLayout_7.addWidget(self.groupBox_3, 2, 0, 1, 1)
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.bck_btn = QtWidgets.QPushButton(Form)
-        self.bck_btn.setGeometry(QtCore.QRect(430, 720, 191, 60))
+        self.bck_btn.setGeometry(QtCore.QRect(720, 920, 191, 60))
         self.bck_btn.setMinimumSize(QtCore.QSize(0, 60))
         self.bck_btn.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.bck_btn.setStyleSheet("font: 11pt \"Acumin Pro\";\n"
@@ -619,18 +619,64 @@ class Ui_Form(object):
 "")
         self.bck_btn.setObjectName("bck_btn")
         self.label_6 = QtWidgets.QLabel(Form)
-        self.label_6.setGeometry(QtCore.QRect(-20, 0, 1361, 821))
+        self.label_6.setGeometry(QtCore.QRect(0, 0, 1920, 1080))
         self.label_6.setMinimumSize(QtCore.QSize(1361, 821))
-        self.label_6.setMaximumSize(QtCore.QSize(1361, 821))
+        self.label_6.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.label_6.setText("")
         self.label_6.setPixmap(QtGui.QPixmap(":/login/images/backgroung/3433814.jpg"))
         self.label_6.setScaledContents(True)
         self.label_6.setObjectName("label_6")
+        self.exit_btn = QtWidgets.QPushButton(Form)
+        self.exit_btn.setGeometry(QtCore.QRect(1840, 10, 30, 30))
+        self.exit_btn.setMinimumSize(QtCore.QSize(30, 30))
+        self.exit_btn.setMaximumSize(QtCore.QSize(161, 161))
+        self.exit_btn.setStyleSheet("QPushButton {\n"
+"    background-color: rgb(178, 39, 39,100);\n"
+"    color: #FFFFFF;\n"
+"    padding: 2px;\n"
+"    font: bold 15px;\n"
+"    border-width: 6px;\n"
+"    border-radius: 10px;\n"
+"    border-color: #2752B8;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #827397;\n"
+"}")
+        self.exit_btn.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/icons/icons/icons8-close-window-96.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.exit_btn.setIcon(icon)
+        self.exit_btn.setIconSize(QtCore.QSize(20, 20))
+        self.exit_btn.setObjectName("exit_btn")
+        self.minimize_btn = QtWidgets.QPushButton(Form)
+        self.minimize_btn.setGeometry(QtCore.QRect(1790, 10, 30, 30))
+        self.minimize_btn.setMinimumSize(QtCore.QSize(30, 30))
+        self.minimize_btn.setMaximumSize(QtCore.QSize(161, 161))
+        self.minimize_btn.setStyleSheet("QPushButton {\n"
+"    background-color: rgb(255, 229, 32,100);\n"
+"    color: #FFFFFF;\n"
+"    padding: 2px;\n"
+"    font: bold 15px;\n"
+"    border-width: 6px;\n"
+"    border-radius: 10px;\n"
+"    border-color: #2752B8;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #827397;\n"
+"}")
+        self.minimize_btn.setText("")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap(":/icons/icons/icons8-subtract-16.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.minimize_btn.setIcon(icon1)
+        self.minimize_btn.setIconSize(QtCore.QSize(30, 30))
+        self.minimize_btn.setObjectName("minimize_btn")
         self.label_6.raise_()
         self.label.raise_()
         self.next_btn.raise_()
         self.scrollArea.raise_()
         self.bck_btn.raise_()
+        self.exit_btn.raise_()
+        self.minimize_btn.raise_()
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
