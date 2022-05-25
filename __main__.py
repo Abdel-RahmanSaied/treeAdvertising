@@ -102,7 +102,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.finishedOrders_manger.exit_btn.clicked.connect(lambda : sys.exit())
 
         '''
-        order Requirment screen
+        order Requirement screen
         '''
         self.orderRequirment_manger.bck_btn.clicked.connect(lambda : self.setCurrentIndex(1))
         self.orderRequirment_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
