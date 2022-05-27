@@ -28,8 +28,8 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>1060</x>
-     <y>10</y>
+     <x>890</x>
+     <y>20</y>
      <width>183</width>
      <height>33</height>
     </rect>
@@ -91,9 +91,9 @@ background-color: rgb(50, 85, 127);
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>60</y>
-     <width>1861</width>
-     <height>821</height>
+     <y>90</y>
+     <width>1871</width>
+     <height>771</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -107,8 +107,8 @@ background-color: rgb(50, 85, 127);
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>1859</width>
-      <height>819</height>
+      <width>1869</width>
+      <height>769</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_7">
@@ -1100,49 +1100,123 @@ background-color: rgb(50, 85, 127);
            <set>Qt::AlignCenter</set>
           </property>
           <layout class="QGridLayout" name="gridLayout_5">
-           <item row="0" column="0">
-            <widget class="QCheckBox" name="logo_checkBox_12">
+           <item row="2" column="3">
+            <widget class="QLineEdit" name="color_lineEdit_2">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>200</width>
+               <height>30</height>
+              </size>
+             </property>
              <property name="font">
               <font>
-               <family>Gill Sans MT</family>
+               <family>Acumin Pro</family>
                <pointsize>13</pointsize>
                <weight>50</weight>
+               <italic>false</italic>
                <bold>false</bold>
               </font>
              </property>
-             <property name="layoutDirection">
-              <enum>Qt::RightToLeft</enum>
+             <property name="cursor">
+              <cursorShape>IBeamCursor</cursorShape>
+             </property>
+             <property name="mouseTracking">
+              <bool>true</bool>
+             </property>
+             <property name="accessibleName">
+              <string/>
+             </property>
+             <property name="accessibleDescription">
+              <string/>
              </property>
              <property name="styleSheet">
-              <string notr="true"/>
+              <string notr="true">background-color:rgba(0, 0, 0, 0);
+border:none;
+border-bottom:2px solid rgba(46, 82, 101, 200);
+
+padding-bottom:7px;
+font: 13pt &quot;Acumin Pro&quot;;</string>
              </property>
              <property name="text">
-              <string>ورق</string>
+              <string/>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="placeholderText">
+              <string>احمر</string>
              </property>
             </widget>
            </item>
-           <item row="0" column="1">
-            <widget class="QCheckBox" name="logo_checkBox_13">
+           <item row="0" column="4">
+            <widget class="QLineEdit" name="lineEdit_11">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="font">
               <font>
-               <family>Gill Sans MT</family>
-               <pointsize>13</pointsize>
+               <family>Acumin Pro</family>
+               <pointsize>14</pointsize>
                <weight>50</weight>
+               <italic>false</italic>
                <bold>false</bold>
               </font>
              </property>
-             <property name="layoutDirection">
-              <enum>Qt::RightToLeft</enum>
-             </property>
              <property name="styleSheet">
-              <string notr="true"/>
+              <string notr="true">background-color:rgba(0, 0, 0, 0);
+border:none;
+font: 14pt &quot;Acumin Pro&quot;;
+padding-bottom:7px;</string>
              </property>
              <property name="text">
-              <string>بلاستيك</string>
+              <string>النوع :</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
              </property>
             </widget>
            </item>
-           <item row="0" column="2">
+           <item row="2" column="4">
+            <widget class="QLineEdit" name="lineEdit_10">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <family>Acumin Pro</family>
+               <pointsize>14</pointsize>
+               <weight>50</weight>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color:rgba(0, 0, 0, 0);
+border:none;
+font: 14pt &quot;Acumin Pro&quot;;
+padding-bottom:7px;</string>
+             </property>
+             <property name="text">
+              <string>اللون :</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
             <widget class="QCheckBox" name="logo_checkBox_11">
              <property name="font">
               <font>
@@ -1163,20 +1237,28 @@ background-color: rgb(50, 85, 127);
              </property>
             </widget>
            </item>
-          </layout>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QGroupBox" name="groupBox_4">
-          <property name="title">
-           <string>انواع الطباعه</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <layout class="QGridLayout" name="gridLayout_4">
+           <item row="1" column="3">
+            <widget class="QDoubleSpinBox" name="doubleSpinBox_2">
+             <property name="styleSheet">
+              <string notr="true">background-color:rgba(0, 0, 0, 0);
+border:none;
+border-bottom:2px solid rgba(46, 82, 101, 200);
+font: 11pt &quot;Acumin Pro&quot;;
+padding-bottom:7px;</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="suffix">
+              <string>        ملٍ</string>
+             </property>
+             <property name="decimals">
+              <number>1</number>
+             </property>
+            </widget>
+           </item>
            <item row="0" column="1">
-            <widget class="QCheckBox" name="logo_checkBox_4">
+            <widget class="QCheckBox" name="logo_checkBox_12">
              <property name="font">
               <font>
                <family>Gill Sans MT</family>
@@ -1192,11 +1274,142 @@ background-color: rgb(50, 85, 127);
               <string notr="true"/>
              </property>
              <property name="text">
-              <string>سلك سكرين</string>
+              <string>ورق</string>
              </property>
             </widget>
            </item>
-           <item row="2" column="1">
+           <item row="0" column="2">
+            <widget class="QCheckBox" name="logo_checkBox_13">
+             <property name="font">
+              <font>
+               <family>Gill Sans MT</family>
+               <pointsize>13</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>بلاستيك</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLineEdit" name="other_kind_lineEdit_2">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>200</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Acumin Pro</family>
+               <pointsize>13</pointsize>
+               <weight>50</weight>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="cursor">
+              <cursorShape>IBeamCursor</cursorShape>
+             </property>
+             <property name="mouseTracking">
+              <bool>true</bool>
+             </property>
+             <property name="accessibleName">
+              <string/>
+             </property>
+             <property name="accessibleDescription">
+              <string/>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color:rgba(0, 0, 0, 0);
+border:none;
+border-bottom:2px solid rgba(46, 82, 101, 200);
+
+padding-bottom:7px;
+font: 13pt &quot;Acumin Pro&quot;;</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="placeholderText">
+              <string>   نوع آخر . .</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="4">
+            <widget class="QLineEdit" name="lineEdit_12">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <family>Acumin Pro</family>
+               <pointsize>14</pointsize>
+               <weight>50</weight>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color:rgba(0, 0, 0, 0);
+border:none;
+font: 14pt &quot;Acumin Pro&quot;;
+padding-bottom:7px;</string>
+             </property>
+             <property name="text">
+              <string>السُمك :</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QGroupBox" name="groupBox_4">
+          <property name="title">
+           <string>انواع الطباعه</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_4">
+           <item row="1" column="7">
+            <spacer name="horizontalSpacer_24">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Fixed</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>60</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="2" column="3">
             <widget class="QCheckBox" name="logo_checkBox_9">
              <property name="font">
               <font>
@@ -1217,91 +1430,7 @@ background-color: rgb(50, 85, 127);
              </property>
             </widget>
            </item>
-           <item row="0" column="3">
-            <widget class="QCheckBox" name="logo_checkBox_2">
-             <property name="font">
-              <font>
-               <family>Gill Sans MT</family>
-               <pointsize>13</pointsize>
-               <weight>50</weight>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="layoutDirection">
-              <enum>Qt::RightToLeft</enum>
-             </property>
-             <property name="styleSheet">
-              <string notr="true"/>
-             </property>
-             <property name="text">
-              <string>ديجيتال</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="3">
-            <widget class="QCheckBox" name="logo_checkBox_10">
-             <property name="font">
-              <font>
-               <family>Gill Sans MT</family>
-               <pointsize>13</pointsize>
-               <weight>50</weight>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="layoutDirection">
-              <enum>Qt::RightToLeft</enum>
-             </property>
-             <property name="styleSheet">
-              <string notr="true"/>
-             </property>
-             <property name="text">
-              <string>فايبر</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="3">
-            <widget class="QCheckBox" name="logo_checkBox_6">
-             <property name="font">
-              <font>
-               <family>Gill Sans MT</family>
-               <pointsize>13</pointsize>
-               <weight>50</weight>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="layoutDirection">
-              <enum>Qt::RightToLeft</enum>
-             </property>
-             <property name="styleSheet">
-              <string notr="true"/>
-             </property>
-             <property name="text">
-              <string>بانر</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="2">
-            <widget class="QCheckBox" name="logo_checkBox_5">
-             <property name="font">
-              <font>
-               <family>Gill Sans MT</family>
-               <pointsize>13</pointsize>
-               <weight>50</weight>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="layoutDirection">
-              <enum>Qt::RightToLeft</enum>
-             </property>
-             <property name="styleSheet">
-              <string notr="true"/>
-             </property>
-             <property name="text">
-              <string>سيلميشن</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="2">
+           <item row="0" column="5">
             <widget class="QCheckBox" name="logo_checkBox_3">
              <property name="font">
               <font>
@@ -1322,7 +1451,28 @@ background-color: rgb(50, 85, 127);
              </property>
             </widget>
            </item>
-           <item row="1" column="1">
+           <item row="0" column="4">
+            <widget class="QCheckBox" name="logo_checkBox_4">
+             <property name="font">
+              <font>
+               <family>Gill Sans MT</family>
+               <pointsize>13</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: &quot;Acumin Pro&quot;;</string>
+             </property>
+             <property name="text">
+              <string>سلك سكرين</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="3">
             <widget class="QCheckBox" name="logo_checkBox_8">
              <property name="font">
               <font>
@@ -1343,7 +1493,112 @@ background-color: rgb(50, 85, 127);
              </property>
             </widget>
            </item>
-           <item row="1" column="2">
+           <item row="1" column="4">
+            <widget class="QCheckBox" name="logo_checkBox_15">
+             <property name="font">
+              <font>
+               <family>Gill Sans MT</family>
+               <pointsize>13</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>فلكسو</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="5">
+            <widget class="QCheckBox" name="logo_checkBox_14">
+             <property name="font">
+              <font>
+               <family>Gill Sans MT</family>
+               <pointsize>13</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>اوت دور</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="6">
+            <widget class="QCheckBox" name="logo_checkBox_2">
+             <property name="font">
+              <font>
+               <family>Gill Sans MT</family>
+               <pointsize>13</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>ديجيتال</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="6">
+            <widget class="QCheckBox" name="logo_checkBox_6">
+             <property name="font">
+              <font>
+               <family>Gill Sans MT</family>
+               <pointsize>13</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>أن دور</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="4">
+            <widget class="QCheckBox" name="logo_checkBox_16">
+             <property name="font">
+              <font>
+               <family>Gill Sans MT</family>
+               <pointsize>13</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>كتر بلوتر</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
             <widget class="QCheckBox" name="logo_checkBox_7">
              <property name="font">
               <font>
@@ -1364,8 +1619,157 @@ background-color: rgb(50, 85, 127);
              </property>
             </widget>
            </item>
-           <item row="1" column="0">
+           <item row="2" column="5">
+            <widget class="QCheckBox" name="logo_checkBox_5">
+             <property name="font">
+              <font>
+               <family>Gill Sans MT</family>
+               <pointsize>13</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>سيلميشن</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="6">
+            <widget class="QCheckBox" name="logo_checkBox_10">
+             <property name="font">
+              <font>
+               <family>Gill Sans MT</family>
+               <pointsize>13</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>فايبر</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
             <spacer name="horizontalSpacer_22">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Fixed</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>60</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="0" column="1" rowspan="3">
+            <widget class="QGroupBox" name="groupBox_6">
+             <property name="font">
+              <font>
+               <pointsize>10</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="title">
+              <string/>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_8">
+              <item row="0" column="0">
+               <widget class="QGroupBox" name="groupBox_7">
+                <property name="font">
+                 <font>
+                  <pointsize>11</pointsize>
+                  <weight>50</weight>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="title">
+                 <string>Width</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_9">
+                 <item row="0" column="0">
+                  <widget class="QDoubleSpinBox" name="doubleSpinBox_5">
+                   <property name="styleSheet">
+                    <string notr="true">background-color:rgba(0, 0, 0, 0);
+border:none;
+border-bottom:2px solid rgba(46, 82, 101, 200);
+font: 11pt &quot;Acumin Pro&quot;;
+padding-bottom:7px;</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="decimals">
+                    <number>1</number>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QGroupBox" name="groupBox_8">
+                <property name="font">
+                 <font>
+                  <pointsize>11</pointsize>
+                  <weight>50</weight>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="title">
+                 <string>High</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_10">
+                 <item row="0" column="0">
+                  <widget class="QDoubleSpinBox" name="doubleSpinBox_6">
+                   <property name="styleSheet">
+                    <string notr="true">background-color:rgba(0, 0, 0, 0);
+border:none;
+border-bottom:2px solid rgba(46, 82, 101, 200);
+font: 11pt &quot;Acumin Pro&quot;;
+padding-bottom:7px;</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="decimals">
+                    <number>1</number>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <spacer name="horizontalSpacer_25">
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
              </property>
