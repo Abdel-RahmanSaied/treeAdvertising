@@ -22,8 +22,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.orderDetails_manger = OrderDetails()
         self.orderRequirment_manger = OrderRequirment()
 
-        self.showFullScreen()
-
+        #self.showFullScreen()
 
         # add widgets to the stack
         self.addWidget(self.login_manger) #0
@@ -41,7 +40,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         # install signals
         self.login_manger.loginAcceptedSignal.connect(self.handle_login_accepted)
         self.login_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
-        self.login_manger.exit_btn.clicked.connect(lambda : sys.exit())
+        self.login_manger.exit_btn.clicked.connect(self.exit_program)
         '''
         main view signals
         '''
@@ -52,41 +51,26 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.main_manger.logOut_btn.clicked.connect(lambda : self.setCurrentIndex(0))
 
         self.main_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
-        self.main_manger.exit_btn.clicked.connect(lambda : sys.exit())
+
+        self.main_manger.logout_signal.connect(self.handle_logOut)
+        self.main_manger.exit_btn.clicked.connect(self.exit_program)
 
         '''
         new order view signals
         '''
         self.newOrder_manger.next_btn.clicked.connect(self.handle_notes)
         self.newOrder_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
-        self.newOrder_manger.exit_btn.clicked.connect(lambda : sys.exit())
+        self.newOrder_manger.exit_btn.clicked.connect(self.exit_program)
         self.newOrder_manger.bck_btn.clicked.connect(lambda : self.setCurrentIndex(1))
 
-        '''
-        new order data screen signals 
-        '''
-#         self.newOrderData_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(3))
-#         self.newOrderData_manger.next_btn.clicked.connect(self.handle_notes)
 
-        '''
-        choose design signals
-        '''
-#         self.chooseDesign_manger.checkAcceptedSignal.connect(self.handle_chooseDesignClient)
-#         self.chooseDesign_manger.officeDesign_btn.clicked.connect(self.handle_officeDesign)
-#         self.chooseDesign_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(2))
-
-        '''
-        office design screen
-        '''
-#         self.officeDesign_manger.next_btn.clicked.connect(self.handle_chooseDesignClient)
-#         self.officeDesign_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(3))
         '''
         follow Orders screen 
         '''
         self.followOrder_manger.details_btn.clicked.connect(self.handle_DetailsOrder)
         self.followOrder_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(1))
         self.followOrder_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
-        self.followOrder_manger.exit_btn.clicked.connect(lambda : sys.exit())
+        self.followOrder_manger.exit_btn.clicked.connect(self.exit_program)
 
         '''
         followed order detail screen 
@@ -106,17 +90,18 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         '''
         self.orderRequirment_manger.bck_btn.clicked.connect(lambda : self.setCurrentIndex(1))
         self.orderRequirment_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
-        self.orderRequirment_manger.exit_btn.clicked.connect(lambda : sys.exit())
+        self.orderRequirment_manger.exit_btn.clicked.connect(self.exit_program)
         '''
         notes screen
         '''
         self.notes_manger.end_btn.clicked.connect(self.handle_login_accepted)
         self.notes_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(2))
         self.notes_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
-        self.notes_manger.exit_btn.clicked.connect(lambda : sys.exit())
-
+        self.notes_manger.exit_btn.clicked.connect(self.exit_program)
 
     def handle_login_accepted(self):
+        self.main_manger.username_lbl.setText(self.login_manger.username_lin.text())
+        self.main_manger.start_stopwatch()
         self.setCurrentIndex(1)
     def handle_workOrder(self):
         self.setCurrentIndex(2)
@@ -136,6 +121,14 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.setCurrentIndex(5)
     def handle_notes(self):
         self.setCurrentIndex(6)
+
+    def exit_program(self):
+        self.main_manger.thred.cancel()
+        sys.exit()
+    def handle_logOut(self):
+        self.main_manger.thred.cancel()
+        self.login_manger.password_lin.setText("")
+        self.setCurrentIndex(0)
 
 if __name__ == "__main__":
     import qdarkstyle
