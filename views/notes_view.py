@@ -18,7 +18,7 @@ class Ui_Form(object):
         Form.setMinimumSize(QtCore.QSize(1340, 810))
         Form.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.label = QtWidgets.QLabel(Form)
-        self.label.setGeometry(QtCore.QRect(870, 40, 183, 33))
+        self.label.setGeometry(QtCore.QRect(890, 30, 183, 33))
         self.label.setMaximumSize(QtCore.QSize(271, 71))
         font = QtGui.QFont()
         font.setPointSize(20)
@@ -28,25 +28,25 @@ class Ui_Form(object):
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
         self.bck_btn = QtWidgets.QPushButton(Form)
-        self.bck_btn.setGeometry(QtCore.QRect(720, 930, 183, 60))
+        self.bck_btn.setGeometry(QtCore.QRect(600, 930, 183, 60))
         self.bck_btn.setMinimumSize(QtCore.QSize(183, 60))
         self.bck_btn.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.bck_btn.setStyleSheet("font: 11pt \"Acumin Pro\";\n"
+        self.bck_btn.setStyleSheet("font: 14pt \"Acumin Pro\";\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(50, 85, 127);\n"
+"background-color: rgb(50, 85, 127, 250);\n"
 "\n"
-" border-radius: 12px;\n"
+" border-radius: 7px;\n"
 "")
         self.bck_btn.setObjectName("bck_btn")
         self.end_btn = QtWidgets.QPushButton(Form)
-        self.end_btn.setGeometry(QtCore.QRect(1010, 930, 183, 60))
+        self.end_btn.setGeometry(QtCore.QRect(870, 930, 183, 60))
         self.end_btn.setMinimumSize(QtCore.QSize(183, 60))
         self.end_btn.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.end_btn.setStyleSheet("font: 11pt \"Acumin Pro\";\n"
+        self.end_btn.setStyleSheet("font: 14pt \"Acumin Pro\";\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(50, 85, 127);\n"
+"background-color: rgb(190, 20, 20,190);\n"
 "\n"
-" border-radius: 12px;\n"
+" border-radius: 7px;\n"
 "")
         self.end_btn.setObjectName("end_btn")
         self.label_12 = QtWidgets.QLabel(Form)
@@ -58,7 +58,7 @@ class Ui_Form(object):
         self.label_12.setScaledContents(True)
         self.label_12.setObjectName("label_12")
         self.exit_btn = QtWidgets.QPushButton(Form)
-        self.exit_btn.setGeometry(QtCore.QRect(1850, 50, 30, 30))
+        self.exit_btn.setGeometry(QtCore.QRect(1840, 10, 30, 30))
         self.exit_btn.setMinimumSize(QtCore.QSize(30, 30))
         self.exit_btn.setMaximumSize(QtCore.QSize(161, 161))
         self.exit_btn.setStyleSheet("QPushButton {\n"
@@ -80,7 +80,7 @@ class Ui_Form(object):
         self.exit_btn.setIconSize(QtCore.QSize(20, 20))
         self.exit_btn.setObjectName("exit_btn")
         self.minimize_btn = QtWidgets.QPushButton(Form)
-        self.minimize_btn.setGeometry(QtCore.QRect(1800, 50, 30, 30))
+        self.minimize_btn.setGeometry(QtCore.QRect(1790, 10, 30, 30))
         self.minimize_btn.setMinimumSize(QtCore.QSize(30, 30))
         self.minimize_btn.setMaximumSize(QtCore.QSize(161, 161))
         self.minimize_btn.setStyleSheet("QPushButton {\n"
@@ -684,6 +684,24 @@ class Ui_Form(object):
         self.textEdit.setObjectName("textEdit")
         self.gridLayout_2.addWidget(self.textEdit, 0, 0, 1, 1)
         self.gridLayout.addWidget(self.groupBox, 1, 0, 1, 1)
+        self.save_btn = QtWidgets.QPushButton(Form)
+        self.save_btn.setGeometry(QtCore.QRect(1140, 930, 183, 60))
+        self.save_btn.setMinimumSize(QtCore.QSize(183, 60))
+        self.save_btn.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        font = QtGui.QFont()
+        font.setFamily("Acumin Pro")
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.save_btn.setFont(font)
+        self.save_btn.setStyleSheet("font: 14pt \"Acumin Pro\";\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: rgb(20,  190, 120);\n"
+"\n"
+" border-radius: 7px;\n"
+"")
+        self.save_btn.setObjectName("save_btn")
         self.label_12.raise_()
         self.label.raise_()
         self.bck_btn.raise_()
@@ -691,6 +709,7 @@ class Ui_Form(object):
         self.exit_btn.raise_()
         self.minimize_btn.raise_()
         self.frame.raise_()
+        self.save_btn.raise_()
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -724,4 +743,5 @@ class Ui_Form(object):
         self.label_28.setText(_translate("Form", "بصمة"))
         self.label_23.setText(_translate("Form", "سلك"))
         self.groupBox.setTitle(_translate("Form", "ملاحظات"))
+        self.save_btn.setText(_translate("Form", "حفظ"))
 import app_resources_rc

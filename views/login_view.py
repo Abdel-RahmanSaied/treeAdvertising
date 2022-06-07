@@ -18,7 +18,7 @@ class Ui_Form(object):
         Form.setMinimumSize(QtCore.QSize(1340, 810))
         Form.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.label_3 = QtWidgets.QLabel(Form)
-        self.label_3.setGeometry(QtCore.QRect(0, -11, 1920, 1080))
+        self.label_3.setGeometry(QtCore.QRect(-10, -10, 1920, 1080))
         self.label_3.setMinimumSize(QtCore.QSize(1920, 1080))
         self.label_3.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.label_3.setText("")
@@ -104,12 +104,11 @@ class Ui_Form(object):
         self.login_btn = QtWidgets.QPushButton(self.groupBox)
         self.login_btn.setMinimumSize(QtCore.QSize(221, 51))
         self.login_btn.setMaximumSize(QtCore.QSize(221, 51))
-        self.login_btn.setStyleSheet("font: 11pt \"Acumin Pro\";\n"
+        self.login_btn.setStyleSheet("font: 12pt \"Acumin Pro\";\n"
 "color: rgb(255, 255, 255);\n"
 "background-color: rgb(1, 25, 54);\n"
 "\n"
-" border-radius: 12px;\n"
-"")
+" border-radius: 7px;")
         self.login_btn.setObjectName("login_btn")
         self.horizontalLayout_14.addWidget(self.login_btn)
         spacerItem11 = QtWidgets.QSpacerItem(58, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -166,7 +165,7 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.username_lin.setPlaceholderText(_translate("Form", "E-Mail"))
+        self.username_lin.setPlaceholderText(_translate("Form", "User Name"))
         self.password_lin.setPlaceholderText(_translate("Form", "Password"))
         self.login_btn.setText(_translate("Form", " LOGIN"))
 import app_resources_rc

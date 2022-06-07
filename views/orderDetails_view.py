@@ -301,11 +301,11 @@ class Ui_Form(object):
         self.bck_btn.setGeometry(QtCore.QRect(920, 950, 183, 60))
         self.bck_btn.setMinimumSize(QtCore.QSize(0, 60))
         self.bck_btn.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.bck_btn.setStyleSheet("font: 11pt \"Acumin Pro\";\n"
+        self.bck_btn.setStyleSheet("font: 14pt \"Acumin Pro\";\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(50, 85, 127);\n"
+"background-color: rgb(50, 85, 127, 250);\n"
 "\n"
-" border-radius: 12px;\n"
+" border-radius: 7px;\n"
 "")
         self.bck_btn.setObjectName("bck_btn")
         self.exit_btn = QtWidgets.QPushButton(Form)

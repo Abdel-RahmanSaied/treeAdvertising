@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1920</width>
-    <height>1045</height>
+    <height>1044</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -70,6 +70,8 @@
       <property name="font">
        <font>
         <pointsize>15</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
        </font>
       </property>
       <property name="layoutDirection">
@@ -95,6 +97,9 @@
       </property>
       <property name="selectionBehavior">
        <enum>QAbstractItemView::SelectRows</enum>
+      </property>
+      <property name="textElideMode">
+       <enum>Qt::ElideMiddle</enum>
       </property>
       <column>
        <property name="text">
@@ -146,11 +151,11 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 11pt &quot;Acumin Pro&quot;;
+    <string notr="true">font: 14pt &quot;Acumin Pro&quot;;
 color: rgb(255, 255, 255);
-background-color: rgb(50, 85, 127);
+background-color: rgb(50, 85, 127, 250);
 
- border-radius: 12px;
+ border-radius: 7px;
 </string>
    </property>
    <property name="text">
@@ -179,11 +184,11 @@ background-color: rgb(50, 85, 127);
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 11pt &quot;Acumin Pro&quot;;
+    <string notr="true">font: 14pt &quot;Acumin Pro&quot;;
 color: rgb(255, 255, 255);
-background-color: rgb(50, 85, 127);
+background-color: rgb(50, 85, 127, 250);
 
- border-radius: 12px;
+ border-radius: 7px;
 </string>
    </property>
    <property name="text">
@@ -330,7 +335,7 @@ QPushButton:hover {
  <resources>
   <include location="app_resources.qrc"/>
   <include location="app_resources.qrc"/>
-  <include location="C:/Users/abdoa/.designer/backup/app_resources.qrc"/>
+  <include location="app_resources.qrc"/>
  </resources>
  <connections/>
 </ui>
