@@ -10,7 +10,7 @@ class Login_Manager(QtWidgets.QWidget, login_view.Ui_Form):
         self.setupUi(self)
         self.login_btn.clicked.connect(self.handle_login)
         self.base_url = "https://saied.pythonanywhere.com/login/"
-        self.token = ''
+        self.userToken = ''
 
     def handle_login(self):
         msg = QtWidgets.QMessageBox()
@@ -44,6 +44,7 @@ class Login_Manager(QtWidgets.QWidget, login_view.Ui_Form):
                         msg.exec_()
                     elif loginStatus == "token" :
                         self.userToken = self.user_check[loginStatus]
+                        print(self.userToken)
                         self.loginAcceptedSignal.emit()
             except Exception as x :
                 print(x)

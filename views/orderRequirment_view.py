@@ -38,6 +38,10 @@ class Ui_Form(object):
         self.tableWidget.setLayoutDirection(QtCore.Qt.RightToLeft)
         self.tableWidget.setAutoFillBackground(False)
         self.tableWidget.setStyleSheet("background-color: rgb(255, 255, 255,100);")
+        self.tableWidget.setEditTriggers(QtWidgets.QAbstractItemView.SelectedClicked)
+        self.tableWidget.setTabKeyNavigation(False)
+        self.tableWidget.setProperty("showDropIndicator", False)
+        self.tableWidget.setDragDropOverwriteMode(False)
         self.tableWidget.setObjectName("tableWidget")
         self.tableWidget.setColumnCount(3)
         self.tableWidget.setRowCount(0)
@@ -132,6 +136,11 @@ class Ui_Form(object):
         self.bck_btn.raise_()
         self.exit_btn.raise_()
         self.minimize_btn.raise_()
+
+        header = self.tableWidget.horizontalHeader()
+        header.setSectionResizeMode(0, QtWidgets.QHeaderView.Stretch)
+        header.setSectionResizeMode(1, QtWidgets.QHeaderView.Stretch)
+        header.setSectionResizeMode(2, QtWidgets.QHeaderView.Stretch)
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)

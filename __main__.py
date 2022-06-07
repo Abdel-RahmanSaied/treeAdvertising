@@ -22,7 +22,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.orderDetails_manger = OrderDetails()
         self.orderRequirment_manger = OrderRequirment()
 
-        #self.showFullScreen()
+        self.showFullScreen()
 
         # add widgets to the stack
         self.addWidget(self.login_manger) #0
@@ -99,6 +99,9 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.notes_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
         self.notes_manger.exit_btn.clicked.connect(self.exit_program)
 
+        ''' designs  '''
+
+
     def handle_login_accepted(self):
         self.main_manger.username_lbl.setText(self.login_manger.username_lin.text())
         self.main_manger.start_stopwatch()
@@ -110,8 +113,12 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
 #     def handle_chooseDesignClient(self):
 #         self.setCurrentIndex(4)
     def handle_orderRequirment(self):
+        self.orderRequirment_manger.token = self.login_manger.userToken
+        self.orderRequirment_manger.run()
         self.setCurrentIndex(7)
     def handle_followOrder(self):
+        self.followOrder_manger.token = self.login_manger.userToken
+        self.followOrder_manger.run()
         self.setCurrentIndex(3)
 #     def handle_officeDesign(self):
 #         self.setCurrentIndex(6)
