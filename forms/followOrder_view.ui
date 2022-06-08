@@ -86,7 +86,7 @@
       </property>
       <layout class="QGridLayout" name="gridLayout">
        <item row="2" column="0">
-        <widget class="QPushButton" name="edit">
+        <widget class="QPushButton" name="edit_btn">
          <property name="sizePolicy">
           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -129,7 +129,7 @@
         </widget>
        </item>
        <item row="4" column="0">
-        <widget class="QPushButton" name="print">
+        <widget class="QPushButton" name="print_btn">
          <property name="sizePolicy">
           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -172,7 +172,7 @@
         </widget>
        </item>
        <item row="3" column="0">
-        <widget class="QPushButton" name="delete_2">
+        <widget class="QPushButton" name="delete_btn">
          <property name="sizePolicy">
           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -215,7 +215,7 @@
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QPushButton" name="new_2">
+        <widget class="QPushButton" name="new_btn">
          <property name="sizePolicy">
           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -258,7 +258,7 @@
         </widget>
        </item>
        <item row="0" column="0">
-        <widget class="QPushButton" name="end">
+        <widget class="QPushButton" name="end_btn">
          <property name="sizePolicy">
           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
            <horstretch>0</horstretch>

@@ -298,7 +298,7 @@ class Ui_Form(object):
         self.label_12.setScaledContents(True)
         self.label_12.setObjectName("label_12")
         self.bck_btn = QtWidgets.QPushButton(Form)
-        self.bck_btn.setGeometry(QtCore.QRect(920, 950, 183, 60))
+        self.bck_btn.setGeometry(QtCore.QRect(820, 950, 183, 60))
         self.bck_btn.setMinimumSize(QtCore.QSize(0, 60))
         self.bck_btn.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.bck_btn.setStyleSheet("font: 14pt \"Acumin Pro\";\n"

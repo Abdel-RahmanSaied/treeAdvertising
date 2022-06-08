@@ -65,12 +65,12 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.newOrder_manger.exit_btn.clicked.connect(self.exit_program)
         self.newOrder_manger.bck_btn.clicked.connect(lambda : self.setCurrentIndex(1))
 
-
         '''
         follow Orders screen 
         '''
-        self.followOrder_manger.details_btn.clicked.connect(self.handle_DetailsOrder)
+        #self.followOrder_manger.details_btn.clicked.connect(self.handle_DetailsOrder)
         self.followOrder_manger.checkAcceptedSignal.connect(self.handle_DetailsOrder)
+        self.followOrder_manger.new_btn.clicked.connect(self.handle_workOrder)
         self.followOrder_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(1))
         self.followOrder_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
         self.followOrder_manger.exit_btn.clicked.connect(self.exit_program)
@@ -78,7 +78,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         '''
         followed order detail screen 
         '''
-        self.orderDetails_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(5))
+        self.orderDetails_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(3))
         self.orderDetails_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
         self.orderDetails_manger.exit_btn.clicked.connect(self.exit_program)
         '''
@@ -118,7 +118,6 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.addClient_manger.minimize_btn.clicked.connect(lambda: self.showMinimized())
         self.addClient_manger.exit_btn.clicked.connect(self.exit_program)
         ''' designs  '''
-
 
     def handle_login_accepted(self):
         self.main_manger.username_lbl.setText(self.login_manger.username_lin.text())
