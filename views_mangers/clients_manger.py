@@ -43,3 +43,9 @@ if __name__ == "__main__":
     w.show()
     #app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
     app.exec_()
+
+# header = self.tableWidget.horizontalHeader()
+# header.setSectionResizeMode(0, QtWidgets.QHeaderView.Stretch)
+# header.setSectionResizeMode(1, QtWidgets.QHeaderView.Stretch)
+# header.setSectionResizeMode(2, QtWidgets.QHeaderView.Stretch)
+# header.setSectionResizeMode(3, QtWidgets.QHeaderView.Stretch)
