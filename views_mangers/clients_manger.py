@@ -15,6 +15,7 @@ class Clients(QtWidgets.QWidget, clients_view.Ui_Form):
         self.token = ''
 
     def run(self):
+        self.tableWidget.clear()
         msg = QtWidgets.QMessageBox()
         headers = {'Accept': 'application/json; indent=4', 'Content-Type': 'application/json',
                    'Authorization': f'Token {self.token}'}
