@@ -60,17 +60,18 @@ class AddClients(QtWidgets.QWidget, add_client_view.Ui_Form):
                     "phone_number": phone,
                     "clientlevel": level
                 }
-            # print(data)
+            print(data)
+            print("Toooooken : ", self.token)
             try:
-                self.add_client = requests.post(self.base_url, data=data, headers=headers)
-                print(self.add_client.json)
+                self.add_client = requests.post(self.base_url, json=data, headers=headers)
+                print(self.add_client.json())
                 self.checkDataSignal.emit()
             except (requests.ConnectionError, requests.Timeout) as exception:
                 print(exception)
                 msg.setWindowTitle("Warning")
                 msg.setText("No internet connection.")
                 msg.exec_()
-            except Exception as e :
+            except Exception as e:
                 print(e)
 
 

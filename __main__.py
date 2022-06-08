@@ -139,6 +139,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.clients_manger.run()
         self.setCurrentIndex(8)
     def handle_addClient(self):
+        self.addClient_manger.token = self.login_manger.userToken
         self.setCurrentIndex(9)
     def handle_finishedOrders(self):
         self.setCurrentIndex(4)
