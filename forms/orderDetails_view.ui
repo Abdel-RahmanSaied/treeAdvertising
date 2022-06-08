@@ -609,11 +609,11 @@ padding-bottom:7px;</string>
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 11pt &quot;Acumin Pro&quot;;
+    <string notr="true">font: 14pt &quot;Acumin Pro&quot;;
 color: rgb(255, 255, 255);
-background-color: rgb(50, 85, 127);
+background-color: rgb(50, 85, 127, 250);
 
- border-radius: 12px;
+ border-radius: 7px;
 </string>
    </property>
    <property name="text">

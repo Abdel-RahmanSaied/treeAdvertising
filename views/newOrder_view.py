@@ -31,11 +31,11 @@ class Ui_Form(object):
         self.next_btn.setGeometry(QtCore.QRect(1060, 920, 191, 60))
         self.next_btn.setMinimumSize(QtCore.QSize(0, 60))
         self.next_btn.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.next_btn.setStyleSheet("font: 11pt \"Acumin Pro\";\n"
+        self.next_btn.setStyleSheet("font: 14pt \"Acumin Pro\";\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(50, 85, 127);\n"
+"background-color: rgb(50, 85, 127, 250);\n"
 "\n"
-" border-radius: 12px;\n"
+" border-radius: 7px;\n"
 "")
         self.next_btn.setObjectName("next_btn")
         self.scrollArea = QtWidgets.QScrollArea(Form)
@@ -58,7 +58,7 @@ class Ui_Form(object):
         self.label_12 = QtWidgets.QLabel(self.groupBox_2)
         self.label_12.setMinimumSize(QtCore.QSize(60, 15))
         self.label_12.setMaximumSize(QtCore.QSize(16777215, 15))
-        self.label_12.setStyleSheet("background-color: rgb(0, 0, 127);")
+        self.label_12.setStyleSheet("background-color: rgb(20, 20, 200);")
         self.label_12.setText("")
         self.label_12.setObjectName("label_12")
         self.horizontalLayout_2.addWidget(self.label_12)
@@ -73,7 +73,7 @@ class Ui_Form(object):
         self.label_13 = QtWidgets.QLabel(self.groupBox_2)
         self.label_13.setMinimumSize(QtCore.QSize(60, 15))
         self.label_13.setMaximumSize(QtCore.QSize(16777215, 15))
-        self.label_13.setStyleSheet("background-color: rgb(170, 0, 0);")
+        self.label_13.setStyleSheet("background-color: rgb(200, 30, 30);")
         self.label_13.setText("")
         self.label_13.setObjectName("label_13")
         self.horizontalLayout_3.addWidget(self.label_13)
@@ -88,7 +88,7 @@ class Ui_Form(object):
         self.label_15 = QtWidgets.QLabel(self.groupBox_2)
         self.label_15.setMinimumSize(QtCore.QSize(60, 15))
         self.label_15.setMaximumSize(QtCore.QSize(16777215, 15))
-        self.label_15.setStyleSheet("background-color: rgb(0, 85, 0);")
+        self.label_15.setStyleSheet("background-color: rgb(30,  160, 30);")
         self.label_15.setText("")
         self.label_15.setObjectName("label_15")
         self.horizontalLayout_4.addWidget(self.label_15)
@@ -101,24 +101,31 @@ class Ui_Form(object):
         self.label_14 = QtWidgets.QLabel(self.groupBox_2)
         font = QtGui.QFont()
         font.setFamily("Acumin Pro")
-        font.setPointSize(11)
+        font.setPointSize(14)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
         self.label_14.setFont(font)
-        self.label_14.setStyleSheet("font: 11pt \"Acumin Pro\";")
+        self.label_14.setStyleSheet("\n"
+"border:none;\n"
+"font: 14pt \"Acumin Pro\";\n"
+"padding-bottom:7px;")
         self.label_14.setAlignment(QtCore.Qt.AlignCenter)
         self.label_14.setObjectName("label_14")
         self.gridLayout_3.addWidget(self.label_14, 1, 3, 1, 1)
         self.label_3 = QtWidgets.QLabel(self.groupBox_2)
         font = QtGui.QFont()
         font.setFamily("Acumin Pro")
-        font.setPointSize(11)
+        font.setPointSize(14)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
         self.label_3.setFont(font)
-        self.label_3.setStyleSheet("font: 11pt \"Acumin Pro\";")
+        self.label_3.setStyleSheet("background-color:rgba(48, 62, 84, 20);\n"
+"\n"
+"border:none;\n"
+"font: 14pt \"Acumin Pro\";\n"
+"padding-bottom:7px;")
         self.label_3.setAlignment(QtCore.Qt.AlignCenter)
         self.label_3.setObjectName("label_3")
         self.gridLayout_3.addWidget(self.label_3, 0, 16, 1, 1)
@@ -148,12 +155,16 @@ class Ui_Form(object):
         self.label_4 = QtWidgets.QLabel(self.groupBox_2)
         font = QtGui.QFont()
         font.setFamily("Acumin Pro")
-        font.setPointSize(11)
+        font.setPointSize(14)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
         self.label_4.setFont(font)
-        self.label_4.setStyleSheet("font: 11pt \"Acumin Pro\";")
+        self.label_4.setStyleSheet("background-color:rgba(48, 62, 84, 20);\n"
+"\n"
+"border:none;\n"
+"font: 14pt \"Acumin Pro\";\n"
+"padding-bottom:7px;")
         self.label_4.setAlignment(QtCore.Qt.AlignCenter)
         self.label_4.setObjectName("label_4")
         self.gridLayout_3.addWidget(self.label_4, 1, 12, 1, 1)
@@ -183,12 +194,16 @@ class Ui_Form(object):
         self.label_16 = QtWidgets.QLabel(self.groupBox_2)
         font = QtGui.QFont()
         font.setFamily("Acumin Pro")
-        font.setPointSize(11)
+        font.setPointSize(14)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
         self.label_16.setFont(font)
-        self.label_16.setStyleSheet("font: 11pt \"Acumin Pro\";")
+        self.label_16.setStyleSheet("background-color:rgba(48, 62, 84, 20);\n"
+"\n"
+"border:none;\n"
+"font: 14pt \"Acumin Pro\";\n"
+"padding-bottom:7px;")
         self.label_16.setAlignment(QtCore.Qt.AlignCenter)
         self.label_16.setObjectName("label_16")
         self.gridLayout_3.addWidget(self.label_16, 1, 16, 1, 1)
@@ -219,12 +234,16 @@ class Ui_Form(object):
         self.label_5 = QtWidgets.QLabel(self.groupBox_2)
         font = QtGui.QFont()
         font.setFamily("Acumin Pro")
-        font.setPointSize(11)
+        font.setPointSize(14)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
         self.label_5.setFont(font)
-        self.label_5.setStyleSheet("font: 11pt \"Acumin Pro\";")
+        self.label_5.setStyleSheet("\n"
+"\n"
+"border:none;\n"
+"font: 14pt \"Acumin Pro\";\n"
+"padding-bottom:7px;")
         self.label_5.setAlignment(QtCore.Qt.AlignCenter)
         self.label_5.setObjectName("label_5")
         self.gridLayout_3.addWidget(self.label_5, 0, 2, 1, 3)
@@ -241,6 +260,7 @@ class Ui_Form(object):
 "border-bottom:2px solid rgba(46, 82, 101, 200);\n"
 "\n"
 "padding-bottom:7px;")
+        self.username_lin_3.setAlignment(QtCore.Qt.AlignCenter)
         self.username_lin_3.setObjectName("username_lin_3")
         self.gridLayout_3.addWidget(self.username_lin_3, 0, 14, 1, 1)
         self.spinBox = QtWidgets.QSpinBox(self.groupBox_2)
@@ -310,8 +330,8 @@ class Ui_Form(object):
         font = QtGui.QFont()
         font.setFamily("Gill Sans MT")
         font.setPointSize(15)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setBold(False)
+        font.setWeight(50)
         self.label_checkBox.setFont(font)
         self.label_checkBox.setStyleSheet("")
         self.label_checkBox.setObjectName("label_checkBox")
@@ -343,8 +363,8 @@ class Ui_Form(object):
         font = QtGui.QFont()
         font.setFamily("Gill Sans MT")
         font.setPointSize(15)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setBold(False)
+        font.setWeight(50)
         self.brochure_checkBox.setFont(font)
         self.brochure_checkBox.setStyleSheet("")
         self.brochure_checkBox.setObjectName("brochure_checkBox")
@@ -353,8 +373,8 @@ class Ui_Form(object):
         font = QtGui.QFont()
         font.setFamily("Gill Sans MT")
         font.setPointSize(15)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setBold(False)
+        font.setWeight(50)
         self.logo_checkBox.setFont(font)
         self.logo_checkBox.setStyleSheet("")
         self.logo_checkBox.setObjectName("logo_checkBox")
@@ -363,8 +383,8 @@ class Ui_Form(object):
         font = QtGui.QFont()
         font.setFamily("Gill Sans MT")
         font.setPointSize(15)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setBold(False)
+        font.setWeight(50)
         self.certificate_checkBox.setFont(font)
         self.certificate_checkBox.setStyleSheet("")
         self.certificate_checkBox.setObjectName("certificate_checkBox")
@@ -373,8 +393,8 @@ class Ui_Form(object):
         font = QtGui.QFont()
         font.setFamily("Gill Sans MT")
         font.setPointSize(15)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setBold(False)
+        font.setWeight(50)
         self.menu_checkBox.setFont(font)
         self.menu_checkBox.setStyleSheet("")
         self.menu_checkBox.setObjectName("menu_checkBox")
@@ -383,8 +403,8 @@ class Ui_Form(object):
         font = QtGui.QFont()
         font.setFamily("Gill Sans MT")
         font.setPointSize(15)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setBold(False)
+        font.setWeight(50)
         self.poster_checkBox.setFont(font)
         self.poster_checkBox.setStyleSheet("")
         self.poster_checkBox.setObjectName("poster_checkBox")
@@ -393,8 +413,9 @@ class Ui_Form(object):
         font = QtGui.QFont()
         font.setFamily("Gill Sans MT")
         font.setPointSize(15)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.cover_checkBox.setFont(font)
         self.cover_checkBox.setStyleSheet("")
         self.cover_checkBox.setObjectName("cover_checkBox")
@@ -403,8 +424,8 @@ class Ui_Form(object):
         font = QtGui.QFont()
         font.setFamily("Gill Sans MT")
         font.setPointSize(15)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setBold(False)
+        font.setWeight(50)
         self.banner_checkBox.setFont(font)
         self.banner_checkBox.setStyleSheet("")
         self.banner_checkBox.setObjectName("banner_checkBox")
@@ -413,8 +434,8 @@ class Ui_Form(object):
         font = QtGui.QFont()
         font.setFamily("Gill Sans MT")
         font.setPointSize(15)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setBold(False)
+        font.setWeight(50)
         self.rollUp_checkBox.setFont(font)
         self.rollUp_checkBox.setStyleSheet("")
         self.rollUp_checkBox.setObjectName("rollUp_checkBox")
@@ -423,8 +444,8 @@ class Ui_Form(object):
         font = QtGui.QFont()
         font.setFamily("Gill Sans MT")
         font.setPointSize(15)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setBold(False)
+        font.setWeight(50)
         self.flyer_checkBox.setFont(font)
         self.flyer_checkBox.setStyleSheet("")
         self.flyer_checkBox.setObjectName("flyer_checkBox")
@@ -433,8 +454,8 @@ class Ui_Form(object):
         font = QtGui.QFont()
         font.setFamily("Gill Sans MT")
         font.setPointSize(15)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setBold(False)
+        font.setWeight(50)
         self.businessCard_checkBox.setFont(font)
         self.businessCard_checkBox.setStyleSheet("")
         self.businessCard_checkBox.setObjectName("businessCard_checkBox")
@@ -460,6 +481,11 @@ class Ui_Form(object):
         self.gridLayout_6 = QtWidgets.QGridLayout(self.groupBox_3)
         self.gridLayout_6.setObjectName("gridLayout_6")
         self.groupBox_5 = QtWidgets.QGroupBox(self.groupBox_3)
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.groupBox_5.setFont(font)
         self.groupBox_5.setAlignment(QtCore.Qt.AlignCenter)
         self.groupBox_5.setObjectName("groupBox_5")
         self.gridLayout_5 = QtWidgets.QGridLayout(self.groupBox_5)
@@ -501,7 +527,8 @@ class Ui_Form(object):
         font.setItalic(False)
         font.setWeight(50)
         self.lineEdit_11.setFont(font)
-        self.lineEdit_11.setStyleSheet("background-color:rgba(0, 0, 0, 0);\n"
+        self.lineEdit_11.setStyleSheet("background-color:rgba(48, 62, 84, 20);\n"
+"\n"
 "border:none;\n"
 "font: 14pt \"Acumin Pro\";\n"
 "padding-bottom:7px;")
@@ -521,7 +548,8 @@ class Ui_Form(object):
         font.setItalic(False)
         font.setWeight(50)
         self.lineEdit_10.setFont(font)
-        self.lineEdit_10.setStyleSheet("background-color:rgba(0, 0, 0, 0);\n"
+        self.lineEdit_10.setStyleSheet("background-color:rgba(48, 62, 84, 20);\n"
+"\n"
 "border:none;\n"
 "font: 14pt \"Acumin Pro\";\n"
 "padding-bottom:7px;")
@@ -607,7 +635,8 @@ class Ui_Form(object):
         font.setItalic(False)
         font.setWeight(50)
         self.lineEdit_12.setFont(font)
-        self.lineEdit_12.setStyleSheet("background-color:rgba(0, 0, 0, 0);\n"
+        self.lineEdit_12.setStyleSheet("background-color:rgba(48, 62, 84, 20);\n"
+"\n"
 "border:none;\n"
 "font: 14pt \"Acumin Pro\";\n"
 "padding-bottom:7px;")
@@ -616,6 +645,11 @@ class Ui_Form(object):
         self.gridLayout_5.addWidget(self.lineEdit_12, 1, 4, 1, 1)
         self.gridLayout_6.addWidget(self.groupBox_5, 0, 0, 1, 1)
         self.groupBox_4 = QtWidgets.QGroupBox(self.groupBox_3)
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.groupBox_4.setFont(font)
         self.groupBox_4.setAlignment(QtCore.Qt.AlignCenter)
         self.groupBox_4.setObjectName("groupBox_4")
         self.gridLayout_4 = QtWidgets.QGridLayout(self.groupBox_4)
@@ -819,17 +853,21 @@ class Ui_Form(object):
         self.bck_btn.setGeometry(QtCore.QRect(720, 920, 191, 60))
         self.bck_btn.setMinimumSize(QtCore.QSize(0, 60))
         self.bck_btn.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.bck_btn.setStyleSheet("font: 11pt \"Acumin Pro\";\n"
+        self.bck_btn.setStyleSheet("font: 14pt \"Acumin Pro\";\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(50, 85, 127);\n"
+"background-color: rgb(50, 85, 127, 250);\n"
 "\n"
-" border-radius: 12px;\n"
+" border-radius: 7px;\n"
 "")
         self.bck_btn.setObjectName("bck_btn")
         self.label_6 = QtWidgets.QLabel(Form)
         self.label_6.setGeometry(QtCore.QRect(0, 0, 1920, 1080))
         self.label_6.setMinimumSize(QtCore.QSize(1361, 821))
         self.label_6.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        font = QtGui.QFont()
+        font.setBold(False)
+        font.setWeight(50)
+        self.label_6.setFont(font)
         self.label_6.setText("")
         self.label_6.setPixmap(QtGui.QPixmap(":/login/images/backgroung/3433814.jpg"))
         self.label_6.setScaledContents(True)

@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(1920, 1080)
+        Form.resize(1920, 1077)
         Form.setMinimumSize(QtCore.QSize(1340, 810))
         Form.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.label = QtWidgets.QLabel(Form)
@@ -167,11 +167,11 @@ class Ui_Form(object):
         self.next_btn = QtWidgets.QPushButton(self.frame)
         self.next_btn.setMinimumSize(QtCore.QSize(91, 41))
         self.next_btn.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.next_btn.setStyleSheet("font: 11pt \"Acumin Pro\";\n"
+        self.next_btn.setStyleSheet("font: 14pt \"Acumin Pro\";\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(50, 85, 127);\n"
+"background-color: rgb(50, 85, 127, 250);\n"
 "\n"
-" border-radius: 12px;\n"
+" border-radius: 7px;\n"
 "")
         self.next_btn.setObjectName("next_btn")
         self.gridLayout_2.addWidget(self.next_btn, 0, 2, 1, 1)
@@ -259,22 +259,22 @@ class Ui_Form(object):
         self.details_btn.setGeometry(QtCore.QRect(1120, 930, 200, 60))
         self.details_btn.setMinimumSize(QtCore.QSize(200, 60))
         self.details_btn.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.details_btn.setStyleSheet("font: 11pt \"Acumin Pro\";\n"
+        self.details_btn.setStyleSheet("font: 14pt \"Acumin Pro\";\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(50, 85, 127);\n"
+"background-color: rgb(50, 85, 127, 250);\n"
 "\n"
-" border-radius: 12px;\n"
+" border-radius: 7px;\n"
 "")
         self.details_btn.setObjectName("details_btn")
         self.bck_btn = QtWidgets.QPushButton(Form)
         self.bck_btn.setGeometry(QtCore.QRect(760, 930, 200, 60))
         self.bck_btn.setMinimumSize(QtCore.QSize(200, 60))
         self.bck_btn.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.bck_btn.setStyleSheet("font: 11pt \"Acumin Pro\";\n"
+        self.bck_btn.setStyleSheet("font: 14pt \"Acumin Pro\";\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(50, 85, 127);\n"
+"background-color: rgb(50, 85, 127, 250);\n"
 "\n"
-" border-radius: 12px;\n"
+" border-radius: 7px;\n"
 "")
         self.bck_btn.setObjectName("bck_btn")
         self.label_4 = QtWidgets.QLabel(Form)
