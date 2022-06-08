@@ -10,12 +10,11 @@ class Clients(QtWidgets.QWidget, clients_view.Ui_Form):
     def __init__(self):
         super(Clients, self).__init__()
         self.setupUi(self)
-
         self.base_url = "https://saied.pythonanywhere.com/clients/"
         self.token = ''
 
     def run(self):
-        self.tableWidget.clear()
+        self.tableWidget.setRowCount(0)
         msg = QtWidgets.QMessageBox()
         headers = {'Accept': 'application/json; indent=4', 'Content-Type': 'application/json',
                    'Authorization': f'Token {self.token}'}
@@ -28,7 +27,6 @@ class Clients(QtWidgets.QWidget, clients_view.Ui_Form):
             for rows in self.reply:
                 self.tableWidget.insertRow(rowPosition)
                 # [{"id": 2,"name": "test","phone_number": "01011","notes": "nothing","clientlevel": "B"}]
-                print(rows)
                 self.tableWidget.setItem(0, 0, QTableWidgetItem(rows['name']))
                 self.tableWidget.setItem(0, 1, QTableWidgetItem(str(rows['phone_number'])))
                 self.tableWidget.setItem(0, 2, QTableWidgetItem(rows['clientlevel']))

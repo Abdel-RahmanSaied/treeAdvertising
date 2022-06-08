@@ -82,6 +82,7 @@ class FollowOrder(QtWidgets.QWidget, followOrder_view.Ui_Form):
             msg.setText("you must select the order !")
             msg.exec_()
 
+
 if __name__ == "__main__":
     import qdarkstyle
     app = QtWidgets.QApplication([])

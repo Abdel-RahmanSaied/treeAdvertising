@@ -1,4 +1,3 @@
-import simplejson
 from PyQt5 import QtWidgets , QtCore
 from views import add_client_view
 from PyQt5.QtWidgets import *
@@ -63,7 +62,7 @@ class AddClients(QtWidgets.QWidget, add_client_view.Ui_Form):
                 }
             # print(data)
             try:
-                self.add_client = requests.post(self.base_url, json=data, headers=headers)
+                self.add_client = requests.post(self.base_url, data=data, headers=headers)
                 print(self.add_client.json)
                 self.checkDataSignal.emit()
             except (requests.ConnectionError, requests.Timeout) as exception:

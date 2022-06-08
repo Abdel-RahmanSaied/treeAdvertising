@@ -114,7 +114,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         Add client
         '''
         self.addClient_manger.end_btn.clicked.connect(lambda: self.setCurrentIndex(8))
-        self.addClient_manger.checkDataSignal.connect(self.handle_Clients)
+        self.addClient_manger.checkDataSignal.connect(self.handle_adduser)
         # self.addClient_manger.add_btn.clicked.connect(lambda: self.setCurrentIndex(8))
         self.addClient_manger.minimize_btn.clicked.connect(lambda: self.showMinimized())
         self.addClient_manger.exit_btn.clicked.connect(self.exit_program)
@@ -149,6 +149,9 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.setCurrentIndex(5)
     def handle_notes(self):
         self.setCurrentIndex(7)
+    def handle_adduser(self):
+        self.clients_manger.run()
+        self.setCurrentIndex(8)
 
     def exit_program(self):
         self.main_manger.thred.cancel()
