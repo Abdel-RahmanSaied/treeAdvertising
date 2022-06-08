@@ -6,12 +6,14 @@ import os
 
 class FollowOrder(QtWidgets.QWidget, followOrder_view.Ui_Form):
     checkAcceptedSignal = QtCore.pyqtSignal()
+    reload_signal = QtCore.pyqtSignal()
     def __init__(self):
         super(FollowOrder, self).__init__()
         self.setupUi(self)
 
         self.base_url = "https://saied.pythonanywhere.com/orders/"
         self.update_link = "https://saied.pythonanywhere.com/updateItem/"
+        self.delete_link = "https://saied.pythonanywhere.com/deleteitem/"
         self.token = ''
         self.orderID = 0
         self.item_selected = False
@@ -19,6 +21,8 @@ class FollowOrder(QtWidgets.QWidget, followOrder_view.Ui_Form):
 
         self.details_btn.clicked.connect(self.orderDetails)
         self.end_btn.clicked.connect(self.end_order)
+        self.delete_btn.clicked.connect(self.delete_order)
+        self.reload_signal.connect(self.run)
 
         self.headers = {}
     def run(self):
@@ -52,11 +56,25 @@ class FollowOrder(QtWidgets.QWidget, followOrder_view.Ui_Form):
         data = {"state" : "F"}
         if self.item_selected != False:
             try :
-
                 self.reply = requests.put(f"{self.update_link}{self.orderID}//" , json=data , headers=self.headers)
                 msg.setWindowTitle("Warning")
                 msg.setText("order state updated to finished !")
                 msg.exec_()
+            except Exception as s :
+                print("ss",s)
+        else:
+            msg.setWindowTitle("Warning")
+            msg.setText("you must select the order !")
+            msg.exec_()
+    def delete_order(self):
+        msg = QtWidgets.QMessageBox()
+        if self.item_selected != False:
+            try :
+                self.reply = requests.delete(f"{self.delete_link}{self.orderID}//" , headers=self.headers)
+                msg.setWindowTitle("Warning")
+                msg.setText("order deleted!")
+                msg.exec_()
+                self.reload_signal.emit()
             except Exception as s :
                 print("ss",s)
         else:
