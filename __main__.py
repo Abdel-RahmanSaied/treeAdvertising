@@ -1,10 +1,11 @@
 from PyQt5 import QtWidgets, QtGui, QtCore
+import sys
 from views_mangers.loginView_manger import Login_Manager
 from views_mangers.main_manger import Main_manger
 from views_mangers.newOrderView_manger import NewOrderView_manger
-import sys
 from views_mangers.notes_manger import NotesManger
-
+from views_mangers.clients_manger import Clients
+from views_mangers.add_client_manger import AddClients
 from views_mangers.followOrder_manger import FollowOrder
 from views_mangers.finishedOrders_manger import FinishedOrders
 from views_mangers.orderDetails_manger import OrderDetails
@@ -21,20 +22,21 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.finishedOrders_manger = FinishedOrders()
         self.orderDetails_manger = OrderDetails()
         self.orderRequirment_manger = OrderRequirment()
-
+        self.clients_manger = Clients()
+        self.addClient_manger = AddClients()
         self.showFullScreen()
 
         # add widgets to the stack
         self.addWidget(self.login_manger) #0
         self.addWidget(self.main_manger) #1
         self.addWidget(self.newOrder_manger) #2
-
         self.addWidget(self.followOrder_manger)  #3  !!!
-
         self.addWidget(self.finishedOrders_manger) #4  !!!
         self.addWidget(self.orderDetails_manger) #5  !!!
         self.addWidget(self.notes_manger) #6
         self.addWidget(self.orderRequirment_manger) #7
+        self.addWidget(self.clients_manger) #8
+        self.addWidget(self.addClient_manger) #9
 
 
         # install signals
@@ -48,6 +50,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.main_manger.followOrders_btn.clicked.connect(self.handle_followOrder)
         self.main_manger.finishedOrders_btn.clicked.connect(self.handle_finishedOrders)
         self.main_manger.ordersReq_btn.clicked.connect(self.handle_orderRequirment)
+        self.main_manger.clients_btn.clicked.connect(self.handle_Clients)
         self.main_manger.logOut_btn.clicked.connect(lambda : self.setCurrentIndex(0))
 
         self.main_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
@@ -100,6 +103,22 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.notes_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
         self.notes_manger.exit_btn.clicked.connect(self.exit_program)
 
+        '''
+        clients
+        '''
+        self.clients_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(1))
+        self.clients_manger.new_btn.clicked.connect(self.handle_addClient)
+        self.clients_manger.minimize_btn.clicked.connect(lambda: self.showMinimized())
+        self.clients_manger.exit_btn.clicked.connect(self.exit_program)
+
+        '''
+        Add client
+        '''
+        self.addClient_manger.end_btn.clicked.connect(lambda: self.setCurrentIndex(8))
+        self.addClient_manger.add_btn.clicked.connect(lambda: self.setCurrentIndex(8))
+        self.addClient_manger.minimize_btn.clicked.connect(lambda: self.showMinimized())
+        self.addClient_manger.exit_btn.clicked.connect(self.exit_program)
+
         ''' designs  '''
 
 
@@ -109,7 +128,6 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.setCurrentIndex(1)
     def handle_workOrder(self):
         self.setCurrentIndex(2)
-
     def handle_orderRequirment(self):
         self.orderRequirment_manger.token = self.login_manger.userToken
         self.orderRequirment_manger.run()
@@ -118,8 +136,10 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.followOrder_manger.token = self.login_manger.userToken
         self.followOrder_manger.run()
         self.setCurrentIndex(3)
-#     def handle_officeDesign(self):
-#         self.setCurrentIndex(6)
+    def handle_Clients(self):
+        self.setCurrentIndex(8)
+    def handle_addClient(self):
+        self.setCurrentIndex(9)
     def handle_finishedOrders(self):
         self.setCurrentIndex(4)
     def handle_DetailsOrder(self):
