@@ -37,24 +37,24 @@ class Ui_Form(object):
         self.gridLayout.setObjectName("gridLayout")
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.bookName_lbl = QtWidgets.QLabel(self.frame)
-        self.bookName_lbl.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.orderID_lbl = QtWidgets.QLabel(self.frame)
+        self.orderID_lbl.setMaximumSize(QtCore.QSize(16777215, 50))
         font = QtGui.QFont()
         font.setFamily("Bebas Neue Bold")
         font.setPointSize(18)
         font.setBold(True)
         font.setWeight(75)
-        self.bookName_lbl.setFont(font)
-        self.bookName_lbl.setStyleSheet("background-color:rgba(0, 0, 0, 0);\n"
+        self.orderID_lbl.setFont(font)
+        self.orderID_lbl.setStyleSheet("background-color:rgba(0, 0, 0, 0);\n"
 "border:none;\n"
 "border-bottom:2px solid rgba(46, 82, 101, 200);\n"
 "\n"
 " border-radius: 12px;\n"
 "padding-bottom:7px;")
-        self.bookName_lbl.setText("")
-        self.bookName_lbl.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
-        self.bookName_lbl.setObjectName("bookName_lbl")
-        self.horizontalLayout.addWidget(self.bookName_lbl)
+        self.orderID_lbl.setText("")
+        self.orderID_lbl.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.orderID_lbl.setObjectName("orderID_lbl")
+        self.horizontalLayout.addWidget(self.orderID_lbl)
         self.label_4 = QtWidgets.QLabel(self.frame)
         self.label_4.setMinimumSize(QtCore.QSize(63, 0))
         self.label_4.setMaximumSize(QtCore.QSize(16777215, 50))
@@ -70,24 +70,24 @@ class Ui_Form(object):
         self.gridLayout.addLayout(self.horizontalLayout, 0, 1, 1, 1)
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.authorName_lbl = QtWidgets.QLabel(self.frame)
-        self.authorName_lbl.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.clientName_lbl = QtWidgets.QLabel(self.frame)
+        self.clientName_lbl.setMaximumSize(QtCore.QSize(16777215, 50))
         font = QtGui.QFont()
         font.setFamily("Bebas Neue Bold")
         font.setPointSize(18)
         font.setBold(True)
         font.setWeight(75)
-        self.authorName_lbl.setFont(font)
-        self.authorName_lbl.setStyleSheet("background-color:rgba(0, 0, 0, 0);\n"
+        self.clientName_lbl.setFont(font)
+        self.clientName_lbl.setStyleSheet("background-color:rgba(0, 0, 0, 0);\n"
 "border:none;\n"
 "border-bottom:2px solid rgba(46, 82, 101, 200);\n"
 "\n"
 " border-radius: 12px;\n"
 "padding-bottom:7px;")
-        self.authorName_lbl.setText("")
-        self.authorName_lbl.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
-        self.authorName_lbl.setObjectName("authorName_lbl")
-        self.horizontalLayout_2.addWidget(self.authorName_lbl)
+        self.clientName_lbl.setText("")
+        self.clientName_lbl.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.clientName_lbl.setObjectName("clientName_lbl")
+        self.horizontalLayout_2.addWidget(self.clientName_lbl)
         self.label_5 = QtWidgets.QLabel(self.frame)
         self.label_5.setMinimumSize(QtCore.QSize(63, 0))
         self.label_5.setMaximumSize(QtCore.QSize(16777215, 50))
@@ -103,24 +103,24 @@ class Ui_Form(object):
         self.gridLayout.addLayout(self.horizontalLayout_2, 0, 3, 1, 1)
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        self.price_lbl = QtWidgets.QLabel(self.frame)
-        self.price_lbl.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.date_lbl = QtWidgets.QLabel(self.frame)
+        self.date_lbl.setMaximumSize(QtCore.QSize(16777215, 50))
         font = QtGui.QFont()
         font.setFamily("Bebas Neue Bold")
         font.setPointSize(18)
         font.setBold(True)
         font.setWeight(75)
-        self.price_lbl.setFont(font)
-        self.price_lbl.setStyleSheet("background-color:rgba(0, 0, 0, 0);\n"
+        self.date_lbl.setFont(font)
+        self.date_lbl.setStyleSheet("background-color:rgba(0, 0, 0, 0);\n"
 "border:none;\n"
 "border-bottom:2px solid rgba(46, 82, 101, 200);\n"
 "\n"
 " border-radius: 12px;\n"
 "padding-bottom:7px;")
-        self.price_lbl.setText("")
-        self.price_lbl.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
-        self.price_lbl.setObjectName("price_lbl")
-        self.horizontalLayout_3.addWidget(self.price_lbl)
+        self.date_lbl.setText("")
+        self.date_lbl.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.date_lbl.setObjectName("date_lbl")
+        self.horizontalLayout_3.addWidget(self.date_lbl)
         self.label_6 = QtWidgets.QLabel(self.frame)
         self.label_6.setMinimumSize(QtCore.QSize(63, 0))
         self.label_6.setMaximumSize(QtCore.QSize(16777215, 50))
@@ -178,23 +178,23 @@ class Ui_Form(object):
         self.groupBox_2.setObjectName("groupBox_2")
         self.gridLayout_3 = QtWidgets.QGridLayout(self.groupBox_2)
         self.gridLayout_3.setObjectName("gridLayout_3")
-        self.label_3 = QtWidgets.QLabel(self.groupBox_2)
+        self.sevices_afterPrinting_lbl = QtWidgets.QLabel(self.groupBox_2)
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(True)
         font.setWeight(75)
-        self.label_3.setFont(font)
-        self.label_3.setStyleSheet("\n"
+        self.sevices_afterPrinting_lbl.setFont(font)
+        self.sevices_afterPrinting_lbl.setStyleSheet("\n"
 " border-radius: 12px;\n"
 "background-color:rgba(0, 0, 0, 0);\n"
 "border:none;\n"
 "border-bottom:2px solid rgba(46, 82, 101, 200);\n"
 "\n"
 "padding-bottom:7px;")
-        self.label_3.setText("")
-        self.label_3.setWordWrap(False)
-        self.label_3.setObjectName("label_3")
-        self.gridLayout_3.addWidget(self.label_3, 0, 0, 1, 1)
+        self.sevices_afterPrinting_lbl.setText("")
+        self.sevices_afterPrinting_lbl.setWordWrap(False)
+        self.sevices_afterPrinting_lbl.setObjectName("sevices_afterPrinting_lbl")
+        self.gridLayout_3.addWidget(self.sevices_afterPrinting_lbl, 0, 0, 1, 1)
         self.gridLayout.addWidget(self.groupBox_2, 2, 0, 1, 3)
         self.groupBox = QtWidgets.QGroupBox(self.frame)
         font = QtGui.QFont()
@@ -207,24 +207,24 @@ class Ui_Form(object):
         self.groupBox.setObjectName("groupBox")
         self.gridLayout_4 = QtWidgets.QGridLayout(self.groupBox)
         self.gridLayout_4.setObjectName("gridLayout_4")
-        self.label_2 = QtWidgets.QLabel(self.groupBox)
+        self.print_type_lbl = QtWidgets.QLabel(self.groupBox)
         font = QtGui.QFont()
         font.setPointSize(11)
         font.setBold(True)
         font.setWeight(75)
-        self.label_2.setFont(font)
-        self.label_2.setStyleSheet("\n"
+        self.print_type_lbl.setFont(font)
+        self.print_type_lbl.setStyleSheet("\n"
 " border-radius: 12px;\n"
 "background-color:rgba(0, 0, 0, 0);\n"
 "border:none;\n"
 "border-bottom:2px solid rgba(46, 82, 101, 200);\n"
 "\n"
 "padding-bottom:7px;")
-        self.label_2.setText("")
-        self.label_2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
-        self.label_2.setWordWrap(True)
-        self.label_2.setObjectName("label_2")
-        self.gridLayout_4.addWidget(self.label_2, 0, 0, 1, 1)
+        self.print_type_lbl.setText("")
+        self.print_type_lbl.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.print_type_lbl.setWordWrap(True)
+        self.print_type_lbl.setObjectName("print_type_lbl")
+        self.gridLayout_4.addWidget(self.print_type_lbl, 0, 0, 1, 1)
         self.gridLayout.addWidget(self.groupBox, 2, 3, 1, 1)
         self.groupBox_3 = QtWidgets.QGroupBox(self.frame)
         font = QtGui.QFont()
@@ -237,45 +237,45 @@ class Ui_Form(object):
         self.groupBox_3.setObjectName("groupBox_3")
         self.gridLayout_5 = QtWidgets.QGridLayout(self.groupBox_3)
         self.gridLayout_5.setObjectName("gridLayout_5")
-        self.label_8 = QtWidgets.QLabel(self.groupBox_3)
+        self.notes_lbl = QtWidgets.QLabel(self.groupBox_3)
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(True)
         font.setWeight(75)
-        self.label_8.setFont(font)
-        self.label_8.setStyleSheet("\n"
+        self.notes_lbl.setFont(font)
+        self.notes_lbl.setStyleSheet("\n"
 " border-radius: 12px;\n"
 "background-color:rgba(0, 0, 0, 0);\n"
 "border:none;\n"
 "border-bottom:2px solid rgba(46, 82, 101, 200);\n"
 "\n"
 "padding-bottom:7px;")
-        self.label_8.setText("")
-        self.label_8.setWordWrap(True)
-        self.label_8.setObjectName("label_8")
-        self.gridLayout_5.addWidget(self.label_8, 0, 0, 1, 1)
+        self.notes_lbl.setText("")
+        self.notes_lbl.setWordWrap(True)
+        self.notes_lbl.setObjectName("notes_lbl")
+        self.gridLayout_5.addWidget(self.notes_lbl, 0, 0, 1, 1)
         self.gridLayout.addWidget(self.groupBox_3, 3, 0, 1, 4)
         self.horizontalLayout_5 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
-        self.available_lbl = QtWidgets.QLabel(self.frame)
-        self.available_lbl.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.recived_date_lbl = QtWidgets.QLabel(self.frame)
+        self.recived_date_lbl.setMaximumSize(QtCore.QSize(16777215, 50))
         font = QtGui.QFont()
         font.setFamily("Bebas Neue Bold")
         font.setPointSize(18)
         font.setBold(True)
         font.setWeight(75)
-        self.available_lbl.setFont(font)
-        self.available_lbl.setStyleSheet("\n"
+        self.recived_date_lbl.setFont(font)
+        self.recived_date_lbl.setStyleSheet("\n"
 " border-radius: 12px;\n"
 "background-color:rgba(0, 0, 0, 0);\n"
 "border:none;\n"
 "border-bottom:2px solid rgba(46, 82, 101, 200);\n"
 "\n"
 "padding-bottom:7px;")
-        self.available_lbl.setText("")
-        self.available_lbl.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
-        self.available_lbl.setObjectName("available_lbl")
-        self.horizontalLayout_5.addWidget(self.available_lbl)
+        self.recived_date_lbl.setText("")
+        self.recived_date_lbl.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.recived_date_lbl.setObjectName("recived_date_lbl")
+        self.horizontalLayout_5.addWidget(self.recived_date_lbl)
         self.label_9 = QtWidgets.QLabel(self.frame)
         self.label_9.setMinimumSize(QtCore.QSize(63, 0))
         self.label_9.setMaximumSize(QtCore.QSize(16777215, 50))

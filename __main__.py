@@ -68,6 +68,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         follow Orders screen 
         '''
         self.followOrder_manger.details_btn.clicked.connect(self.handle_DetailsOrder)
+        self.followOrder_manger.checkAcceptedSignal.connect(self.handle_DetailsOrder)
         self.followOrder_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(1))
         self.followOrder_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
         self.followOrder_manger.exit_btn.clicked.connect(self.exit_program)
@@ -108,10 +109,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.setCurrentIndex(1)
     def handle_workOrder(self):
         self.setCurrentIndex(2)
-#     def handle_newOrder(self):
-#         self.setCurrentIndex(3)
-#     def handle_chooseDesignClient(self):
-#         self.setCurrentIndex(4)
+
     def handle_orderRequirment(self):
         self.orderRequirment_manger.token = self.login_manger.userToken
         self.orderRequirment_manger.run()
@@ -125,9 +123,12 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
     def handle_finishedOrders(self):
         self.setCurrentIndex(4)
     def handle_DetailsOrder(self):
+        self.orderDetails_manger.order_id = self.followOrder_manger.orderID
+        self.orderDetails_manger.token = self.login_manger.userToken
+        self.orderDetails_manger.run()
         self.setCurrentIndex(5)
     def handle_notes(self):
-        self.setCurrentIndex(6)
+        self.setCurrentIndex(7)
 
     def exit_program(self):
         self.main_manger.thred.cancel()
