@@ -78,13 +78,13 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         '''
         self.orderDetails_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(5))
         self.orderDetails_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
-        self.orderDetails_manger.exit_btn.clicked.connect(lambda : sys.exit())
+        self.orderDetails_manger.exit_btn.clicked.connect(self.exit_program)
         '''
         finished orders screen
         '''
         self.finishedOrders_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(1))
         self.finishedOrders_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
-        self.finishedOrders_manger.exit_btn.clicked.connect(lambda : sys.exit())
+        self.finishedOrders_manger.exit_btn.clicked.connect(self.exit_program)
 
         '''
         order Requirement screen

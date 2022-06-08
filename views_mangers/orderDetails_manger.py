@@ -19,21 +19,18 @@ class OrderDetails(QtWidgets.QWidget, orderDetails_view.Ui_Form):
                    'Authorization': f'Token {self.token}'}
         # [{'order_id': 1, 'user_name': 'mok11', 'date': '2022-06-05', 'recived_date': '2022-05-28', 'delivery_date': '2022-09-28', 'design_types': 'A', 'design_path': 'teeeeeeeeest', 'design_category': ['x'], 'printing_type': ['x'], 'size_width': 56.0, 'size_high': 645.0, 'materials': 'eeee', 'color': 'eeee', 'thickness': 12.2, 'Post_print_services': ['x'], 'state': 'I', 'notes': 'asd', 'user_id': 2, 'client_id': 2}]
         try :
-            print("x1")
             self.reply = requests.get(self.base_url , headers=headers).json()
-            print("x2")
         except Exception as s :
             print("ss",s)
         try :
             for item in self.reply :
-                print(self.order_id)
                 if item['order_id'] == self.order_id :
                     self.clientName_lbl.setText("xxxx")
                     self.orderID_lbl.setText(str(item["order_id"]))
-                    self.date_lbl.setText(item['date'])
+                    self.date_lbl.setText(str(item['date']))
                     self.recived_date_lbl.setText(item['recived_date'])
-                    self.print_type_lbl.setText(item['design_types'])
-                    self.sevices_afterPrinting_lbl.setText(item['Post_print_services'])
+                    self.print_type_lbl.setText(str(item['design_types']))
+                    self.sevices_afterPrinting_lbl.setText(str(item['Post_print_services']))
                     self.notes_lbl.setText((item['notes']))
 
         except Exception as e:
