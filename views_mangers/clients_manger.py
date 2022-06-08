@@ -1,5 +1,6 @@
 from PyQt5 import QtWidgets , QtCore
 from views import clients_view
+from PyQt5.QtWidgets import *
 import json
 import requests
 import os
@@ -10,29 +11,30 @@ class Clients(QtWidgets.QWidget, clients_view.Ui_Form):
         super(Clients, self).__init__()
         self.setupUi(self)
 
-        # self.base_url = "https://saied.pythonanywhere.com/orders/"
-        # self.token = ''
-        # self.orderID = 0
-        # self.listWidget.itemSelectionChanged.connect(self.selectionChanged)
-    # def run(self):
-    #     msg = QtWidgets.QMessageBox()
-    #     headers = {'Accept': 'application/json; indent=4', 'Content-Type': 'application/json',
-    #                'Authorization': f'Token {self.token}'}
-    #     try :
-    #         self.reply = requests.get(self.base_url , headers=headers).json()
-    #     except Exception as s :
-    #         print("ss",s)
-    #     try :
-    #         self.listWidget.clear()
-    #         for element in  self.reply :
-    #             self.listWidget.addItem(str(element['order_id']))
-    #     except Exception as e :
-    #         print(e)
-    # def selectionChanged(self):
-    #     items = self.listWidget.selectedItems()
-    #     for item in items:
-    #         self.orderID = int(item.text())
-    #         self.checkAcceptedSignal.emit()
+        self.base_url = "https://saied.pythonanywhere.com/clients/"
+        self.token = ''
+
+    def run(self):
+        msg = QtWidgets.QMessageBox()
+        headers = {'Accept': 'application/json; indent=4', 'Content-Type': 'application/json',
+                   'Authorization': f'Token {self.token}'}
+        try :
+            self.reply = requests.get(self.base_url , headers=headers).json()
+        except Exception as s :
+            print("ss",s)
+        rowPosition = self.tableWidget.rowCount()
+        try :
+            for rows in self.reply:
+                self.tableWidget.insertRow(rowPosition)
+                # [{"id": 2,"name": "test","phone_number": "01011","notes": "nothing","clientlevel": "B"}]
+                print(rows)
+                self.tableWidget.setItem(0, 0, QTableWidgetItem(rows['name']))
+                self.tableWidget.setItem(0, 1, QTableWidgetItem(str(rows['phone_number'])))
+                self.tableWidget.setItem(0, 2, QTableWidgetItem(rows['clientlevel']))
+                self.tableWidget.setItem(0, 3, QTableWidgetItem(rows['notes']))
+
+        except Exception as e :
+            print(e)
 
 if __name__ == "__main__":
     import qdarkstyle

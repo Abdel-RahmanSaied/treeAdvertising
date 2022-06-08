@@ -458,6 +458,18 @@ font: 14pt &quot;Acumin Pro&quot;;</string>
           <string notr="true">background-color: rgb(255, 255, 255,100);
 font: 14pt &quot;Acumin Pro&quot;;</string>
          </property>
+         <property name="editTriggers">
+          <set>QAbstractItemView::SelectedClicked</set>
+         </property>
+         <property name="tabKeyNavigation">
+          <bool>false</bool>
+         </property>
+         <property name="showDropIndicator" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="dragDropOverwriteMode">
+          <bool>false</bool>
+         </property>
          <column>
           <property name="text">
            <string>اسم العميل</string>
@@ -485,6 +497,9 @@ font: 14pt &quot;Acumin Pro&quot;;</string>
          <column>
           <property name="text">
            <string>تفاصيل آخرى</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
           </property>
          </column>
         </widget>

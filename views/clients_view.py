@@ -193,6 +193,10 @@ class Ui_Form(object):
         self.tableWidget.setAutoFillBackground(False)
         self.tableWidget.setStyleSheet("background-color: rgb(255, 255, 255,100);\n"
 "font: 14pt \"Acumin Pro\";")
+        self.tableWidget.setEditTriggers(QtWidgets.QAbstractItemView.SelectedClicked)
+        self.tableWidget.setTabKeyNavigation(False)
+        self.tableWidget.setProperty("showDropIndicator", False)
+        self.tableWidget.setDragDropOverwriteMode(False)
         self.tableWidget.setObjectName("tableWidget")
         self.tableWidget.setColumnCount(4)
         self.tableWidget.setRowCount(0)
@@ -206,6 +210,7 @@ class Ui_Form(object):
         item.setTextAlignment(QtCore.Qt.AlignCenter)
         self.tableWidget.setHorizontalHeaderItem(2, item)
         item = QtWidgets.QTableWidgetItem()
+        item.setTextAlignment(QtCore.Qt.AlignCenter)
         self.tableWidget.setHorizontalHeaderItem(3, item)
         self.gridLayout_3.addWidget(self.tableWidget, 0, 0, 1, 1)
         self.gridLayout_2.addWidget(self.frame_3, 1, 1, 1, 3)
@@ -215,6 +220,12 @@ class Ui_Form(object):
         self.exit_btn.raise_()
         self.minimize_btn.raise_()
         self.frame.raise_()
+
+        header = self.tableWidget.horizontalHeader()
+        header.setSectionResizeMode(0, QtWidgets.QHeaderView.Stretch)
+        header.setSectionResizeMode(1, QtWidgets.QHeaderView.Stretch)
+        header.setSectionResizeMode(2, QtWidgets.QHeaderView.Stretch)
+        header.setSectionResizeMode(3, QtWidgets.QHeaderView.Stretch)
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
