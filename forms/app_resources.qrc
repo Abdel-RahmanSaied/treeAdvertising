@@ -21,6 +21,7 @@
     <file>images/backgroung/3433814.jpg</file>
   </qresource>
   <qresource prefix="icons">
+    <file>icons/icons8-search-50.png</file>
     <file>icons/icons8-inbox-65s.png</file>
     <file>icons/icons8-inbox-64.png</file>
     <file>icons/icons8-inbox-65.png</file>

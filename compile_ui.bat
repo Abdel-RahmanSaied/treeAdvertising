@@ -4,7 +4,6 @@ pyuic5 forms/newOrder_view.ui -o views/newOrder_view.py
 pyuic5 forms/clients_view.ui -o views/clients_view.py
 pyuic5 forms/add_client_view.ui -o views/add_client_view.py
 
-pyuic5 forms/notes_view.ui -o views/notes_view.py
 pyuic5 forms/followOrder_view.ui -o views/followOrder_view.py
 pyuic5 forms/finishedOrders_view.ui -o views/finishedOrders_view.py
 pyuic5 forms/orderDetails_view.ui -o views/orderDetails_view.py
