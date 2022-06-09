@@ -29,6 +29,21 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
         self.post_date = ''
         self.phone_number = ''
 
+        self.design_types = ''
+        self.img_path = ''
+        self.design_path = ''
+        self.design_category = []
+        self.printing_type = []
+        self.size_width = 0.0
+        self.size_high = 0.0
+        self.materials = ''
+        self.color = ''
+        self.thickness = 0.0
+        self.Post_print_services = []
+        self.state = ''
+        self.notes = ''
+        self.cliend_id = 0
+
     def getdesign_path(self):
         self.fileName, _ = QtWidgets.QFileDialog.getOpenFileName(self, 'تحديد مسار الملف ', '', 'Images (*.png, *.jpeg , *.jpg , *.psd , *.ai , *.eps ) ')
         if len(self.fileName) != 0 :
@@ -98,6 +113,7 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
                         self.blueRadioButton.setChecked(True)
                     elif check_reply['clientlevel'] == 'G' :
                         self.greenRadioButton.setChecked(True)
+                    self.cliend_id = check_reply['id']
                     msg.setWindowTitle("Alarm")
                     msg.setText("client data imported successfully")
                     msg.exec_()
@@ -106,7 +122,60 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
                 print(e)
 
     def add_new_order(self):
-        pass
+        msg = QtWidgets.QMessageBox()
+        if self.ofice_design.isChecked() :
+            self.design_types= "O"
+        elif self.attatched_design.isChecked():
+            self.design_types = 'A'
+
+        if self.filaPath_lbl.text() != 'مسار الملف ' :
+            self.design_path = self.filaPath_lbl.text()
+        else :
+            self.design_path = 'no file selected '
+
+        if self.filaPath_lbl_2.text() != 'مسار الملف ':
+            self.img_path = self.filaPath_lbl_2.text()
+        else :
+            self.img_path = 'no file selected '
+
+        if self.logo_checkBox.isChecked() :
+            self.design_category.append("logo")
+
+        if self.businessCard_checkBox.isChecked() :
+            self.design_category.append("business Card")
+
+        if self.banner_checkBox.isChecked():
+            self.design_category.append("banner")
+
+        if self.brochure_checkBox.isChecked():
+            self.design_category.append("brochure")
+
+        if self.menu_checkBox.isChecked():
+            self.design_category.append("menu")
+
+        if self.flyer_checkBox.isChecked():
+            self.design_category.append("flyer")
+
+        if self.certificate_checkBox.isChecked():
+            self.design_category.append("certificate")
+
+        if self.cover_checkBox.isChecked():
+            self.design_category.append("cover")
+
+        if self.poster_checkBox.isChecked():
+            self.design_category.append("poster")
+
+        if self.rollUp_checkBox.isChecked():
+            self.design_category.append("RollUp")
+
+        if self.label_checkBox.isChecked():
+            self.design_category.append("label")
+
+        if len(self.other_lineEdit) != 0 :
+            self.design_category.append(self.other_lineEdit.text())
+
+
+
 
 if __name__ == "__main__":
     import qdarkstyle

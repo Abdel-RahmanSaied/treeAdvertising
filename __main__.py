@@ -128,6 +128,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.main_manger.start_stopwatch()
         self.setCurrentIndex(1)
     def handle_workOrder(self):
+        self.newOrder_manger.token = self.login_manger.userToken
         self.setCurrentIndex(2)
     def handle_orderRequirment(self):
         self.orderRequirment_manger.token = self.login_manger.userToken
