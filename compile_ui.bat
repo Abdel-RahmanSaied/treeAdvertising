@@ -9,5 +9,8 @@ pyuic5 forms/followOrder_view.ui -o views/followOrder_view.py
 pyuic5 forms/finishedOrders_view.ui -o views/finishedOrders_view.py
 pyuic5 forms/orderDetails_view.ui -o views/orderDetails_view.py
 
+pyuic5 forms/inbox_view.ui -o views/inbox_view.py
+
+
 
 pyrcc5  forms/app_resources.qrc -o app_resources_rc.py

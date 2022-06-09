@@ -21,6 +21,9 @@
     <file>images/backgroung/3433814.jpg</file>
   </qresource>
   <qresource prefix="icons">
+    <file>icons/icons8-inbox-65s.png</file>
+    <file>icons/icons8-inbox-64.png</file>
+    <file>icons/icons8-inbox-65.png</file>
     <file>icons/icons8-close-window-96.png</file>
     <file>icons/icons8-subtract-16.png</file>
     <file>icons/checklist.png</file>

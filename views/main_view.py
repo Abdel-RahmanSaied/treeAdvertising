@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_main(object):
     def setupUi(self, main):
         main.setObjectName("main")
-        main.resize(1920, 1070)
+        main.resize(1920, 1068)
         main.setMinimumSize(QtCore.QSize(0, 0))
         main.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.label = QtWidgets.QLabel(main)
@@ -348,6 +348,59 @@ class Ui_main(object):
         self.minimize_btn.setIcon(icon7)
         self.minimize_btn.setIconSize(QtCore.QSize(30, 30))
         self.minimize_btn.setObjectName("minimize_btn")
+        self.label_4 = QtWidgets.QLabel(main)
+        self.label_4.setGeometry(QtCore.QRect(270, 80, 61, 61))
+        self.label_4.setText("")
+        self.label_4.setPixmap(QtGui.QPixmap(":/icons/icons/icons8-inbox-65s.png"))
+        self.label_4.setScaledContents(True)
+        self.label_4.setObjectName("label_4")
+        self.layoutWidget = QtWidgets.QWidget(main)
+        self.layoutWidget.setGeometry(QtCore.QRect(190, 110, 111, 151))
+        self.layoutWidget.setObjectName("layoutWidget")
+        self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.layoutWidget)
+        self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_6.setObjectName("verticalLayout_6")
+        self.inbox_btn = QtWidgets.QPushButton(self.layoutWidget)
+        self.inbox_btn.setMinimumSize(QtCore.QSize(100, 100))
+        self.inbox_btn.setMaximumSize(QtCore.QSize(161, 161))
+        self.inbox_btn.setStyleSheet("QPushButton {\n"
+"    \n"
+"    background-color: rgb(85, 132, 220,100);\n"
+"    color: #FFFFFF;\n"
+"    padding: 2px;\n"
+"    font: bold 15px;\n"
+"    border-width: 6px;\n"
+"    border-radius: 10px;\n"
+"    border-color: #2752B8;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #EFEAD8;\n"
+"}")
+        self.inbox_btn.setText("")
+        icon8 = QtGui.QIcon()
+        icon8.addPixmap(QtGui.QPixmap(":/icons/icons/icons8-inbox-65.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.inbox_btn.setIcon(icon8)
+        self.inbox_btn.setIconSize(QtCore.QSize(100, 100))
+        self.inbox_btn.setObjectName("inbox_btn")
+        self.verticalLayout_6.addWidget(self.inbox_btn)
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        spacerItem12 = QtWidgets.QSpacerItem(44, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_2.addItem(spacerItem12)
+        self.label_8 = QtWidgets.QLabel(self.layoutWidget)
+        self.label_8.setMaximumSize(QtCore.QSize(161, 16777215))
+        font = QtGui.QFont()
+        font.setFamily("Cairo")
+        font.setPointSize(16)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_8.setFont(font)
+        self.label_8.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_8.setObjectName("label_8")
+        self.horizontalLayout_2.addWidget(self.label_8)
+        spacerItem13 = QtWidgets.QSpacerItem(44, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_2.addItem(spacerItem13)
+        self.verticalLayout_6.addLayout(self.horizontalLayout_2)
         self.label_3.raise_()
         self.label.raise_()
         self.frame.raise_()
@@ -355,6 +408,10 @@ class Ui_main(object):
         self.groupBox.raise_()
         self.exit_btn.raise_()
         self.minimize_btn.raise_()
+        self.inbox_btn.raise_()
+        self.layoutWidget.raise_()
+        self.layoutWidget.raise_()
+        self.label_4.raise_()
 
         self.retranslateUi(main)
         QtCore.QMetaObject.connectSlotsByName(main)
@@ -373,4 +430,5 @@ class Ui_main(object):
         self.username_lbl.setText(_translate("main", "Abdel-Rahman"))
         self.label_7.setText(_translate("main", "Session time :"))
         self.sessionTime_lbl.setText(_translate("main", "2 m"))
+        self.label_8.setText(_translate("main", "inbox"))
 import app_resources_rc

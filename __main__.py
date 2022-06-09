@@ -11,6 +11,8 @@ from views_mangers.finishedOrders_manger import FinishedOrders
 from views_mangers.orderDetails_manger import OrderDetails
 from views_mangers.orderRequirment_view_manger import OrderRequirment
 
+from views_mangers.inbox_manger import Inbox_manger
+
 class Tree_Advertising(QtWidgets.QStackedWidget):
     def __init__(self):
         super(Tree_Advertising, self).__init__()
@@ -24,6 +26,8 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.orderRequirment_manger = OrderRequirment()
         self.clients_manger = Clients()
         self.addClient_manger = AddClients()
+        self.inbox_manger = Inbox_manger()
+
         self.showFullScreen()
 
         # add widgets to the stack
@@ -37,6 +41,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.addWidget(self.orderRequirment_manger) #7
         self.addWidget(self.clients_manger) #8
         self.addWidget(self.addClient_manger) #9
+        self.addWidget(self.inbox_manger) #10
 
         # install signals
         self.login_manger.loginAcceptedSignal.connect(self.handle_login_accepted)
@@ -51,6 +56,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.main_manger.ordersReq_btn.clicked.connect(self.handle_orderRequirment)
         self.main_manger.clients_btn.clicked.connect(self.handle_Clients)
         self.main_manger.logOut_btn.clicked.connect(lambda : self.setCurrentIndex(0))
+        self.main_manger.inbox_btn.clicked.connect(self.handle_inboxManger)
 
         self.main_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
 
@@ -118,6 +124,13 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         # self.addClient_manger.add_btn.clicked.connect(lambda: self.setCurrentIndex(8))
         self.addClient_manger.minimize_btn.clicked.connect(lambda: self.showMinimized())
         self.addClient_manger.exit_btn.clicked.connect(self.exit_program)
+
+        '''
+        inbox 
+        '''
+        self.inbox_manger.exit_btn.clicked.connect(self.exit_program)
+        self.inbox_manger.minimize_btn.clicked.connect(lambda: self.showMinimized())
+        self.inbox_manger.bck_btn.clicked.connect(lambda : self.setCurrentIndex(1))
         ''' designs  '''
 
     def handle_login_accepted(self):
@@ -148,10 +161,12 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.orderDetails_manger.run()
         self.setCurrentIndex(5)
     def handle_notes(self):
-        self.setCurrentIndex(7)
+        self.setCurrentIndex(6)
     def handle_adduser(self):
         self.clients_manger.run()
         self.setCurrentIndex(8)
+    def handle_inboxManger(self):
+        self.setCurrentIndex(10)
 
     def exit_program(self):
         self.main_manger.thred.cancel()
