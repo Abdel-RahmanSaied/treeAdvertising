@@ -470,6 +470,17 @@ font: 14pt &quot;Acumin Pro&quot;;</string>
          <property name="dragDropOverwriteMode">
           <bool>false</bool>
          </property>
+         <property name="selectionMode">
+          <enum>QAbstractItemView::SingleSelection</enum>
+         </property>
+         <column>
+          <property name="text">
+           <string>الرقم</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </column>
          <column>
           <property name="text">
            <string>اسم العميل</string>

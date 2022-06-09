@@ -21,7 +21,7 @@ class OrderRequirment(QtWidgets.QWidget, orderRequirment_view.Ui_Form):
                    'Authorization': f'Token {self.token}'}
 
         self.reply = requests.get(self.base_url , headers=headers).json()
-        print(self.reply)
+
 
         rowPosition = self.tableWidget.rowCount()
         for rows in  self.reply :
