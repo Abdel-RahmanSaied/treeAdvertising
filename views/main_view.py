@@ -18,7 +18,7 @@ class Ui_main(object):
         main.setMinimumSize(QtCore.QSize(0, 0))
         main.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.label = QtWidgets.QLabel(main)
-        self.label.setGeometry(QtCore.QRect(710, 30, 271, 51))
+        self.label.setGeometry(QtCore.QRect(850, 30, 271, 51))
         self.label.setMaximumSize(QtCore.QSize(271, 71))
         font = QtGui.QFont()
         font.setFamily("Thunder Lord")
@@ -408,8 +408,6 @@ class Ui_main(object):
         self.groupBox.raise_()
         self.exit_btn.raise_()
         self.minimize_btn.raise_()
-        self.inbox_btn.raise_()
-        self.layoutWidget.raise_()
         self.layoutWidget.raise_()
         self.label_4.raise_()
 
@@ -429,6 +427,6 @@ class Ui_main(object):
         self.label_2.setText(_translate("main", "User Name :"))
         self.username_lbl.setText(_translate("main", "Abdel-Rahman"))
         self.label_7.setText(_translate("main", "Session time :"))
-        self.sessionTime_lbl.setText(_translate("main", "2 m"))
+        self.sessionTime_lbl.setText(_translate("main", "0:00:00 "))
         self.label_8.setText(_translate("main", "inbox"))
 import app_resources_rc

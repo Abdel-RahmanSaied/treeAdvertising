@@ -131,6 +131,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.inbox_manger.exit_btn.clicked.connect(self.exit_program)
         self.inbox_manger.minimize_btn.clicked.connect(lambda: self.showMinimized())
         self.inbox_manger.bck_btn.clicked.connect(lambda : self.setCurrentIndex(1))
+
         ''' designs  '''
 
     def handle_login_accepted(self):
