@@ -36,11 +36,12 @@ class Clients(QtWidgets.QWidget, clients_view.Ui_Form):
         else:
             try:
                 self.delete_response = requests.delete(rf"{self.delete_url}{self.id}//", headers=headers).json()
-                response = self.delete_response["Response"]
+                self.response = self.delete_response["Response"]
                 self.run()
                 msg.setWindowTitle("Response")
-                msg.setText(f"Client {self.id} : {response} ")
+                msg.setText(self.response)
                 msg.exec_()
+
             except Exception as e:
                 print(e)
 

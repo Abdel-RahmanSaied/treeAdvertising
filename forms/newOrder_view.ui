@@ -28,7 +28,7 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>890</x>
+     <x>880</x>
      <y>20</y>
      <width>183</width>
      <height>33</height>
@@ -73,9 +73,9 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>0</y>
+      <y>-436</y>
       <width>1852</width>
-      <height>1241</height>
+      <height>1255</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_13">
@@ -102,9 +102,12 @@
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>40</width>
+              <width>120</width>
               <height>20</height>
              </size>
             </property>
@@ -170,6 +173,12 @@ padding-bottom:7px;</string>
           </item>
           <item>
            <widget class="QLabel" name="label_5">
+            <property name="minimumSize">
+             <size>
+              <width>150</width>
+              <height>40</height>
+             </size>
+            </property>
             <property name="font">
              <font>
               <family>Acumin Pro</family>
@@ -180,7 +189,7 @@ padding-bottom:7px;</string>
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">
+             <string notr="true">background-color:rgba(48, 62, 84, 20);
 
 border:none;
 font: 14pt &quot;Acumin Pro&quot;;
@@ -206,7 +215,7 @@ padding-bottom:7px;</string>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>13</width>
+            <width>300</width>
             <height>20</height>
            </size>
           </property>
@@ -371,7 +380,7 @@ padding-bottom:7px;</string>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>13</width>
+            <width>100</width>
             <height>20</height>
            </size>
           </property>
@@ -433,6 +442,12 @@ padding-bottom:7px;</string>
         </item>
         <item row="0" column="11">
          <widget class="QLabel" name="label_3">
+          <property name="minimumSize">
+           <size>
+            <width>120</width>
+            <height>40</height>
+           </size>
+          </property>
           <property name="font">
            <font>
             <family>Acumin Pro</family>
@@ -464,9 +479,12 @@ padding-bottom:7px;</string>
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>40</width>
+              <width>120</width>
               <height>20</height>
              </size>
             </property>
@@ -532,6 +550,18 @@ padding-bottom:7px;</string>
           </item>
           <item>
            <widget class="QLabel" name="label_14">
+            <property name="minimumSize">
+             <size>
+              <width>120</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>40</height>
+             </size>
+            </property>
             <property name="font">
              <font>
               <family>Acumin Pro</family>
@@ -542,7 +572,8 @@ padding-bottom:7px;</string>
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">
+             <string notr="true">background-color:rgba(48, 62, 84, 20);
+
 border:none;
 font: 14pt &quot;Acumin Pro&quot;;
 padding-bottom:7px;</string>
@@ -613,7 +644,7 @@ background-color: rgb(50, 85, 127,100);
            <enum>Qt::Horizontal</enum>
           </property>
           <property name="sizeType">
-           <enum>QSizePolicy::Fixed</enum>
+           <enum>QSizePolicy::Preferred</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
@@ -679,6 +710,12 @@ padding-bottom:7px;</string>
         </item>
         <item row="1" column="11">
          <widget class="QLabel" name="label_16">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>40</height>
+           </size>
+          </property>
           <property name="font">
            <font>
             <family>Acumin Pro</family>
@@ -708,6 +745,13 @@ padding-bottom:7px;</string>
      </item>
      <item row="1" column="0">
       <widget class="QGroupBox" name="groupBox">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
        <property name="title">
         <string>نوع التصميم</string>
        </property>
@@ -781,42 +825,6 @@ font: 13pt &quot;Acumin Pro&quot;;</string>
              </property>
             </widget>
            </item>
-           <item row="4" column="3" rowspan="2">
-            <widget class="QCheckBox" name="label_checkBox">
-             <property name="font">
-              <font>
-               <family>Gill Sans MT</family>
-               <pointsize>15</pointsize>
-               <weight>50</weight>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true"/>
-             </property>
-             <property name="text">
-              <string>Label</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="2">
-            <widget class="QCheckBox" name="brochure_checkBox">
-             <property name="font">
-              <font>
-               <family>Gill Sans MT</family>
-               <pointsize>15</pointsize>
-               <weight>50</weight>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true"/>
-             </property>
-             <property name="text">
-              <string>Brochure</string>
-             </property>
-            </widget>
-           </item>
            <item row="0" column="1" rowspan="2">
             <widget class="QCheckBox" name="logo_checkBox">
              <property name="font">
@@ -850,6 +858,61 @@ font: 13pt &quot;Acumin Pro&quot;;</string>
              </property>
              <property name="text">
               <string>Certificate</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QCheckBox" name="brochure_checkBox">
+             <property name="font">
+              <font>
+               <family>Gill Sans MT</family>
+               <pointsize>15</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>Brochure</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="3" rowspan="2">
+            <widget class="QCheckBox" name="label_checkBox">
+             <property name="font">
+              <font>
+               <family>Gill Sans MT</family>
+               <pointsize>15</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>Label</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="4" rowspan="3">
+            <widget class="QCheckBox" name="cover_checkBox">
+             <property name="font">
+              <font>
+               <family>Gill Sans MT</family>
+               <pointsize>15</pointsize>
+               <weight>50</weight>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>Cover</string>
              </property>
             </widget>
            </item>
@@ -889,25 +952,6 @@ font: 13pt &quot;Acumin Pro&quot;;</string>
              </property>
             </widget>
            </item>
-           <item row="2" column="4" rowspan="3">
-            <widget class="QCheckBox" name="cover_checkBox">
-             <property name="font">
-              <font>
-               <family>Gill Sans MT</family>
-               <pointsize>15</pointsize>
-               <weight>50</weight>
-               <italic>false</italic>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true"/>
-             </property>
-             <property name="text">
-              <string>Cover</string>
-             </property>
-            </widget>
-           </item>
            <item row="3" column="1" rowspan="3">
             <widget class="QCheckBox" name="banner_checkBox">
              <property name="font">
@@ -923,42 +967,6 @@ font: 13pt &quot;Acumin Pro&quot;;</string>
              </property>
              <property name="text">
               <string>Banner</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="3" rowspan="3">
-            <widget class="QCheckBox" name="rollUp_checkBox">
-             <property name="font">
-              <font>
-               <family>Gill Sans MT</family>
-               <pointsize>15</pointsize>
-               <weight>50</weight>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true"/>
-             </property>
-             <property name="text">
-              <string>Roll Up</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="2" rowspan="3">
-            <widget class="QCheckBox" name="flyer_checkBox">
-             <property name="font">
-              <font>
-               <family>Gill Sans MT</family>
-               <pointsize>15</pointsize>
-               <weight>50</weight>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true"/>
-             </property>
-             <property name="text">
-              <string>Flyer</string>
              </property>
             </widget>
            </item>
@@ -980,6 +988,24 @@ font: 13pt &quot;Acumin Pro&quot;;</string>
              </property>
             </widget>
            </item>
+           <item row="3" column="2" rowspan="3">
+            <widget class="QCheckBox" name="flyer_checkBox">
+             <property name="font">
+              <font>
+               <family>Gill Sans MT</family>
+               <pointsize>15</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>Flyer</string>
+             </property>
+            </widget>
+           </item>
            <item row="2" column="0">
             <spacer name="horizontalSpacer_13">
              <property name="orientation">
@@ -990,112 +1016,32 @@ font: 13pt &quot;Acumin Pro&quot;;</string>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
-               <width>500</width>
+               <width>650</width>
                <height>20</height>
               </size>
              </property>
             </spacer>
            </item>
+           <item row="1" column="3" rowspan="3">
+            <widget class="QCheckBox" name="rollUp_checkBox">
+             <property name="font">
+              <font>
+               <family>Gill Sans MT</family>
+               <pointsize>15</pointsize>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>Roll Up</string>
+             </property>
+            </widget>
+           </item>
           </layout>
          </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QLabel" name="filaPath_lbl_2">
-          <property name="minimumSize">
-           <size>
-            <width>300</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>30</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color:rgba(0, 0, 0, 0);
-border:none;
-border-bottom:2px solid rgba(46, 82, 101, 200);
-font: 8pt &quot;Acumin Pro&quot;;
-padding-bottom:7px;</string>
-          </property>
-          <property name="text">
-           <string>مسار الملف</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="5">
-         <widget class="QLabel" name="filaPath_lbl">
-          <property name="minimumSize">
-           <size>
-            <width>300</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>30</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color:rgba(0, 0, 0, 0);
-border:none;
-border-bottom:2px solid rgba(46, 82, 101, 200);
-font: 8pt &quot;Acumin Pro&quot;;
-padding-bottom:7px;</string>
-          </property>
-          <property name="text">
-           <string>مسار الملف</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="10">
-         <widget class="QRadioButton" name="ofice_design">
-          <property name="minimumSize">
-           <size>
-            <width>120</width>
-            <height>40</height>
-           </size>
-          </property>
-          <property name="layoutDirection">
-           <enum>Qt::RightToLeft</enum>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">font: 11pt &quot;Acumin Pro&quot;;
-color: rgb(255, 255, 255);
-background-color: rgb(50, 85, 127);
-
- border-radius: 12px;
-</string>
-          </property>
-          <property name="text">
-           <string>تصميم بالمكتب</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="6">
-         <spacer name="horizontalSpacer_4">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Fixed</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
         </item>
         <item row="0" column="7">
          <widget class="QPushButton" name="clientDesign_btn">
@@ -1160,12 +1106,94 @@ background-color: rgb(50, 85, 127);
 </string>
           </property>
           <property name="text">
+           <string>  تصميم مرفق</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="10">
+         <widget class="QRadioButton" name="ofice_design">
+          <property name="minimumSize">
+           <size>
+            <width>120</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::RightToLeft</enum>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 11pt &quot;Acumin Pro&quot;;
+color: rgb(255, 255, 255);
+background-color: rgb(50, 85, 127);
+
+ border-radius: 12px;
+</string>
+          </property>
+          <property name="text">
            <string>تصميم بالمكتب</string>
           </property>
          </widget>
         </item>
-        <item row="0" column="4">
-         <spacer name="horizontalSpacer_5">
+        <item row="0" column="1">
+         <widget class="QLabel" name="filaPath_lbl_2">
+          <property name="minimumSize">
+           <size>
+            <width>300</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgba(0, 0, 0, 0);
+border:none;
+border-bottom:2px solid rgba(46, 82, 101, 200);
+font: 8pt &quot;Acumin Pro&quot;;
+padding-bottom:7px;</string>
+          </property>
+          <property name="text">
+           <string>مسار الملف</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="5">
+         <widget class="QLabel" name="filaPath_lbl">
+          <property name="minimumSize">
+           <size>
+            <width>300</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:rgba(0, 0, 0, 0);
+border:none;
+border-bottom:2px solid rgba(46, 82, 101, 200);
+font: 8pt &quot;Acumin Pro&quot;;
+padding-bottom:7px;</string>
+          </property>
+          <property name="text">
+           <string>مسار الملف</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="6">
+         <spacer name="horizontalSpacer_4">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
@@ -1174,7 +1202,7 @@ background-color: rgb(50, 85, 127);
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>60</width>
+            <width>20</width>
             <height>20</height>
            </size>
           </property>
@@ -1206,6 +1234,22 @@ background-color: rgb(50, 85, 127);
            <string>تحميل صوره</string>
           </property>
          </widget>
+        </item>
+        <item row="0" column="4">
+         <spacer name="horizontalSpacer_5">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>150</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
         </item>
         <item row="0" column="0">
          <spacer name="horizontalSpacer_12">
@@ -1322,7 +1366,7 @@ font: 13pt &quot;Acumin Pro&quot;;</string>
               </widget>
              </item>
              <item>
-              <widget class="QCheckBox" name="logo_checkBox_12">
+              <widget class="QCheckBox" name="paper_checkBox">
                <property name="font">
                 <font>
                  <family>Gill Sans MT</family>
@@ -1343,7 +1387,7 @@ font: 13pt &quot;Acumin Pro&quot;;</string>
               </widget>
              </item>
              <item>
-              <widget class="QCheckBox" name="logo_checkBox_13">
+              <widget class="QCheckBox" name="plastic_checkBox">
                <property name="font">
                 <font>
                  <family>Gill Sans MT</family>
@@ -1364,7 +1408,7 @@ font: 13pt &quot;Acumin Pro&quot;;</string>
               </widget>
              </item>
              <item>
-              <widget class="QCheckBox" name="logo_checkBox_11">
+              <widget class="QCheckBox" name="wood_checkBox">
                <property name="font">
                 <font>
                  <family>Gill Sans MT</family>
@@ -1431,7 +1475,7 @@ padding-bottom:7px;</string>
            <item row="1" column="2">
             <layout class="QHBoxLayout" name="horizontalLayout_5">
              <item>
-              <widget class="QDoubleSpinBox" name="doubleSpinBox_2">
+              <widget class="QDoubleSpinBox" name="thickness_doubleSpinBox">
                <property name="styleSheet">
                 <string notr="true">background-color:rgba(0, 0, 0, 0);
 border:none;
@@ -1497,7 +1541,7 @@ padding-bottom:7px;</string>
            <item row="2" column="1" colspan="2">
             <layout class="QHBoxLayout" name="horizontalLayout_6">
              <item>
-              <widget class="QLineEdit" name="color_lineEdit_2">
+              <widget class="QLineEdit" name="color_lineEdit">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -1649,7 +1693,7 @@ padding-bottom:7px;</string>
                 </property>
                 <layout class="QGridLayout" name="gridLayout_9">
                  <item row="0" column="0">
-                  <widget class="QDoubleSpinBox" name="doubleSpinBox_5">
+                  <widget class="QDoubleSpinBox" name="width_doubleSpinBox">
                    <property name="styleSheet">
                     <string notr="true">background-color:rgba(0, 0, 0, 0);
 border:none;
@@ -1685,7 +1729,7 @@ padding-bottom:7px;</string>
                 </property>
                 <layout class="QGridLayout" name="gridLayout_10">
                  <item row="0" column="0">
-                  <widget class="QDoubleSpinBox" name="doubleSpinBox_6">
+                  <widget class="QDoubleSpinBox" name="high_doubleSpinBox">
                    <property name="styleSheet">
                     <string notr="true">background-color:rgba(0, 0, 0, 0);
 border:none;
@@ -1726,7 +1770,7 @@ padding-bottom:7px;</string>
            <item row="0" column="3">
             <layout class="QGridLayout" name="gridLayout_5">
              <item row="0" column="0">
-              <widget class="QCheckBox" name="logo_checkBox_7">
+              <widget class="QCheckBox" name="uv_checkBox">
                <property name="font">
                 <font>
                  <family>Gill Sans MT</family>
@@ -1747,7 +1791,7 @@ padding-bottom:7px;</string>
               </widget>
              </item>
              <item row="0" column="1">
-              <widget class="QCheckBox" name="logo_checkBox_4">
+              <widget class="QCheckBox" name="silkscreen_checkBox">
                <property name="font">
                 <font>
                  <family>Gill Sans MT</family>
@@ -1768,7 +1812,7 @@ padding-bottom:7px;</string>
               </widget>
              </item>
              <item row="0" column="2">
-              <widget class="QCheckBox" name="logo_checkBox_3">
+              <widget class="QCheckBox" name="offset_checkBox">
                <property name="font">
                 <font>
                  <family>Gill Sans MT</family>
@@ -1789,7 +1833,7 @@ padding-bottom:7px;</string>
               </widget>
              </item>
              <item row="0" column="3">
-              <widget class="QCheckBox" name="logo_checkBox_2">
+              <widget class="QCheckBox" name="digital_checkBox">
                <property name="font">
                 <font>
                  <family>Gill Sans MT</family>
@@ -1810,7 +1854,7 @@ padding-bottom:7px;</string>
               </widget>
              </item>
              <item row="1" column="0">
-              <widget class="QCheckBox" name="logo_checkBox_8">
+              <widget class="QCheckBox" name="laser_checkBox">
                <property name="font">
                 <font>
                  <family>Gill Sans MT</family>
@@ -1831,7 +1875,7 @@ padding-bottom:7px;</string>
               </widget>
              </item>
              <item row="1" column="1">
-              <widget class="QCheckBox" name="logo_checkBox_15">
+              <widget class="QCheckBox" name="flexo_checkBox">
                <property name="font">
                 <font>
                  <family>Gill Sans MT</family>
@@ -1852,7 +1896,7 @@ padding-bottom:7px;</string>
               </widget>
              </item>
              <item row="1" column="2">
-              <widget class="QCheckBox" name="logo_checkBox_14">
+              <widget class="QCheckBox" name="outdoor_checkBox">
                <property name="font">
                 <font>
                  <family>Gill Sans MT</family>
@@ -1873,7 +1917,7 @@ padding-bottom:7px;</string>
               </widget>
              </item>
              <item row="1" column="3">
-              <widget class="QCheckBox" name="logo_checkBox_6">
+              <widget class="QCheckBox" name="indoor_checkBox">
                <property name="font">
                 <font>
                  <family>Gill Sans MT</family>
@@ -1889,12 +1933,12 @@ padding-bottom:7px;</string>
                 <string notr="true"/>
                </property>
                <property name="text">
-                <string>أن دور</string>
+                <string>ان دور</string>
                </property>
               </widget>
              </item>
              <item row="2" column="0">
-              <widget class="QCheckBox" name="logo_checkBox_9">
+              <widget class="QCheckBox" name="inkjet_checkBox">
                <property name="font">
                 <font>
                  <family>Gill Sans MT</family>
@@ -1915,7 +1959,7 @@ padding-bottom:7px;</string>
               </widget>
              </item>
              <item row="2" column="1">
-              <widget class="QCheckBox" name="logo_checkBox_16">
+              <widget class="QCheckBox" name="Cutter_checkBox">
                <property name="font">
                 <font>
                  <family>Gill Sans MT</family>
@@ -1936,7 +1980,7 @@ padding-bottom:7px;</string>
               </widget>
              </item>
              <item row="2" column="2">
-              <widget class="QCheckBox" name="logo_checkBox_5">
+              <widget class="QCheckBox" name="selmation_checkBox">
                <property name="font">
                 <font>
                  <family>Gill Sans MT</family>
@@ -1957,7 +2001,7 @@ padding-bottom:7px;</string>
               </widget>
              </item>
              <item row="2" column="3">
-              <widget class="QCheckBox" name="logo_checkBox_10">
+              <widget class="QCheckBox" name="fiber_checkBox">
                <property name="font">
                 <font>
                  <family>Gill Sans MT</family>
@@ -2035,7 +2079,7 @@ padding-bottom:7px;</string>
         <item row="6" column="6">
          <layout class="QVBoxLayout" name="verticalLayout_27">
           <item>
-           <widget class="QCheckBox" name="checkBox_31">
+           <widget class="QCheckBox" name="circularCut_checkBox">
             <property name="font">
              <font>
               <pointsize>18</pointsize>
@@ -2086,7 +2130,7 @@ padding-bottom:7px;</string>
         <item row="6" column="4">
          <layout class="QVBoxLayout" name="verticalLayout_26">
           <item>
-           <widget class="QCheckBox" name="checkBox_30">
+           <widget class="QCheckBox" name="idPerforatio_checkBox">
             <property name="font">
              <font>
               <pointsize>18</pointsize>
@@ -2215,7 +2259,7 @@ padding-bottom:7px;</string>
         <item row="6" column="2">
          <layout class="QVBoxLayout" name="verticalLayout_12">
           <item>
-           <widget class="QCheckBox" name="checkBox_16">
+           <widget class="QCheckBox" name="perforation_checkBox">
             <property name="font">
              <font>
               <pointsize>18</pointsize>
@@ -2266,7 +2310,7 @@ padding-bottom:7px;</string>
         <item row="0" column="2">
          <layout class="QVBoxLayout" name="verticalLayout_8">
           <item>
-           <widget class="QCheckBox" name="checkBox_13">
+           <widget class="QCheckBox" name="rijah_checkBox">
             <property name="font">
              <font>
               <pointsize>18</pointsize>
@@ -2317,7 +2361,7 @@ padding-bottom:7px;</string>
         <item row="2" column="2">
          <layout class="QVBoxLayout" name="verticalLayout_16">
           <item>
-           <widget class="QCheckBox" name="checkBox_20">
+           <widget class="QCheckBox" name="Peel_checkBox">
             <property name="font">
              <font>
               <pointsize>18</pointsize>
@@ -2368,7 +2412,7 @@ padding-bottom:7px;</string>
         <item row="0" column="6">
          <layout class="QVBoxLayout" name="verticalLayout_9">
           <item>
-           <widget class="QCheckBox" name="checkBox_14">
+           <widget class="QCheckBox" name="cut_checkBox">
             <property name="font">
              <font>
               <pointsize>18</pointsize>
@@ -2419,7 +2463,7 @@ padding-bottom:7px;</string>
         <item row="2" column="6">
          <layout class="QVBoxLayout" name="verticalLayout_20">
           <item>
-           <widget class="QCheckBox" name="checkBox_24">
+           <widget class="QCheckBox" name="packaging_checkBox">
             <property name="font">
              <font>
               <pointsize>18</pointsize>
@@ -2470,7 +2514,7 @@ padding-bottom:7px;</string>
         <item row="6" column="0">
          <layout class="QVBoxLayout" name="verticalLayout_11">
           <item>
-           <widget class="QCheckBox" name="checkBox_15">
+           <widget class="QCheckBox" name="cutRokneh_checkBox">
             <property name="font">
              <font>
               <pointsize>18</pointsize>
@@ -2521,7 +2565,7 @@ padding-bottom:7px;</string>
         <item row="2" column="4">
          <layout class="QVBoxLayout" name="verticalLayout_19">
           <item>
-           <widget class="QCheckBox" name="checkBox_21">
+           <widget class="QCheckBox" name="binding_checkBox">
             <property name="font">
              <font>
               <pointsize>18</pointsize>
@@ -2572,7 +2616,7 @@ padding-bottom:7px;</string>
         <item row="4" column="8">
          <layout class="QVBoxLayout" name="verticalLayout_25">
           <item>
-           <widget class="QCheckBox" name="checkBox_29">
+           <widget class="QCheckBox" name="kofrag_checkBox">
             <property name="font">
              <font>
               <pointsize>18</pointsize>
@@ -2623,7 +2667,7 @@ padding-bottom:7px;</string>
         <item row="0" column="4">
          <layout class="QVBoxLayout" name="verticalLayout_4">
           <item>
-           <widget class="QCheckBox" name="checkBox_9">
+           <widget class="QCheckBox" name="thermalPackaging_checkBox">
             <property name="font">
              <font>
               <pointsize>18</pointsize>
@@ -2674,7 +2718,7 @@ padding-bottom:7px;</string>
         <item row="4" column="0">
          <layout class="QVBoxLayout" name="verticalLayout_21">
           <item>
-           <widget class="QCheckBox" name="checkBox_25">
+           <widget class="QCheckBox" name="pin_checkBox">
             <property name="font">
              <font>
               <pointsize>18</pointsize>
@@ -2752,7 +2796,7 @@ padding-bottom:7px;</string>
              </widget>
             </item>
             <item>
-             <widget class="QComboBox" name="comboBox">
+             <widget class="QComboBox" name="cellophane_comboBox">
               <property name="minimumSize">
                <size>
                 <width>70</width>
@@ -2821,7 +2865,7 @@ padding-bottom:7px;
         <item row="4" column="2">
          <layout class="QVBoxLayout" name="verticalLayout_22">
           <item>
-           <widget class="QCheckBox" name="checkBox_26">
+           <widget class="QCheckBox" name="Spot_checkBox">
             <property name="font">
              <font>
               <pointsize>18</pointsize>
@@ -2872,7 +2916,7 @@ padding-bottom:7px;
         <item row="2" column="0">
          <layout class="QVBoxLayout" name="verticalLayout_3">
           <item>
-           <widget class="QCheckBox" name="checkBox_8">
+           <widget class="QCheckBox" name="wood_checkBox_2">
             <property name="font">
              <font>
               <pointsize>18</pointsize>
@@ -2923,7 +2967,7 @@ padding-bottom:7px;
         <item row="4" column="4">
          <layout class="QVBoxLayout" name="verticalLayout_23">
           <item>
-           <widget class="QCheckBox" name="checkBox_27">
+           <widget class="QCheckBox" name="purpura_checkBox">
             <property name="font">
              <font>
               <pointsize>18</pointsize>
@@ -2974,7 +3018,7 @@ padding-bottom:7px;
         <item row="0" column="0">
          <layout class="QVBoxLayout" name="verticalLayout_15">
           <item>
-           <widget class="QCheckBox" name="checkBox_19">
+           <widget class="QCheckBox" name="shriek_checkBox">
             <property name="font">
              <font>
               <pointsize>18</pointsize>
@@ -3025,7 +3069,7 @@ padding-bottom:7px;
         <item row="4" column="6">
          <layout class="QVBoxLayout" name="verticalLayout_24">
           <item>
-           <widget class="QCheckBox" name="checkBox_28">
+           <widget class="QCheckBox" name="fingerprint_checkBox">
             <property name="font">
              <font>
               <pointsize>18</pointsize>
@@ -3110,7 +3154,7 @@ padding-bottom:7px;
              </widget>
             </item>
             <item>
-             <widget class="QSpinBox" name="spinBox">
+             <widget class="QSpinBox" name="wire_spinBox">
               <property name="minimumSize">
                <size>
                 <width>70</width>
@@ -3194,7 +3238,7 @@ padding-bottom:7px;</string>
        </property>
        <layout class="QGridLayout" name="gridLayout_12">
         <item row="0" column="0">
-         <widget class="QTextEdit" name="textEdit">
+         <widget class="QTextEdit" name="notes_textEdit">
           <property name="styleSheet">
            <string notr="true">background-color:rgba(0, 0, 0, 0);
 border:none;
@@ -3217,13 +3261,13 @@ font: 13pt &quot;Acumin Pro&quot;;</string>
      <x>0</x>
      <y>0</y>
      <width>1920</width>
-     <height>1080</height>
+     <height>1920</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>1361</width>
-     <height>821</height>
+     <width>120</width>
+     <height>1920</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -3349,7 +3393,7 @@ QPushButton:hover {
   <widget class="QPushButton" name="bck_btn">
    <property name="geometry">
     <rect>
-     <x>780</x>
+     <x>650</x>
      <y>950</y>
      <width>183</width>
      <height>60</height>
@@ -3382,7 +3426,7 @@ background-color: rgb(50, 85, 127, 250);
   <widget class="QPushButton" name="save_btn">
    <property name="geometry">
     <rect>
-     <x>1050</x>
+     <x>1130</x>
      <y>950</y>
      <width>183</width>
      <height>60</height>
@@ -3421,6 +3465,39 @@ background-color: rgb(20,  190, 120);
     <string>حفظ</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="end_btn">
+   <property name="geometry">
+    <rect>
+     <x>890</x>
+     <y>950</y>
+     <width>183</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>183</width>
+     <height>60</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>16777215</width>
+     <height>16777215</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 14pt &quot;Acumin Pro&quot;;
+color: rgb(255, 255, 255);
+background-color: rgb(190, 20, 20,190);
+
+ border-radius: 7px;
+</string>
+   </property>
+   <property name="text">
+    <string>إنهاء</string>
+   </property>
+  </widget>
   <zorder>label_6</zorder>
   <zorder>label</zorder>
   <zorder>scrollArea</zorder>
@@ -3428,6 +3505,7 @@ background-color: rgb(20,  190, 120);
   <zorder>minimize_btn</zorder>
   <zorder>bck_btn</zorder>
   <zorder>save_btn</zorder>
+  <zorder>end_btn</zorder>
  </widget>
  <resources>
   <include location="app_resources.qrc"/>

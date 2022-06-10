@@ -60,12 +60,14 @@ class AddClients(QtWidgets.QWidget, add_client_view.Ui_Form):
                     "phone_number": phone,
                     "clientlevel": level
                 }
-            print(data)
-            print("Toooooken : ", self.token)
+
             try:
                 self.add_client = requests.post(self.base_url, json=data, headers=headers)
-                print(self.add_client.json())
                 self.checkDataSignal.emit()
+                if self.add_client.status_code == 406:
+                    msg.setWindowTitle("Warning")
+                    msg.setText(self.add_client.json()['Response'])
+                    msg.exec_()
             except (requests.ConnectionError, requests.Timeout) as exception:
                 print(exception)
                 msg.setWindowTitle("Warning")
