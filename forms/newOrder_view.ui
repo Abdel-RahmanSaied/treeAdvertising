@@ -73,7 +73,7 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>-436</y>
+      <y>0</y>
       <width>1852</width>
       <height>1255</height>
      </rect>
@@ -1312,10 +1312,85 @@ background-color: rgb(50, 85, 127);
            <set>Qt::AlignCenter</set>
           </property>
           <layout class="QGridLayout" name="gridLayout_4">
-           <item row="0" column="0" colspan="3">
+           <item row="1" column="3">
+            <layout class="QHBoxLayout" name="horizontalLayout_5">
+             <item>
+              <widget class="QDoubleSpinBox" name="thickness_doubleSpinBox">
+               <property name="minimumSize">
+                <size>
+                 <width>70</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color:rgba(0, 0, 0, 0);
+border:none;
+border-bottom:2px solid rgba(46, 82, 101, 200);
+font: 11pt &quot;Acumin Pro&quot;;
+padding-bottom:7px;</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="decimals">
+                <number>1</number>
+               </property>
+               <property name="maximum">
+                <double>1000.000000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_7">
+               <property name="minimumSize">
+                <size>
+                 <width>157</width>
+                 <height>34</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>157</width>
+                 <height>34</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color:rgba(48, 62, 84, 20);
+
+border:none;
+font: 14pt &quot;Acumin Pro&quot;;
+padding-bottom:7px;</string>
+               </property>
+               <property name="text">
+                <string>السُمك :</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="2" column="0">
+            <spacer name="horizontalSpacer_15">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>600</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="0" column="0" colspan="4">
             <layout class="QHBoxLayout" name="horizontalLayout">
              <item>
               <widget class="QLineEdit" name="other_kind_lineEdit_2">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -1366,13 +1441,26 @@ font: 13pt &quot;Acumin Pro&quot;;</string>
               </widget>
              </item>
              <item>
-              <widget class="QCheckBox" name="paper_checkBox">
+              <widget class="QRadioButton" name="otherKind_radioButton">
+               <property name="maximumSize">
+                <size>
+                 <width>15</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="paper_radioButton">
                <property name="font">
                 <font>
-                 <family>Gill Sans MT</family>
                  <pointsize>13</pointsize>
-                 <weight>50</weight>
-                 <bold>false</bold>
                 </font>
                </property>
                <property name="layoutDirection">
@@ -1387,13 +1475,10 @@ font: 13pt &quot;Acumin Pro&quot;;</string>
               </widget>
              </item>
              <item>
-              <widget class="QCheckBox" name="plastic_checkBox">
+              <widget class="QRadioButton" name="plastic_radioButton">
                <property name="font">
                 <font>
-                 <family>Gill Sans MT</family>
                  <pointsize>13</pointsize>
-                 <weight>50</weight>
-                 <bold>false</bold>
                 </font>
                </property>
                <property name="layoutDirection">
@@ -1408,13 +1493,10 @@ font: 13pt &quot;Acumin Pro&quot;;</string>
               </widget>
              </item>
              <item>
-              <widget class="QCheckBox" name="wood_checkBox">
+              <widget class="QRadioButton" name="wood_radioButton">
                <property name="font">
                 <font>
-                 <family>Gill Sans MT</family>
                  <pointsize>13</pointsize>
-                 <weight>50</weight>
-                 <bold>false</bold>
                 </font>
                </property>
                <property name="layoutDirection">
@@ -1464,81 +1546,18 @@ padding-bottom:7px;</string>
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
              </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Fixed</enum>
+             </property>
              <property name="sizeHint" stdset="0">
               <size>
-               <width>716</width>
+               <width>600</width>
                <height>20</height>
               </size>
              </property>
             </spacer>
            </item>
-           <item row="1" column="2">
-            <layout class="QHBoxLayout" name="horizontalLayout_5">
-             <item>
-              <widget class="QDoubleSpinBox" name="thickness_doubleSpinBox">
-               <property name="styleSheet">
-                <string notr="true">background-color:rgba(0, 0, 0, 0);
-border:none;
-border-bottom:2px solid rgba(46, 82, 101, 200);
-font: 11pt &quot;Acumin Pro&quot;;
-padding-bottom:7px;</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-               <property name="suffix">
-                <string>        ملٍ</string>
-               </property>
-               <property name="decimals">
-                <number>1</number>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="label_7">
-               <property name="minimumSize">
-                <size>
-                 <width>157</width>
-                 <height>34</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>157</width>
-                 <height>34</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">background-color:rgba(48, 62, 84, 20);
-
-border:none;
-font: 14pt &quot;Acumin Pro&quot;;
-padding-bottom:7px;</string>
-               </property>
-               <property name="text">
-                <string>السُمك :</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item row="2" column="0">
-            <spacer name="horizontalSpacer_15">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>704</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item row="2" column="1" colspan="2">
+           <item row="2" column="1" colspan="3">
             <layout class="QHBoxLayout" name="horizontalLayout_6">
              <item>
               <widget class="QLineEdit" name="color_lineEdit">
@@ -1624,6 +1643,35 @@ padding-bottom:7px;</string>
               </widget>
              </item>
             </layout>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLabel" name="label_33">
+             <property name="minimumSize">
+              <size>
+               <width>45</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Acumin Pro</family>
+               <pointsize>11</pointsize>
+               <weight>50</weight>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color:rgba(0, 0, 0, 0);
+border:none;
+
+font: 11pt &quot;Acumin Pro&quot;;
+padding-bottom:7px;</string>
+             </property>
+             <property name="text">
+              <string>  مل</string>
+             </property>
+            </widget>
            </item>
           </layout>
          </widget>
@@ -1742,6 +1790,9 @@ padding-bottom:7px;</string>
                    </property>
                    <property name="decimals">
                     <number>1</number>
+                   </property>
+                   <property name="maximum">
+                    <double>1000.000000000000000</double>
                    </property>
                   </widget>
                  </item>

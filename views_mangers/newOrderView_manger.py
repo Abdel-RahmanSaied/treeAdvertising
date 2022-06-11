@@ -9,7 +9,7 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
     def __init__(self):
         super(NewOrderView_manger, self).__init__()
         self.setupUi(self)
-
+        self.otherKind_radioButton.toggled.connect(self.other_kind_lineEdit_2.setEnabled)
         self.clientDesign_btn.clicked.connect(self.getdesign_path)
         self.upload_photo_btn.clicked.connect(self.getphoto_path)
         self.search_btn.clicked.connect(self.check_client)
@@ -17,6 +17,7 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
 
         self.client_check_url = 'https://saied.pythonanywhere.com/clientPhone/'
         self.add_client_url = 'https://saied.pythonanywhere.com/clients/'
+        self.orders_url = 'https://saied.pythonanywhere.com/orders/'
 
         self.token = 'a3f482dc51cf4cf3d3ecbe8e469c8048c09c333a'
         self.headers = {}
@@ -124,6 +125,7 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
 
     def add_new_order(self):
         try:
+            self.headers = {'Accept': 'application/json; indent=4', 'Content-Type': 'application/json','Authorization': f'Token {self.token}'}
             msg = QtWidgets.QMessageBox()
             if self.ofice_design.isChecked() :
                 self.design_types= "O"
@@ -215,29 +217,156 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
             self.size_high = float(self.high_doubleSpinBox.text())
             self.size_width = float(self.width_doubleSpinBox.text())
 
+            if self.wood_radioButton.isChecked():
+                self.materials = "خشب"
+            elif self.plastic_radioButton.isChecked():
+                self.materials = "بلاستيك"
+            elif self.paper_radioButton.isChecked():
+                self.materials = "ورق"
+            elif self.otherKind_radioButton.isChecked() and len(self.other_kind_lineEdit_2.text()) != 0 :
+                self.materials = self.other_kind_lineEdit_2.text()
+            else:
+                self.materials = "no material"
+
+            self.thickness = float(self.thickness_doubleSpinBox.text())
+
+            if len(self.color_lineEdit.text()) != 0:
+                self.color = self.color_lineEdit.text()
+            else:
+                self.color = "no color"
+
+            if self.shriek_checkBox.isChecked():
+                self.Post_print_services.append("شرشرة")
+
+            if self.rijah_checkBox.isChecked():
+                self.Post_print_services.append("ريجه")
+
+            if self.thermalPackaging_checkBox.isChecked():
+                self.Post_print_services.append("تغليف حرارى")
+
+            if self.cut_checkBox.isChecked():
+                self.Post_print_services.append("قص")
+
+            if self.wood_checkBox_2.isChecked():
+                self.Post_print_services.append("تجميع خشب")
+
+            if self.Peel_checkBox.isChecked():
+                self.Post_print_services.append("بشر")
+
+            if self.binding_checkBox.isChecked():
+                self.Post_print_services.append("تجليد")
+
+            if self.packaging_checkBox.isChecked():
+                self.Post_print_services.append("تعبئة و تغليف")
+
+            if self.pin_checkBox.isChecked():
+                self.Post_print_services.append("دبوس")
+
+            if self.Spot_checkBox.isChecked():
+                self.Post_print_services.append("اسبوت")
+
+            if self.purpura_checkBox.isChecked():
+                self.Post_print_services.append("فرفرية")
+
+            if self.fingerprint_checkBox.isChecked():
+                self.Post_print_services.append("بصمة")
+
+            if self.kofrag_checkBox.isChecked():
+                self.Post_print_services.append("كوفراج")
+
+            if self.cutRokneh_checkBox.isChecked():
+                self.Post_print_services.append("قص روكنه")
+
+            if self.perforation_checkBox.isChecked():
+                self.Post_print_services.append("تخريم")
+
+            if self.idPerforatio_checkBox.isChecked():
+                self.Post_print_services.append("شرشرة id")
+
+            if self.circularCut_checkBox.isChecked():
+                self.Post_print_services.append("قص دائرى")
+
+            if len(self.wire_spinBox.text()) != 0:
+                self.Post_print_services.append(f"سلك ({self.wire_spinBox.text()})")
+
+            self.Post_print_services.append(f"سلوفان ({self.cellophane_comboBox.currentText()})")
+
+            self.state = 'D'
+
+            if len(self.notes_textEdit.toPlainText()) != 0 :
+                self.notes = self.notes_textEdit.toPlainText()
+            else:
+                self.notes = "nothing"
 
 
-            """ Check Input Data """
+
+                """ Check Input Data """
             if self.design_types == '':
                 msg.setWindowTitle("Warning")
                 msg.setText("You must choose design type !")
                 msg.exec_()
                 self.design_category = []
                 self.printing_type = []
+                self.Post_print_services = []
+            else:
+
+                """ Post Order """
+                orderData = {
+
+                        "accepted_by": "Not Accepted yet",
+                        "img_path": self.img_path,
+                        "recived_date": self.recived_date,
+                        "delivery_date": self.post_date,
+                        "design_types": self.design_types,
+                        "design_path": self.design_path,
+                        "design_category": self.design_category,
+                        "printing_type": self.printing_type,
+                        "size_width": self.size_width,
+                        "size_high": self.size_high,
+                        "materials": self.materials,
+                        "color": self.color,
+                        "thickness": self.thickness,
+                        "Post_print_services": self.Post_print_services,
+                        "state": self.state,
+                        "notes": self.notes,
+                        "client_id": self.cliend_id        # ForTest ...
+                            }
+                try:
+                    self.check_reply = requests.post(self.orders_url, json=orderData, headers=self.headers).json()
+                    print("Respnse : ", self.check_reply)
+                    self.checkAcceptedSignal.emit()
+                except (requests.ConnectionError, requests.Timeout) as exception:
+                    print(exception)
+                    msg.setWindowTitle("Warning")
+                    msg.setText("No internet connection.")
+                    msg.exec_()
+                except Exception as e:
+                    print(e)
+
 
 
             """ Depug """
-            print(40*"-")
-            print("img_path : ",self.img_path)
-            print("design_path : ",self.design_path)
-            print("design_types : ",self.design_types)
-            print("design_category : ",self.design_category)
-            print("printing_type : ",self.printing_type)
-            print("size_high : ",self.size_high)
-            print("size_width : ",self.size_width)
+            # print(40*"-")
+            # print("img_path : ",self.img_path)
+            # print("design_path : ",self.design_path)
+            # print("design_types : ",self.design_types)
+            # print("design_category : ",self.design_category)
+            # print("printing_type : ",self.printing_type)
+            # print("size_high : ",self.size_high)
+            # print("size_width : ",self.size_width)
+            # print("materials : ",self.materials)
+            # print("color : ",self.color)
+            # print("thickness : ",self.thickness)
+            # print("Post_print_services : ",self.Post_print_services)
+            # print("state : ",self.state)
+            # print("notes : ",self.notes)
+            # print("cliend_id : ",self.cliend_id)
+            # print(orderData)
 
 
-            print(self.design_category)
+
+
+
         except Exception as e:
             print(e)
 
