@@ -44,7 +44,7 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
         self.Post_print_services = []
         self.state = ''
         self.notes = ''
-        self.cliend_id = 0
+        self.cliend_id = -1
 
     def getdesign_path(self):
         self.fileName, _ = QtWidgets.QFileDialog.getOpenFileName(self, 'تحديد مسار الملف ', '', 'Images (*.png, *.jpeg , *.jpg , *.psd , *.ai , *.eps ) ')
@@ -116,6 +116,7 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
                     elif check_reply['clientlevel'] == 'G' :
                         self.greenRadioButton.setChecked(True)
                     self.cliend_id = check_reply['id']
+
                     msg.setWindowTitle("Alarm")
                     msg.setText("client data imported successfully")
                     msg.exec_()
@@ -310,6 +311,40 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
                 self.Post_print_services = []
             else:
 
+                ''' Client cheacker '''
+                if len(self.username_lin_3.text()) != 0:
+                    self.username = self.username_lin_3.text()
+                else:
+                    msg.setWindowTitle("Warning")
+                    msg.setText("You must enter user name.")
+                    msg.exec_()
+
+                if len(self.phone_number_lin.text()) != 0:
+                    self.phone_number = self.phone_number_lin.text()
+                else:
+                    msg.setWindowTitle("Warning")
+                    msg.setText("You must enter phone number.")
+                    msg.exec_()
+
+                try:
+                    if self.redRadioButton.isChecked():
+                        self.level = "R"
+                    elif self.blueRadioButton.isChecked():
+                        self.level = "B"
+                    elif self.greenRadioButton.isChecked():
+                        self.level = "G"
+                except Exception as r:
+                    print(r)
+
+                self.recived_date = self.recived_date_lin.text()
+                self.post_date = self.post_date_lin.text()
+
+                client_data = {
+                    "name": self.username,
+                    "phone_number": self.phone_number,
+                    "clientlevel": self.level
+                }
+
                 """ Post Order """
                 orderData = {
 
@@ -331,19 +366,37 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
                         "notes": self.notes,
                         "client_id": self.cliend_id        # ForTest ...
                             }
+
                 try:
-                    self.check_reply = requests.post(self.orders_url, json=orderData, headers=self.headers).json()
-                    print("Respnse : ", self.check_reply)
-                    self.checkAcceptedSignal.emit()
+                    if self.cliend_id != -1 :
+                        self.check_reply = requests.post(self.orders_url, json=orderData, headers=self.headers).json()
+                        print("Respnse : ", self.check_reply)
+                        self.checkAcceptedSignal.emit()
+                        msg.setWindowTitle("successfully")
+                        msg.setText("your request sent successfully.")
+                        msg.exec_()
+                    else :
+                        add_client_reply = requests.post(self.add_client_url, json=client_data,
+                                                       headers=self.headers).json()
+                        self.cliend_id = add_client_reply['id']
+                        orderData["client_id"] = add_client_reply['id']
+                        print(orderData)
+                        self.check_reply = requests.post(self.orders_url, json=orderData, headers=self.headers).json()
+                        print("Respnse : ", self.check_reply)
+                        self.checkAcceptedSignal.emit()
+                        msg.setWindowTitle("successfully")
+                        msg.setText("your request sent successfully.")
+                        msg.exec_()
+
                 except (requests.ConnectionError, requests.Timeout) as exception:
                     print(exception)
                     msg.setWindowTitle("Warning")
                     msg.setText("No internet connection.")
                     msg.exec_()
                 except Exception as e:
-                    print(e)
-
-
+                    msg.setWindowTitle("Warning")
+                    msg.setText("The phone number is already registered with another client  , you can use search button.")
+                    msg.exec_()
 
             """ Depug """
             # print(40*"-")
@@ -373,7 +426,6 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
 
 if __name__ == "__main__":
     import qdarkstyle
-
     app = QtWidgets.QApplication([])
     w = NewOrderView_manger()
     w.show()
