@@ -45,7 +45,7 @@ class OrderDetails(QtWidgets.QWidget, orderDetails_view.Ui_Form):
                     self.sevices_afterPrinting_lbl.setText(str(item['Post_print_services']))
                     self.width_lbl.setText(str(item['size_width']))
                     self.high_lbl.setText(str(item['size_high']))
-                    self.color_lbl.setText(item['color_lbl'])
+                    self.color_lbl.setText(item['color'])
                     self.thinkness_lbl.setText(str(item['thickness']))
 
                     self.notes_lbl.setText((item['notes']))

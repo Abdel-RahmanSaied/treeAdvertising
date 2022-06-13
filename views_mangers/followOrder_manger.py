@@ -37,9 +37,8 @@ class FollowOrder(QtWidgets.QWidget, followOrder_view.Ui_Form):
         data = {
                 "from_date": from_date,
                 "to_date": to_date,
-                "state": "unfinished"
+                "state": "all"
                 }
-        print(data)
         try:
             self.search_reply = requests.post(self.searchByDate_url, json=data, headers=headers).json()
             self.listWidget.clear()
