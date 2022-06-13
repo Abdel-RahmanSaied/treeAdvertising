@@ -17,7 +17,7 @@ class OrderDetails(QtWidgets.QWidget, orderDetails_view.Ui_Form):
         msg = QtWidgets.QMessageBox()
         headers = {'Accept': 'application/json; indent=4', 'Content-Type': 'application/json',
                    'Authorization': f'Token {self.token}'}
-        # [{'order_id': 1, 'user_name': 'mok11', 'date': '2022-06-05', 'recived_date': '2022-05-28', 'delivery_date': '2022-09-28', 'design_types': 'A', 'design_path': 'teeeeeeeeest', 'design_category': ['x'], 'printing_type': ['x'], 'size_width': 56.0, 'size_high': 645.0, 'materials': 'eeee', 'color': 'eeee', 'thickness': 12.2, 'Post_print_services': ['x'], 'state': 'I', 'notes': 'asd', 'user_id': 2, 'client_id': 2}]
+
         try :
             self.reply = requests.get(self.base_url , headers=headers).json()
         except Exception as s :
@@ -25,12 +25,30 @@ class OrderDetails(QtWidgets.QWidget, orderDetails_view.Ui_Form):
         try :
             for item in self.reply :
                 if item['order_id'] == self.order_id :
-                    self.clientName_lbl.setText("xxxx")
+                    self.clientName_lbl.setText(item["client_name"])
                     self.orderID_lbl.setText(str(item["order_id"]))
                     self.date_lbl.setText(str(item['date']))
                     self.recived_date_lbl.setText(item['recived_date'])
-                    self.print_type_lbl.setText(str(item['design_types']))
+                    self.deliver_date_lbl.setText(item["delivery_date"])
+                    self.userName_lbl.setText(item["accepted_by"])
+                    self.department_lbl.setText(str(item['target_dapertment']))
+                    self.state_lbl.setText(item['state'])
+
+                    if item["design_types"] == "A" :
+                        self.desigTybe_lbl.setText("تصميم مرفق")
+                    if item["design_types"] == "O" :
+                        self.desigTybe_lbl.setText("تصميم مكتب")
+                    self.filePath_lbl.setText(item["design_path"])
+                    self.design_types_lbl.setText(str(item["design_category"]))
+                    self.material_lbl.setText(item["materials"])
+                    self.print_type_lbl.setText(str(item['printing_type']))
                     self.sevices_afterPrinting_lbl.setText(str(item['Post_print_services']))
+                    self.width_lbl.setText(str(item['size_width']))
+                    self.high_lbl.setText(str(item['size_high']))
+                    self.color_lbl.setText(item['color_lbl'])
+                    self.thinkness_lbl.setText(str(item['thickness']))
+
+
                     self.notes_lbl.setText((item['notes']))
 
         except Exception as e:

@@ -57,6 +57,7 @@ class FollowOrder(QtWidgets.QWidget, followOrder_view.Ui_Form):
         if self.item_selected != False:
             try :
                 self.reply = requests.put(f"{self.update_link}{self.orderID}//" , json=data , headers=self.headers)
+                self.reload_signal.emit()
                 msg.setWindowTitle("Warning")
                 msg.setText("order state updated to finished !")
                 msg.exec_()

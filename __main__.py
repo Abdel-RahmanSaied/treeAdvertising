@@ -43,7 +43,6 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.addWidget(self.inbox_manger) #9
         self.addWidget(self.addRequirement_manger) # 10
 
-
         # install signals
         self.login_manger.loginAcceptedSignal.connect(self.handle_login_accepted)
         self.login_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
@@ -63,7 +62,6 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
 
         self.main_manger.logout_signal.connect(self.handle_logOut)
         self.main_manger.exit_btn.clicked.connect(self.exit_program)
-
 
         '''
         new order view signals
@@ -85,7 +83,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         '''
         followed order detail screen 
         '''
-        self.orderDetails_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(3))
+        self.orderDetails_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(1))
         self.orderDetails_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
         self.orderDetails_manger.exit_btn.clicked.connect(self.exit_program)
         '''
@@ -126,6 +124,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.inbox_manger.exit_btn.clicked.connect(self.exit_program)
         self.inbox_manger.minimize_btn.clicked.connect(lambda: self.showMinimized())
         self.inbox_manger.bck_btn.clicked.connect(lambda : self.setCurrentIndex(1))
+        self.inbox_manger.details_btn.clicked.connect(self.handle_DetailsOrder)
         '''
         Add Requirement
         '''
@@ -134,6 +133,9 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         # self.addClient_manger.add_btn.clicked.connect(lambda: self.setCurrentIndex(8))
         self.addRequirement_manger.minimize_btn.clicked.connect(lambda: self.showMinimized())
         self.addRequirement_manger.exit_btn.clicked.connect(self.exit_program)
+
+
+
 
         ''' designs  '''
 
@@ -170,8 +172,16 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.orderDetails_manger.run()
         self.setCurrentIndex(5)
 
+    def handle_DetailsOrder(self):
+        self.orderDetails_manger.order_id = self.inbox_manger.orderID
+        self.orderDetails_manger.token = self.login_manger.userToken
+        self.orderDetails_manger.run()
+        self.setCurrentIndex(5)
+
     def handle_inboxManger(self):
         self.inbox_manger.token = self.login_manger.userToken
+        self.inbox_manger.user_name = self.login_manger.username_lin.text()
+        self.inbox_manger.run()
         self.setCurrentIndex(9)
 
     def exit_program(self):

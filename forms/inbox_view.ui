@@ -48,7 +48,7 @@
     </font>
    </property>
    <property name="text">
-    <string>امر الشغل</string>
+    <string>اوامر الشغل</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -122,49 +122,6 @@
       </property>
       <layout class="QGridLayout" name="gridLayout">
        <item row="1" column="0">
-        <widget class="QPushButton" name="new_btn">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>100</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>100</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Acumin Pro</family>
-           <pointsize>13</pointsize>
-           <weight>50</weight>
-           <italic>false</italic>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">
- transition-duration: 0.4s;
- color: white;
- background-color :rgb(50, 85, 127);
- border: 2px solid #rgb(50, 85, 127)
-
- box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);</string>
-         </property>
-         <property name="text">
-          <string>جديد</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
         <widget class="QPushButton" name="end_btn">
          <property name="sizePolicy">
           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
@@ -203,7 +160,50 @@
  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);</string>
          </property>
          <property name="text">
-          <string>انتهى</string>
+          <string>انتهي</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QPushButton" name="accept_btn">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Acumin Pro</family>
+           <pointsize>13</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+ transition-duration: 0.4s;
+ color: white;
+ background-color :rgb(50, 85, 127);
+ border: 2px solid #rgb(50, 85, 127)
+
+ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);</string>
+         </property>
+         <property name="text">
+          <string>قبول</string>
          </property>
         </widget>
        </item>

@@ -57,30 +57,6 @@ class Ui_Form(object):
         self.frame_2.setObjectName("frame_2")
         self.gridLayout = QtWidgets.QGridLayout(self.frame_2)
         self.gridLayout.setObjectName("gridLayout")
-        self.new_btn = QtWidgets.QPushButton(self.frame_2)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.MinimumExpanding, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.new_btn.sizePolicy().hasHeightForWidth())
-        self.new_btn.setSizePolicy(sizePolicy)
-        self.new_btn.setMinimumSize(QtCore.QSize(100, 40))
-        self.new_btn.setMaximumSize(QtCore.QSize(100, 40))
-        font = QtGui.QFont()
-        font.setFamily("Acumin Pro")
-        font.setPointSize(13)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setWeight(50)
-        self.new_btn.setFont(font)
-        self.new_btn.setStyleSheet("\n"
-" transition-duration: 0.4s;\n"
-" color: white;\n"
-" background-color :rgb(50, 85, 127);\n"
-" border: 2px solid #rgb(50, 85, 127)\n"
-"\n"
-" box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);")
-        self.new_btn.setObjectName("new_btn")
-        self.gridLayout.addWidget(self.new_btn, 1, 0, 1, 1)
         self.end_btn = QtWidgets.QPushButton(self.frame_2)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.MinimumExpanding, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -104,7 +80,31 @@ class Ui_Form(object):
 "\n"
 " box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);")
         self.end_btn.setObjectName("end_btn")
-        self.gridLayout.addWidget(self.end_btn, 0, 0, 1, 1)
+        self.gridLayout.addWidget(self.end_btn, 1, 0, 1, 1)
+        self.accept_btn = QtWidgets.QPushButton(self.frame_2)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.MinimumExpanding, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.accept_btn.sizePolicy().hasHeightForWidth())
+        self.accept_btn.setSizePolicy(sizePolicy)
+        self.accept_btn.setMinimumSize(QtCore.QSize(100, 40))
+        self.accept_btn.setMaximumSize(QtCore.QSize(100, 40))
+        font = QtGui.QFont()
+        font.setFamily("Acumin Pro")
+        font.setPointSize(13)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.accept_btn.setFont(font)
+        self.accept_btn.setStyleSheet("\n"
+" transition-duration: 0.4s;\n"
+" color: white;\n"
+" background-color :rgb(50, 85, 127);\n"
+" border: 2px solid #rgb(50, 85, 127)\n"
+"\n"
+" box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);")
+        self.accept_btn.setObjectName("accept_btn")
+        self.gridLayout.addWidget(self.accept_btn, 0, 0, 1, 1)
         self.gridLayout_2.addWidget(self.frame_2, 0, 0, 2, 1)
         self.details_btn = QtWidgets.QPushButton(Form)
         self.details_btn.setGeometry(QtCore.QRect(1120, 930, 200, 60))
@@ -194,9 +194,9 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.label.setText(_translate("Form", "امر الشغل"))
-        self.new_btn.setText(_translate("Form", "جديد"))
-        self.end_btn.setText(_translate("Form", "انتهى"))
+        self.label.setText(_translate("Form", "اوامر الشغل"))
+        self.end_btn.setText(_translate("Form", "انتهي"))
+        self.accept_btn.setText(_translate("Form", "قبول"))
         self.details_btn.setText(_translate("Form", "تفاصيل الامر"))
         self.bck_btn.setText(_translate("Form", "الرجوع"))
 import app_resources_rc
