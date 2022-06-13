@@ -171,6 +171,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.setCurrentIndex(5)
 
     def handle_inboxManger(self):
+        self.inbox_manger.token = self.login_manger.userToken
         self.setCurrentIndex(9)
 
     def exit_program(self):
