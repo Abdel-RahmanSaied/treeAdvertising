@@ -6,6 +6,7 @@ import os
 
 class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
     checkAcceptedSignal = QtCore.pyqtSignal()
+    home_signal = QtCore.pyqtSignal()
     def __init__(self):
         super(NewOrderView_manger, self).__init__()
         self.setupUi(self)

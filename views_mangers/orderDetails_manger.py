@@ -48,7 +48,6 @@ class OrderDetails(QtWidgets.QWidget, orderDetails_view.Ui_Form):
                     self.color_lbl.setText(item['color_lbl'])
                     self.thinkness_lbl.setText(str(item['thickness']))
 
-
                     self.notes_lbl.setText((item['notes']))
 
         except Exception as e:
