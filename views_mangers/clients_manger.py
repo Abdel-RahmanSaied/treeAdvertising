@@ -41,6 +41,7 @@ class Clients(QtWidgets.QWidget, clients_view.Ui_Form):
                 msg.setWindowTitle("Response")
                 msg.setText(self.response)
                 msg.exec_()
+                self.id = -1
 
             except Exception as e:
                 print(e)
@@ -51,12 +52,12 @@ class Clients(QtWidgets.QWidget, clients_view.Ui_Form):
         headers = {'Accept': 'application/json; indent=4', 'Content-Type': 'application/json',
                    'Authorization': f'Token {self.token}'}
         try :
-            self.delete_response = requests.get(self.base_url, headers=headers).json()
+            self.get_response = requests.get(self.base_url, headers=headers).json()
         except Exception as s :
             print("ss",s)
         rowPosition = self.tableWidget.rowCount()
         try :
-            for rows in self.delete_response:
+            for rows in self.get_response:
                 self.tableWidget.insertRow(rowPosition)
                 # [{"id": 2,"name": "test","phone_number": "01011","notes": "nothing","clientlevel": "B"}]
                 self.tableWidget.setItem(0, 0, QTableWidgetItem(str(rows['id'])))
@@ -76,7 +77,7 @@ if __name__ == "__main__":
     app.exec_()
 
 # header = self.tableWidget.horizontalHeader()
-# header.setSectionResizeMode(0, QtWidgets.QHeaderView.Stretch)
+# header.setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeToContents)
 # header.setSectionResizeMode(1, QtWidgets.QHeaderView.Stretch)
 # header.setSectionResizeMode(2, QtWidgets.QHeaderView.Stretch)
 # header.setSectionResizeMode(3, QtWidgets.QHeaderView.Stretch)

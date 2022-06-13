@@ -70,9 +70,10 @@ class FollowOrder(QtWidgets.QWidget, followOrder_view.Ui_Form):
         msg = QtWidgets.QMessageBox()
         if self.item_selected != False:
             try :
-                self.reply = requests.delete(f"{self.delete_link}{self.orderID}//" , headers=self.headers)
+                self.reply = requests.delete(f"{self.delete_link}{self.orderID}//" , headers=self.headers).json()
+                response = self.reply["Response"]
                 msg.setWindowTitle("Warning")
-                msg.setText("order deleted!")
+                msg.setText(response)
                 msg.exec_()
                 self.reload_signal.emit()
             except Exception as s :

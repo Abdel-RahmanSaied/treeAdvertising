@@ -17,7 +17,7 @@ class Ui_Form(object):
         Form.resize(1920, 1045)
         Form.setMinimumSize(QtCore.QSize(1340, 810))
         self.label = QtWidgets.QLabel(Form)
-        self.label.setGeometry(QtCore.QRect(900, 20, 271, 51))
+        self.label.setGeometry(QtCore.QRect(870, 20, 271, 51))
         self.label.setMaximumSize(QtCore.QSize(271, 71))
         font = QtGui.QFont()
         font.setFamily("Thunder Lord")
@@ -224,14 +224,12 @@ class Ui_Form(object):
         self.exit_btn.raise_()
         self.minimize_btn.raise_()
         self.frame.raise_()
-
         header = self.tableWidget.horizontalHeader()
-        header.setSectionResizeMode(0, QtWidgets.QHeaderView.Stretch)
+        header.setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeToContents)
         header.setSectionResizeMode(1, QtWidgets.QHeaderView.Stretch)
         header.setSectionResizeMode(2, QtWidgets.QHeaderView.Stretch)
         header.setSectionResizeMode(3, QtWidgets.QHeaderView.Stretch)
         header.setSectionResizeMode(4, QtWidgets.QHeaderView.Stretch)
-
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
