@@ -64,6 +64,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.main_manger.logout_signal.connect(self.handle_logOut)
         self.main_manger.exit_btn.clicked.connect(self.exit_program)
 
+
         '''
         new order view signals
         '''

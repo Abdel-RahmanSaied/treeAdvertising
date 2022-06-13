@@ -347,7 +347,6 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
 
                 """ Post Order """
                 orderData = {
-
                         "accepted_by": "Not Accepted yet",
                         "img_path": self.img_path,
                         "recived_date": self.recived_date,
@@ -398,31 +397,12 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
                     msg.setText("The phone number is already registered with another client  , you can use search button.")
                     msg.exec_()
 
-            """ Depug """
-            # print(40*"-")
-            # print("img_path : ",self.img_path)
-            # print("design_path : ",self.design_path)
-            # print("design_types : ",self.design_types)
-            # print("design_category : ",self.design_category)
-            # print("printing_type : ",self.printing_type)
-            # print("size_high : ",self.size_high)
-            # print("size_width : ",self.size_width)
-            # print("materials : ",self.materials)
-            # print("color : ",self.color)
-            # print("thickness : ",self.thickness)
-            # print("Post_print_services : ",self.Post_print_services)
-            # print("state : ",self.state)
-            # print("notes : ",self.notes)
-            # print("cliend_id : ",self.cliend_id)
-            # print(orderData)
-
-
-
-
-
         except Exception as e:
             print(e)
 
+
+    def clear_data(self):
+        pass
 
 if __name__ == "__main__":
     import qdarkstyle

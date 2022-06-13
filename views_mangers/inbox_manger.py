@@ -9,7 +9,61 @@ class Inbox_manger(QtWidgets.QWidget, inbox_view.Ui_Form):
     def __init__(self , name=None, *args, **kwargs ):
         super(Inbox_manger, self).__init__()
         self.setupUi(self)
+        self.base_url = "https://saied.pythonanywhere.com/orders/"
+        self.update_link = "https://saied.pythonanywhere.com/updateItem/"
+        self.token = ''
+        self.orderID = 0
+        self.item_selected = False
+        self.listWidget.itemSelectionChanged.connect(self.selectionChanged)
+        self.details_btn.clicked.connect(self.orderDetails)
+        self.end_btn.clicked.connect(self.end_order)
+        self.reload_signal.connect(self.run)
+        self.headers = {}
 
+    def selectionChanged(self):
+        items = self.listWidget.selectedItems()
+        for item in items:
+            self.orderID = int(item.text())
+            self.item_selected = True
+
+    def run(self):
+        self.headers = {'Accept': 'application/json; indent=4', 'Content-Type': 'application/json',
+                   'Authorization': f'Token {self.token}'}
+        try :
+            self.reply = requests.get(self.base_url , headers=self.headers).json()
+        except Exception as s :
+            print("ss",s)
+        try :
+            self.listWidget.clear()
+            for element in  self.reply :
+                self.listWidget.addItem(str(element['order_id']))
+        except Exception as e :
+            print(e)
+
+    def orderDetails(self):
+        msg = QtWidgets.QMessageBox()
+        if self.item_selected != False :
+            self.checkAcceptedSignal.emit()
+        else:
+            msg.setWindowTitle("Warning")
+            msg.setText("you must select the order !")
+            msg.exec_()
+
+    def end_order(self):
+        msg = QtWidgets.QMessageBox()
+        data = {"state" : "F"}
+        if self.item_selected != False:
+            try :
+                self.reply = requests.put(f"{self.update_link}{self.orderID}//" , json=data , headers=self.headers)
+                msg.setWindowTitle("Warning")
+                msg.setText("order state updated to finished !")
+                msg.exec_()
+            except Exception as s :
+                print("ss",s)
+        else:
+            msg.setWindowTitle("Warning")
+            msg.setText("you must select the order !")
+            msg.exec_()
 
 
 if __name__ == "__main__":
