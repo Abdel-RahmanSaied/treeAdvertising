@@ -192,6 +192,7 @@ class Ui_Form(object):
 "font: 11pt \"Acumin Pro\";\n"
 "padding-bottom:7px;")
         self.dateEdit_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.dateEdit_2.setDateTime(QtCore.QDateTime(QtCore.QDate(2022, 6, 6), QtCore.QTime(0, 0, 0)))
         self.dateEdit_2.setObjectName("dateEdit_2")
         self.gridLayout_2.addWidget(self.dateEdit_2, 0, 4, 1, 1)
         self.label_3 = QtWidgets.QLabel(self.frame)
@@ -218,6 +219,7 @@ class Ui_Form(object):
 "font: 11pt \"Acumin Pro\";\n"
 "padding-bottom:7px;")
         self.dateEdit.setAlignment(QtCore.Qt.AlignCenter)
+        self.dateEdit.setDateTime(QtCore.QDateTime(QtCore.QDate(2022, 6, 6), QtCore.QTime(0, 0, 0)))
         self.dateEdit.setObjectName("dateEdit")
         self.gridLayout_2.addWidget(self.dateEdit, 0, 7, 1, 1)
         self.label_2 = QtWidgets.QLabel(self.frame)
@@ -350,7 +352,9 @@ class Ui_Form(object):
         self.new_btn.setText(_translate("Form", "جديد"))
         self.end_btn.setText(_translate("Form", "انتهى"))
         self.next_btn.setText(_translate("Form", "بحث"))
+        self.dateEdit_2.setDisplayFormat(_translate("Form", "yyyy-M-d"))
         self.label_3.setText(_translate("Form", "الي"))
+        self.dateEdit.setDisplayFormat(_translate("Form", "yyyy-M-d"))
         self.label_2.setText(_translate("Form", "من"))
         self.search_lineEdit.setPlaceholderText(_translate("Form", "    بحث . . ."))
         self.details_btn.setText(_translate("Form", "تفاصيل الامر"))
