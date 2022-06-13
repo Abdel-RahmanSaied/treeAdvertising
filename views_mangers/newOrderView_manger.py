@@ -19,7 +19,7 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
         self.add_client_url = 'https://saied.pythonanywhere.com/clients/'
         self.orders_url = 'https://saied.pythonanywhere.com/orders/'
 
-        self.token = 'a3f482dc51cf4cf3d3ecbe8e469c8048c09c333a'
+        self.token = ''
         self.headers = {}
 
         '''
