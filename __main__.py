@@ -28,7 +28,8 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.inbox_manger = Inbox_manger()
         self.addRequirement_manger = AddRequirement()
 
-        self.showFullScreen()
+        #self.showFullScreen()
+
 
         # add widgets to the stack
         self.addWidget(self.login_manger) #0 done
