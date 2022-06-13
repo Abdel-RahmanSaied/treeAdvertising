@@ -109,7 +109,7 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
                         #print(add_user_reply)
                 elif check_reply['Response'] == "successful":
                     self.username_lin_3.setText(check_reply['name'])
-                    print(check_reply)
+                    # print(check_reply)
                     if check_reply['clientlevel'] == 'R':
                         self.redRadioButton.setChecked(True)
                     elif check_reply['clientlevel'] == 'B' :
@@ -318,6 +318,9 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
                     msg.setWindowTitle("warning")
                     msg.setText("you must select at least one department.")
                     msg.exec_()
+                    self.design_category = []
+                    self.printing_type = []
+                    self.Post_print_services = []
                 else:
 
                     ''' Client cheacker '''
@@ -380,7 +383,7 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
                     try:
                         if self.cliend_id != -1 :
                             self.check_reply = requests.post(self.orders_url, json=orderData, headers=self.headers).json()
-                            print("Respnse : ", self.check_reply)
+                            # print("Respnse : ", self.check_reply)
                             self.checkAcceptedSignal.emit()
                             msg.setWindowTitle("successfully")
                             msg.setText("your request sent successfully.")
@@ -390,9 +393,9 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
                                                            headers=self.headers).json()
                             self.cliend_id = add_client_reply['id']
                             orderData["client_id"] = add_client_reply['id']
-                            print(orderData)
+                            # print(orderData)
                             self.check_reply = requests.post(self.orders_url, json=orderData, headers=self.headers).json()
-                            print("Respnse : ", self.check_reply)
+                            # print("Respnse : ", self.check_reply)
                             self.checkAcceptedSignal.emit()
                             msg.setWindowTitle("successfully")
                             msg.setText("your request sent successfully.")
@@ -413,7 +416,71 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
 
 
     def clear_data(self):
-        pass
+        self.username_lin_3.setText("")
+        self.phone_number_lin.setText("")
+        # self.redRadioButton.setChecked(False)
+        # self.blueRadioButton.setChecked(False)
+        # self.greenRadioButton.setChecked(False)
+        self.recived_date_lin.date()
+        self.post_date_lin.date()
+        # self.ofice_design.setChecked(False)
+        # self.attatched_design.setChecked(False)
+        self.filaPath_lbl.setText("مسار الملف")
+        self.filaPath_lbl_2.setText("مسار الملف")
+        self.certificate_checkBox.setChecked(False)
+        self.cover_checkBox.setChecked(False)
+        self.poster_checkBox.setChecked(False)
+        self.rollUp_checkBox.setChecked(False)
+        self.label_checkBox.setChecked(False)
+        self.brochure_checkBox.setChecked(False)
+        self.menu_checkBox.setChecked(False)
+        self.flyer_checkBox.setChecked(False)
+        self.logo_checkBox.setChecked(False)
+        self.businessCard_checkBox.setChecked(False)
+        self.banner_checkBox.setChecked(False)
+        self.other_lineEdit.setText("")
+
+        self.digital_checkBox.setChecked(False)
+        self.indoor_checkBox.setChecked(False)
+        self.outdoor_checkBox.setChecked(False)
+        self.fiber_checkBox.setChecked(False)
+        self.offset_checkBox.setChecked(False)
+        self.selmation_checkBox.setChecked(False)
+        self.silkscreen_checkBox.setChecked(False)
+        self.flexo_checkBox.setChecked(False)
+        self.Cutter_checkBox.setChecked(False)
+        self.uv_checkBox.setChecked(False)
+        self.laser_checkBox.setChecked(False)
+        self.inkjet_checkBox.setChecked(False)
+
+        self.high_doubleSpinBox.setValue(0.0)
+        self.width_doubleSpinBox.setValue(0.0)
+        self.thickness_doubleSpinBox.setValue(0.0)
+        self.other_kind_lineEdit_2.setText("")
+        self.color_lineEdit.setText("")
+
+        self.shriek_checkBox.setChecked(False)
+        self.wood_checkBox_2.setChecked(False)
+        self.pin_checkBox.setChecked(False)
+        self.cutRokneh_checkBox.setChecked(False)
+        self.rijah_checkBox.setChecked(False)
+        self.Peel_checkBox.setChecked(False)
+        self.Spot_checkBox.setChecked(False)
+        self.perforation_checkBox.setChecked(False)
+        self.thermalPackaging_checkBox.setChecked(False)
+        self.binding_checkBox.setChecked(False)
+        self.purpura_checkBox.setChecked(False)
+        self.idPerforatio_checkBox.setChecked(False)
+        self.cut_checkBox.setChecked(False)
+        self.packaging_checkBox.setChecked(False)
+        self.fingerprint_checkBox.setChecked(False)
+        self.circularCut_checkBox.setChecked(False)
+        self.kofrag_checkBox.setChecked(False)
+        self.design_checkBox.setChecked(False)
+        self.printing_checkBox.setChecked(False)
+        self.wire_spinBox.setValue(0)
+        self.notes_textEdit.setText("")
+
 
 if __name__ == "__main__":
     import qdarkstyle
