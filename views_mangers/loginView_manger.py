@@ -12,15 +12,20 @@ class Login_Manager(QtWidgets.QWidget, login_view.Ui_Form):
         self.base_url = "https://saied.pythonanywhere.com/login/"
         self.userToken = ''
 
+        self.setStyleSheet("\n"
+                           "#Form {\n"
+                           r"border-image: url(:E:\@projects\tree Advertising\treeAdvertising\forms\images\backgroung\3433814.jpg 0 0 0 0 stretch stretch;\n"
+                           "}")
+
     def handle_login(self):
         msg = QtWidgets.QMessageBox()
         username = self.username_lin.text()
         password = self.password_lin.text()
-        if len(username) == 0 :
+        if len(username) == 0:
             msg.setWindowTitle("Warning")
             msg.setText("you must fill all fields !")
             msg.exec_()
-        elif len(password) ==0 :
+        elif len(password) == 0:
             msg.setWindowTitle("Warning")
             msg.setText("you must fill all fields !")
             msg.exec_()

@@ -47,7 +47,7 @@ class Main_manger(QtWidgets.QWidget, main_view.Ui_main):
         except Exception as w :
             print(w)
         try :
-            tracker = MouseTracker(self.label_3)
+            tracker = MouseTracker(self)
             tracker.positionChanged.connect(self.on_positionChanged)
         except Exception as e :
             print(e)
@@ -66,6 +66,7 @@ class Main_manger(QtWidgets.QWidget, main_view.Ui_main):
 
     @QtCore.pyqtSlot(QtCore.QPoint)
     def on_positionChanged(self, pos):
+
         self.session_counter = time.time()
         #print("(%d, %d)" % (pos.x(), pos.y()))
 

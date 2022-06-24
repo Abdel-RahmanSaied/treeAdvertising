@@ -15,20 +15,11 @@ class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(1920, 1049)
-        Form.setMinimumSize(QtCore.QSize(1340, 810))
+        Form.setMinimumSize(QtCore.QSize(0, 0))
         Form.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.label = QtWidgets.QLabel(Form)
-        self.label.setGeometry(QtCore.QRect(920, 30, 218, 33))
-        self.label.setMaximumSize(QtCore.QSize(271, 71))
-        font = QtGui.QFont()
-        font.setPointSize(20)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label.setFont(font)
-        self.label.setAlignment(QtCore.Qt.AlignCenter)
-        self.label.setObjectName("label")
+        self.gridLayout_4 = QtWidgets.QGridLayout(Form)
+        self.gridLayout_4.setObjectName("gridLayout_4")
         self.frame = QtWidgets.QFrame(Form)
-        self.frame.setGeometry(QtCore.QRect(20, 70, 1881, 881))
         self.frame.setMinimumSize(QtCore.QSize(391, 450))
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -662,17 +653,25 @@ class Ui_Form(object):
         self.label_16.setObjectName("label_16")
         self.horizontalLayout_11.addWidget(self.label_16)
         self.gridLayout.addLayout(self.horizontalLayout_11, 1, 2, 1, 1)
-        self.label_12 = QtWidgets.QLabel(Form)
-        self.label_12.setGeometry(QtCore.QRect(0, 0, 1920, 1080))
-        self.label_12.setMinimumSize(QtCore.QSize(1361, 821))
-        self.label_12.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.label_12.setText("")
-        self.label_12.setPixmap(QtGui.QPixmap(":/login/images/backgroung/3433814.jpg"))
-        self.label_12.setScaledContents(True)
-        self.label_12.setObjectName("label_12")
+        self.gridLayout_4.addWidget(self.frame, 1, 0, 1, 6)
+        spacerItem8 = QtWidgets.QSpacerItem(909, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_4.addItem(spacerItem8, 0, 0, 1, 2)
+        self.label = QtWidgets.QLabel(Form)
+        self.label.setMaximumSize(QtCore.QSize(271, 71))
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label.setFont(font)
+        self.label.setAlignment(QtCore.Qt.AlignCenter)
+        self.label.setObjectName("label")
+        self.gridLayout_4.addWidget(self.label, 0, 2, 1, 2)
+        spacerItem9 = QtWidgets.QSpacerItem(659, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_4.addItem(spacerItem9, 0, 4, 1, 1)
+        spacerItem10 = QtWidgets.QSpacerItem(832, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_4.addItem(spacerItem10, 2, 0, 1, 1)
         self.bck_btn = QtWidgets.QPushButton(Form)
-        self.bck_btn.setGeometry(QtCore.QRect(820, 950, 183, 60))
-        self.bck_btn.setMinimumSize(QtCore.QSize(0, 60))
+        self.bck_btn.setMinimumSize(QtCore.QSize(183, 60))
         self.bck_btn.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.bck_btn.setStyleSheet("font: 14pt \"Acumin Pro\";\n"
 "color: rgb(255, 255, 255);\n"
@@ -681,56 +680,9 @@ class Ui_Form(object):
 " border-radius: 7px;\n"
 "")
         self.bck_btn.setObjectName("bck_btn")
-        self.exit_btn = QtWidgets.QPushButton(Form)
-        self.exit_btn.setGeometry(QtCore.QRect(1860, 40, 30, 30))
-        self.exit_btn.setMinimumSize(QtCore.QSize(30, 30))
-        self.exit_btn.setMaximumSize(QtCore.QSize(161, 161))
-        self.exit_btn.setStyleSheet("QPushButton {\n"
-"    background-color: rgb(178, 39, 39,100);\n"
-"    color: #FFFFFF;\n"
-"    padding: 2px;\n"
-"    font: bold 15px;\n"
-"    border-width: 6px;\n"
-"    border-radius: 10px;\n"
-"    border-color: #2752B8;\n"
-"}\n"
-"QPushButton:hover {\n"
-"    background-color: #827397;\n"
-"}")
-        self.exit_btn.setText("")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/icons/icons/icons8-close-window-96.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.exit_btn.setIcon(icon)
-        self.exit_btn.setIconSize(QtCore.QSize(20, 20))
-        self.exit_btn.setObjectName("exit_btn")
-        self.minimize_btn = QtWidgets.QPushButton(Form)
-        self.minimize_btn.setGeometry(QtCore.QRect(1810, 40, 30, 30))
-        self.minimize_btn.setMinimumSize(QtCore.QSize(30, 30))
-        self.minimize_btn.setMaximumSize(QtCore.QSize(161, 161))
-        self.minimize_btn.setStyleSheet("QPushButton {\n"
-"    background-color: rgb(255, 229, 32,100);\n"
-"    color: #FFFFFF;\n"
-"    padding: 2px;\n"
-"    font: bold 15px;\n"
-"    border-width: 6px;\n"
-"    border-radius: 10px;\n"
-"    border-color: #2752B8;\n"
-"}\n"
-"QPushButton:hover {\n"
-"    background-color: #827397;\n"
-"}")
-        self.minimize_btn.setText("")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(":/icons/icons/icons8-subtract-16.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.minimize_btn.setIcon(icon1)
-        self.minimize_btn.setIconSize(QtCore.QSize(30, 30))
-        self.minimize_btn.setObjectName("minimize_btn")
-        self.label_12.raise_()
-        self.label.raise_()
-        self.frame.raise_()
-        self.bck_btn.raise_()
-        self.exit_btn.raise_()
-        self.minimize_btn.raise_()
+        self.gridLayout_4.addWidget(self.bck_btn, 2, 1, 1, 2)
+        spacerItem11 = QtWidgets.QSpacerItem(869, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_4.addItem(spacerItem11, 2, 3, 1, 3)
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -738,7 +690,6 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.label.setText(_translate("Form", "متابعة امر الشغل"))
         self.groupBox_3.setTitle(_translate("Form", "ملاحظات"))
         self.label_7.setText(_translate("Form", "اسم القائم علي العمل"))
         self.label_10.setText(_translate("Form", "تاريخ التسليم "))
@@ -760,5 +711,6 @@ class Ui_Form(object):
         self.label_5.setText(_translate("Form", "اسم العميل "))
         self.label_15.setText(_translate("Form", "القسم المختص"))
         self.label_16.setText(_translate("Form", "الحاله "))
+        self.label.setText(_translate("Form", "متابعة امر الشغل"))
         self.bck_btn.setText(_translate("Form", "الرجوع"))
 import app_resources_rc

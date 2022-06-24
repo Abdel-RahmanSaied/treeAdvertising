@@ -46,8 +46,8 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
 
         # install signals
         self.login_manger.loginAcceptedSignal.connect(self.handle_login_accepted)
-        self.login_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
-        self.login_manger.exit_btn.clicked.connect(self.exit_program)
+        # self.login_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
+        # self.login_manger.exit_btn.clicked.connect(self.exit_program)
         '''
         main view signals
         '''
@@ -59,19 +59,21 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.main_manger.logOut_btn.clicked.connect(lambda : self.setCurrentIndex(0))
         self.main_manger.inbox_btn.clicked.connect(self.handle_inboxManger)
 
-        self.main_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
-
         self.main_manger.logout_signal.connect(self.handle_logOut)
-        self.main_manger.exit_btn.clicked.connect(self.exit_program)
+
+        # self.main_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
+        # self.main_manger.exit_btn.clicked.connect(self.exit_program)
 
         '''
         new order view signals
         '''
-        self.newOrder_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
-        self.newOrder_manger.exit_btn.clicked.connect(self.exit_program)
+
         self.newOrder_manger.bck_btn.clicked.connect(lambda : self.setCurrentIndex(1))
         self.newOrder_manger.checkAcceptedSignal.connect(self.handle_clearOrder)
         self.newOrder_manger.end_btn.clicked.connect(self.handle_clearOrder)
+
+        # self.newOrder_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
+        # self.newOrder_manger.exit_btn.clicked.connect(self.exit_program)
 
         '''
         follow Orders screen 
@@ -80,37 +82,37 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.followOrder_manger.checkAcceptedSignal.connect(self.handle_DetailsFollowOrder)
         self.followOrder_manger.new_btn.clicked.connect(self.handle_workOrder)
         self.followOrder_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(1))
-        self.followOrder_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
-        self.followOrder_manger.exit_btn.clicked.connect(self.exit_program)
+        # self.followOrder_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
+        # self.followOrder_manger.exit_btn.clicked.connect(self.exit_program)
 
         '''
         followed order detail screen 
         '''
         self.orderDetails_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(1))
-        self.orderDetails_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
-        self.orderDetails_manger.exit_btn.clicked.connect(self.exit_program)
+        # self.orderDetails_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
+        # self.orderDetails_manger.exit_btn.clicked.connect(self.exit_program)
         '''
         finished orders screen
         '''
         self.finishedOrders_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(1))
-        self.finishedOrders_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
-        self.finishedOrders_manger.exit_btn.clicked.connect(self.exit_program)
+        # self.finishedOrders_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
+        # self.finishedOrders_manger.exit_btn.clicked.connect(self.exit_program)
 
         '''
         order Requirement screen
         '''
         self.orderRequirment_manger.bck_btn.clicked.connect(lambda : self.setCurrentIndex(1))
         self.orderRequirment_manger.new_btn.clicked.connect(self.handle_addRequirement)
-        self.orderRequirment_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
-        self.orderRequirment_manger.exit_btn.clicked.connect(self.exit_program)
+        # self.orderRequirment_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
+        # self.orderRequirment_manger.exit_btn.clicked.connect(self.exit_program)
 
         '''
         clients
         '''
         self.clients_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(1))
         self.clients_manger.new_btn.clicked.connect(self.handle_addClient)
-        self.clients_manger.minimize_btn.clicked.connect(lambda: self.showMinimized())
-        self.clients_manger.exit_btn.clicked.connect(self.exit_program)
+        # self.clients_manger.minimize_btn.clicked.connect(lambda: self.showMinimized())
+        # self.clients_manger.exit_btn.clicked.connect(self.exit_program)
 
         '''
         Add client
@@ -118,14 +120,14 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.addClient_manger.end_btn.clicked.connect(lambda: self.setCurrentIndex(7))
         self.addClient_manger.checkDataSignal.connect(self.handle_Clients)
         # self.addClient_manger.add_btn.clicked.connect(lambda: self.setCurrentIndex(8))
-        self.addClient_manger.minimize_btn.clicked.connect(lambda: self.showMinimized())
-        self.addClient_manger.exit_btn.clicked.connect(self.exit_program)
+        # self.addClient_manger.minimize_btn.clicked.connect(lambda: self.showMinimized())
+        # self.addClient_manger.exit_btn.clicked.connect(self.exit_program)
 
         '''
         inbox 
         '''
-        self.inbox_manger.exit_btn.clicked.connect(self.exit_program)
-        self.inbox_manger.minimize_btn.clicked.connect(lambda: self.showMinimized())
+        # self.inbox_manger.exit_btn.clicked.connect(self.exit_program)
+        # self.inbox_manger.minimize_btn.clicked.connect(lambda: self.showMinimized())
         self.inbox_manger.bck_btn.clicked.connect(lambda : self.setCurrentIndex(1))
         self.inbox_manger.details_btn.clicked.connect(self.handle_DetailsOrder)
         '''
@@ -134,8 +136,8 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.addRequirement_manger.end_btn.clicked.connect(lambda: self.setCurrentIndex(6))
         self.addRequirement_manger.checkDataSignal.connect(self.handle_orderRequirment)
         # self.addClient_manger.add_btn.clicked.connect(lambda: self.setCurrentIndex(8))
-        self.addRequirement_manger.minimize_btn.clicked.connect(lambda: self.showMinimized())
-        self.addRequirement_manger.exit_btn.clicked.connect(self.exit_program)
+        # self.addRequirement_manger.minimize_btn.clicked.connect(lambda: self.showMinimized())
+        # self.addRequirement_manger.exit_btn.clicked.connect(self.exit_program)
 
 
         ''' designs  '''
@@ -191,11 +193,20 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
 
     def exit_program(self):
         self.main_manger.thred.cancel()
+        print("program closed")
         sys.exit()
     def handle_logOut(self):
         self.main_manger.thred.cancel()
         self.login_manger.password_lin.setText("")
         self.setCurrentIndex(0)
+
+    def closeEvent(self, event):
+        try:
+            self.exit_program()
+            event.accept()
+        except Exception as e:
+            print(e)
+            event.ignore()
 
 if __name__ == "__main__":
     import qdarkstyle

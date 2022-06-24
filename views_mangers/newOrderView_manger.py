@@ -98,6 +98,7 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
         else:
             try :
                 check_reply = requests.post(self.client_check_url, json = phone_number, headers=self.headers).json()
+                print(check_reply)
             except Exception as s :
                 print("ss",s)
 
@@ -323,7 +324,6 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
                     self.printing_type = []
                     self.Post_print_services = []
                 else:
-
                     ''' Client cheacker '''
                     if len(self.username_lin_3.text()) != 0:
                         self.username = self.username_lin_3.text()
@@ -338,7 +338,6 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
                         msg.setWindowTitle("Warning")
                         msg.setText("You must enter phone number.")
                         msg.exec_()
-
                     try:
                         if self.redRadioButton.isChecked():
                             self.level = "R"

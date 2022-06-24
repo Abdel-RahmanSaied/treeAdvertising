@@ -14,84 +14,11 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(1920, 1045)
-        Form.setMinimumSize(QtCore.QSize(1340, 810))
-        self.label = QtWidgets.QLabel(Form)
-        self.label.setGeometry(QtCore.QRect(870, 20, 271, 51))
-        self.label.setMaximumSize(QtCore.QSize(271, 71))
-        font = QtGui.QFont()
-        font.setFamily("Thunder Lord")
-        font.setPointSize(20)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label.setFont(font)
-        self.label.setAlignment(QtCore.Qt.AlignCenter)
-        self.label.setObjectName("label")
-        self.bck_btn = QtWidgets.QPushButton(Form)
-        self.bck_btn.setGeometry(QtCore.QRect(920, 920, 200, 60))
-        self.bck_btn.setMinimumSize(QtCore.QSize(200, 60))
-        self.bck_btn.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.bck_btn.setStyleSheet("font: 14pt \"Acumin Pro\";\n"
-"color: rgb(255, 255, 255);\n"
-"background-color: rgb(50, 85, 127, 250);\n"
-"\n"
-" border-radius: 7px;\n"
-"")
-        self.bck_btn.setObjectName("bck_btn")
-        self.label_3 = QtWidgets.QLabel(Form)
-        self.label_3.setGeometry(QtCore.QRect(0, 0, 1920, 1080))
-        self.label_3.setMinimumSize(QtCore.QSize(1361, 821))
-        self.label_3.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.label_3.setText("")
-        self.label_3.setPixmap(QtGui.QPixmap(":/login/images/backgroung/3433814.jpg"))
-        self.label_3.setScaledContents(True)
-        self.label_3.setObjectName("label_3")
-        self.exit_btn = QtWidgets.QPushButton(Form)
-        self.exit_btn.setGeometry(QtCore.QRect(1860, 20, 30, 30))
-        self.exit_btn.setMinimumSize(QtCore.QSize(30, 30))
-        self.exit_btn.setMaximumSize(QtCore.QSize(161, 161))
-        self.exit_btn.setStyleSheet("QPushButton {\n"
-"    background-color: rgb(178, 39, 39,100);\n"
-"    color: #FFFFFF;\n"
-"    padding: 2px;\n"
-"    font: bold 15px;\n"
-"    border-width: 6px;\n"
-"    border-radius: 10px;\n"
-"    border-color: #2752B8;\n"
-"}\n"
-"QPushButton:hover {\n"
-"    background-color: #827397;\n"
-"}")
-        self.exit_btn.setText("")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/icons/icons/icons8-close-window-96.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.exit_btn.setIcon(icon)
-        self.exit_btn.setIconSize(QtCore.QSize(20, 20))
-        self.exit_btn.setObjectName("exit_btn")
-        self.minimize_btn = QtWidgets.QPushButton(Form)
-        self.minimize_btn.setGeometry(QtCore.QRect(1810, 20, 30, 30))
-        self.minimize_btn.setMinimumSize(QtCore.QSize(30, 30))
-        self.minimize_btn.setMaximumSize(QtCore.QSize(161, 161))
-        self.minimize_btn.setStyleSheet("QPushButton {\n"
-"    background-color: rgb(255, 229, 32,100);\n"
-"    color: #FFFFFF;\n"
-"    padding: 2px;\n"
-"    font: bold 15px;\n"
-"    border-width: 6px;\n"
-"    border-radius: 10px;\n"
-"    border-color: #2752B8;\n"
-"}\n"
-"QPushButton:hover {\n"
-"    background-color: #827397;\n"
-"}")
-        self.minimize_btn.setText("")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(":/icons/icons/icons8-subtract-16.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.minimize_btn.setIcon(icon1)
-        self.minimize_btn.setIconSize(QtCore.QSize(30, 30))
-        self.minimize_btn.setObjectName("minimize_btn")
+        Form.resize(1920, 1035)
+        Form.setMinimumSize(QtCore.QSize(0, 0))
+        self.gridLayout_4 = QtWidgets.QGridLayout(Form)
+        self.gridLayout_4.setObjectName("gridLayout_4")
         self.frame = QtWidgets.QFrame(Form)
-        self.frame.setGeometry(QtCore.QRect(100, 120, 1711, 761))
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
@@ -218,26 +145,55 @@ class Ui_Form(object):
         self.tableWidget.setHorizontalHeaderItem(4, item)
         self.gridLayout_3.addWidget(self.tableWidget, 0, 0, 1, 1)
         self.gridLayout_2.addWidget(self.frame_3, 1, 1, 1, 3)
-        self.label_3.raise_()
-        self.label.raise_()
-        self.bck_btn.raise_()
-        self.exit_btn.raise_()
-        self.minimize_btn.raise_()
-        self.frame.raise_()
-        header = self.tableWidget.horizontalHeader()
-        header.setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeToContents)
-        header.setSectionResizeMode(1, QtWidgets.QHeaderView.Stretch)
-        header.setSectionResizeMode(2, QtWidgets.QHeaderView.Stretch)
-        header.setSectionResizeMode(3, QtWidgets.QHeaderView.Stretch)
-        header.setSectionResizeMode(4, QtWidgets.QHeaderView.Stretch)
+        self.gridLayout_4.addWidget(self.frame, 2, 1, 2, 5)
+        spacerItem4 = QtWidgets.QSpacerItem(770, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_4.addItem(spacerItem4, 0, 1, 1, 1)
+        spacerItem5 = QtWidgets.QSpacerItem(770, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_4.addItem(spacerItem5, 0, 4, 1, 1)
+        spacerItem6 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_4.addItem(spacerItem6, 2, 0, 1, 1)
+        spacerItem7 = QtWidgets.QSpacerItem(20, 28, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.gridLayout_4.addItem(spacerItem7, 1, 2, 1, 1)
+        self.bck_btn = QtWidgets.QPushButton(Form)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.bck_btn.sizePolicy().hasHeightForWidth())
+        self.bck_btn.setSizePolicy(sizePolicy)
+        self.bck_btn.setMinimumSize(QtCore.QSize(200, 60))
+        self.bck_btn.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.bck_btn.setStyleSheet("font: 14pt \"Acumin Pro\";\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: rgb(50, 85, 127, 250);\n"
+"\n"
+" border-radius: 7px;\n"
+"")
+        self.bck_btn.setObjectName("bck_btn")
+        self.gridLayout_4.addWidget(self.bck_btn, 5, 2, 1, 2)
+        spacerItem8 = QtWidgets.QSpacerItem(68, 20, QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_4.addItem(spacerItem8, 3, 6, 1, 2)
+        spacerItem9 = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.gridLayout_4.addItem(spacerItem9, 4, 3, 1, 1)
+        spacerItem10 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.gridLayout_4.addItem(spacerItem10, 6, 3, 1, 1)
+        self.label = QtWidgets.QLabel(Form)
+        self.label.setMaximumSize(QtCore.QSize(271, 71))
+        font = QtGui.QFont()
+        font.setFamily("Thunder Lord")
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label.setFont(font)
+        self.label.setAlignment(QtCore.Qt.AlignCenter)
+        self.label.setObjectName("label")
+        self.gridLayout_4.addWidget(self.label, 0, 3, 1, 1)
+
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.label.setText(_translate("Form", "العملاء"))
-        self.bck_btn.setText(_translate("Form", "الرجوع"))
         self.new_btn.setText(_translate("Form", "جديد"))
         self.delete_btn.setText(_translate("Form", "مسح"))
         self.search_btn.setText(_translate("Form", "بحث"))
@@ -252,4 +208,6 @@ class Ui_Form(object):
         item.setText(_translate("Form", "المستوى"))
         item = self.tableWidget.horizontalHeaderItem(4)
         item.setText(_translate("Form", "تفاصيل آخرى"))
+        self.bck_btn.setText(_translate("Form", "الرجوع"))
+        self.label.setText(_translate("Form", "العملاء"))
 import app_resources_rc
