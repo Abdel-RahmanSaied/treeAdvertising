@@ -62,6 +62,7 @@ class Inbox_manger(QtWidgets.QWidget, inbox_view.Ui_Form):
             try :
                 self.reply = requests.put(f"{self.accept_order}{self.orderID}//" , json=data , headers=self.headers).json()
                 response = self.reply['Response']
+                print(response)
                 if response == "You don't have permission to update this." :
                     msg.setWindowTitle("Warning")
                     msg.setText(f"{response}by {self.user_name}")

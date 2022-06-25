@@ -84,7 +84,8 @@ class Main_manger(QtWidgets.QWidget, main_view.Ui_main):
         session_mins = actuall_session_time // 60
         session_mins = session_mins % 60
         if session_mins == 1 :
-            self.logout_signal.emit()
+            #self.logout_signal.emit()
+            pass
 
 
 

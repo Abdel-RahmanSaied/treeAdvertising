@@ -20,13 +20,14 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
         self.add_client_url = 'https://saied.pythonanywhere.com/clients/'
         self.orders_url = 'https://saied.pythonanywhere.com/orders/'
 
-        self.token = ''
+        self.token = '70d541af9b5dd9b1fb33ce325f0a90743d59f2ab'
         self.headers = {}
 
         '''
         data
         '''
         self.username = ''
+        self.Orderid = 0
         self.level = ''
         self.recived_date = ''
         self.post_date = ''
@@ -85,6 +86,8 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
         phone_number = {
                 "phone": self.phone_number
                             }
+
+
 
         client_data = {
                 "name": self.username,
@@ -220,6 +223,7 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
 
             self.size_high = float(self.high_doubleSpinBox.text())
             self.size_width = float(self.width_doubleSpinBox.text())
+            self.Orderid = int(self.order_ID.text())
 
             if self.wood_radioButton.isChecked():
                 self.materials = "خشب"
@@ -359,6 +363,7 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
 
                     """ Post Order """
                     orderData = {
+                            "order_id" : self.Orderid ,
                             "accepted_by": "Not Accepted yet",
                             "img_path": self.img_path,
                             "recived_date": self.recived_date,
@@ -382,8 +387,10 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
 
                     try:
                         if self.cliend_id != -1 :
+                            print("the order data \n" , orderData)
+
                             self.check_reply = requests.post(self.orders_url, json=orderData, headers=self.headers).json()
-                            # print("Respnse : ", self.check_reply)
+
                             self.checkAcceptedSignal.emit()
                             msg.setWindowTitle("successfully")
                             msg.setText("your request sent successfully.")
@@ -402,11 +409,11 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
                             msg.exec_()
 
                     except (requests.ConnectionError, requests.Timeout) as exception:
-                        print(exception)
                         msg.setWindowTitle("Warning")
                         msg.setText("No internet connection.")
                         msg.exec_()
                     except Exception as e:
+                        #print(e)
                         msg.setWindowTitle("Warning")
                         msg.setText("The phone number is already registered with another client  , you can use search button.")
                         msg.exec_()

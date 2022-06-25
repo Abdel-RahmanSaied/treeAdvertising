@@ -25,6 +25,7 @@ class OrderDetails(QtWidgets.QWidget, orderDetails_view.Ui_Form):
         try :
             for item in self.reply :
                 if item['order_id'] == self.order_id :
+                    print(item)
                     self.clientName_lbl.setText(item["client_name"])
                     self.orderID_lbl.setText(str(item["order_id"]))
                     self.date_lbl.setText(str(item['date']))

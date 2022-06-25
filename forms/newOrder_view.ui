@@ -86,6 +86,61 @@
           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
          </property>
          <layout class="QGridLayout" name="gridLayout_3">
+          <item row="1" column="8">
+           <spacer name="horizontalSpacer_39">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="1" column="10">
+           <spacer name="horizontalSpacer_30">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>60</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="1" column="7">
+           <widget class="QSpinBox" name="order_ID">
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Acumin Pro</family>
+              <pointsize>15</pointsize>
+              <weight>50</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:rgba(0, 0, 0, 0);
+border:none;
+border-bottom:2px solid rgba(46, 82, 101, 200);
+font: 15pt &quot;Acumin Pro&quot;;
+padding-bottom:7px;</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
           <item row="0" column="0">
            <layout class="QHBoxLayout" name="horizontalLayout_7">
             <item>
@@ -212,216 +267,50 @@ padding-bottom:7px;</string>
             </property>
            </spacer>
           </item>
-          <item row="0" column="2">
-           <layout class="QHBoxLayout" name="horizontalLayout_4">
-            <item>
-             <widget class="QLabel" name="gg">
-              <property name="minimumSize">
-               <size>
-                <width>60</width>
-                <height>15</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>15</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color: rgb(30,  160, 30);</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QRadioButton" name="greenRadioButton">
-              <property name="maximumSize">
-               <size>
-                <width>15</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item row="0" column="3">
-           <spacer name="horizontalSpacer">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::Fixed</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>13</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="0" column="4">
-           <layout class="QHBoxLayout" name="horizontalLayout_2">
-            <item>
-             <widget class="QLabel" name="label_12">
-              <property name="minimumSize">
-               <size>
-                <width>60</width>
-                <height>15</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>15</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color: rgb(20, 20, 200);</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QRadioButton" name="blueRadioButton">
-              <property name="maximumSize">
-               <size>
-                <width>15</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item row="0" column="5">
-           <spacer name="horizontalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::Fixed</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>13</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="0" column="6" colspan="2">
-           <layout class="QHBoxLayout" name="horizontalLayout_3">
-            <item>
-             <widget class="QLabel" name="label_13">
-              <property name="minimumSize">
-               <size>
-                <width>60</width>
-                <height>15</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>15</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color: rgb(200, 30, 30);</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QRadioButton" name="redRadioButton">
-              <property name="maximumSize">
-               <size>
-                <width>15</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item row="0" column="8">
-           <spacer name="horizontalSpacer_21">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::Fixed</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>100</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="0" column="9">
-           <widget class="QLineEdit" name="username_lin_3">
+          <item row="1" column="11">
+           <widget class="QPushButton" name="search_btn">
             <property name="minimumSize">
              <size>
-              <width>300</width>
-              <height>0</height>
+              <width>50</width>
+              <height>50</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>500</width>
+              <width>16777215</width>
               <height>16777215</height>
              </size>
             </property>
-            <property name="font">
-             <font>
-              <family>Acumin Pro</family>
-              <pointsize>10</pointsize>
-             </font>
-            </property>
-            <property name="layoutDirection">
-             <enum>Qt::LeftToRight</enum>
-            </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgba(0, 0, 0, 0);
-border:none;
-border-bottom:2px solid rgba(46, 82, 101, 200);
+             <string notr="true">font: 11pt &quot;Acumin Pro&quot;;
+color: rgb(255, 255, 255);
+background-color: rgb(50, 85, 127,100);
 
-padding-bottom:7px;</string>
+ border-radius: 12px;
+</string>
             </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
+            <property name="text">
+             <string/>
             </property>
-            <property name="placeholderText">
-             <string>اسم العميل</string>
+            <property name="icon">
+             <iconset resource="app_resources.qrc">
+              <normaloff>:/icons/icons/icons8-search-50.png</normaloff>:/icons/icons/icons8-search-50.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>30</width>
+              <height>30</height>
+             </size>
             </property>
            </widget>
           </item>
-          <item row="0" column="10">
-           <spacer name="horizontalSpacer_3">
+          <item row="1" column="12">
+           <spacer name="horizontalSpacer_23">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
             <property name="sizeType">
-             <enum>QSizePolicy::Fixed</enum>
+             <enum>QSizePolicy::Preferred</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -430,38 +319,6 @@ padding-bottom:7px;</string>
              </size>
             </property>
            </spacer>
-          </item>
-          <item row="0" column="11">
-           <widget class="QLabel" name="label_3">
-            <property name="minimumSize">
-             <size>
-              <width>120</width>
-              <height>40</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Acumin Pro</family>
-              <pointsize>14</pointsize>
-              <weight>50</weight>
-              <italic>false</italic>
-              <bold>false</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color:rgba(48, 62, 84, 20);
-
-border:none;
-font: 14pt &quot;Acumin Pro&quot;;
-padding-bottom:7px;</string>
-            </property>
-            <property name="text">
-             <string>اسم العميل</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
           </item>
           <item row="1" column="0">
            <layout class="QHBoxLayout" name="horizontalLayout_8">
@@ -579,63 +436,83 @@ padding-bottom:7px;</string>
             </item>
            </layout>
           </item>
-          <item row="1" column="1" colspan="6">
-           <spacer name="horizontalSpacer_6">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>368</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="1" column="7">
-           <widget class="QPushButton" name="search_btn">
+          <item row="0" column="13">
+           <widget class="QLineEdit" name="username_lin_3">
             <property name="minimumSize">
              <size>
-              <width>50</width>
-              <height>50</height>
+              <width>300</width>
+              <height>0</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>16777215</width>
+              <width>500</width>
               <height>16777215</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <family>Acumin Pro</family>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+            </property>
             <property name="styleSheet">
-             <string notr="true">font: 11pt &quot;Acumin Pro&quot;;
-color: rgb(255, 255, 255);
-background-color: rgb(50, 85, 127,100);
+             <string notr="true">background-color:rgba(0, 0, 0, 0);
+border:none;
+border-bottom:2px solid rgba(46, 82, 101, 200);
 
- border-radius: 12px;
-</string>
+padding-bottom:7px;</string>
             </property>
-            <property name="text">
-             <string/>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
             </property>
-            <property name="icon">
-             <iconset resource="app_resources.qrc">
-              <normaloff>:/icons/icons/icons8-search-50.png</normaloff>:/icons/icons/icons8-search-50.png</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>30</width>
-              <height>30</height>
-             </size>
+            <property name="placeholderText">
+             <string>اسم العميل</string>
             </property>
            </widget>
           </item>
-          <item row="1" column="8">
-           <spacer name="horizontalSpacer_23">
+          <item row="0" column="15">
+           <widget class="QLabel" name="label_3">
+            <property name="minimumSize">
+             <size>
+              <width>120</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Acumin Pro</family>
+              <pointsize>14</pointsize>
+              <weight>50</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:rgba(48, 62, 84, 20);
+
+border:none;
+font: 14pt &quot;Acumin Pro&quot;;
+padding-bottom:7px;</string>
+            </property>
+            <property name="text">
+             <string>اسم العميل</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="14">
+           <spacer name="horizontalSpacer_3">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
             <property name="sizeType">
-             <enum>QSizePolicy::Preferred</enum>
+             <enum>QSizePolicy::Fixed</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -645,7 +522,55 @@ background-color: rgb(50, 85, 127,100);
             </property>
            </spacer>
           </item>
-          <item row="1" column="9">
+          <item row="1" column="14">
+           <spacer name="horizontalSpacer_11">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>13</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="1" column="15">
+           <widget class="QLabel" name="label_16">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Acumin Pro</family>
+              <pointsize>14</pointsize>
+              <weight>50</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:rgba(48, 62, 84, 20);
+
+border:none;
+font: 14pt &quot;Acumin Pro&quot;;
+padding-bottom:7px;</string>
+            </property>
+            <property name="text">
+             <string>رقم التليفون</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="13">
            <widget class="QLineEdit" name="phone_number_lin">
             <property name="minimumSize">
              <size>
@@ -683,8 +608,47 @@ padding-bottom:7px;</string>
             </property>
            </widget>
           </item>
-          <item row="1" column="10">
-           <spacer name="horizontalSpacer_11">
+          <item row="0" column="4">
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QLabel" name="label_12">
+              <property name="minimumSize">
+               <size>
+                <width>60</width>
+                <height>15</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>15</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(20, 20, 200);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="blueRadioButton">
+              <property name="maximumSize">
+               <size>
+                <width>15</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="0" column="5">
+           <spacer name="horizontalSpacer_2">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -699,23 +663,63 @@ padding-bottom:7px;</string>
             </property>
            </spacer>
           </item>
-          <item row="1" column="11">
-           <widget class="QLabel" name="label_16">
-            <property name="maximumSize">
+          <item row="0" column="3">
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
              <size>
-              <width>16777215</width>
-              <height>40</height>
+              <width>13</width>
+              <height>20</height>
              </size>
             </property>
-            <property name="font">
-             <font>
-              <family>Acumin Pro</family>
-              <pointsize>14</pointsize>
-              <weight>50</weight>
-              <italic>false</italic>
-              <bold>false</bold>
-             </font>
-            </property>
+           </spacer>
+          </item>
+          <item row="0" column="2">
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QLabel" name="gg">
+              <property name="minimumSize">
+               <size>
+                <width>60</width>
+                <height>15</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>15</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(30,  160, 30);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="greenRadioButton">
+              <property name="maximumSize">
+               <size>
+                <width>15</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="9">
+           <widget class="QLabel" name="label_6">
             <property name="styleSheet">
              <string notr="true">background-color:rgba(48, 62, 84, 20);
 
@@ -724,12 +728,77 @@ font: 14pt &quot;Acumin Pro&quot;;
 padding-bottom:7px;</string>
             </property>
             <property name="text">
-             <string>رقم التليفون</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
+             <string>رقم امر الشغل :</string>
             </property>
            </widget>
+          </item>
+          <item row="0" column="12">
+           <spacer name="horizontalSpacer_21">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>100</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="1" column="1" colspan="6">
+           <spacer name="horizontalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>368</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="6" colspan="6">
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QLabel" name="label_13">
+              <property name="minimumSize">
+               <size>
+                <width>60</width>
+                <height>15</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>15</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(200, 30, 30);</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="redRadioButton">
+              <property name="maximumSize">
+               <size>
+                <width>15</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
          </layout>
         </widget>
