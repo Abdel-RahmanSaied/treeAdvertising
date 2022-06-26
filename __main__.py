@@ -10,12 +10,44 @@ from views_mangers.finishedOrders_manger import FinishedOrders
 from views_mangers.orderDetails_manger import OrderDetails
 from views_mangers.orderRequirment_view_manger import OrderRequirment
 from views_mangers.add_requirement_manger import AddRequirement
-
 from views_mangers.inbox_manger import Inbox_manger
 
+from PyQt5.QtGui import QImage, QPixmap
+from PyQt5.QtCore import QTimer, QThread, pyqtSignal, pyqtSlot
+
+import os
+import time
+import datetime
+from threading import Timer
+
+class RepeatTimer(Timer):
+    def run(self):
+        while not self.finished.wait(self.interval):
+            self.function(*self.args, **self.kwargs)
+
+
+class MouseTracker(QtCore.QObject):
+    positionChanged = QtCore.pyqtSignal(QtCore.QPoint)
+
+    def __init__(self, widget ):
+        super().__init__(widget)
+        self._widget = widget
+
+        self.widget.setMouseTracking(True)
+        self.widget.installEventFilter(self)
+    @property
+    def widget(self):
+        return self._widget
+
+    def eventFilter(self, o, e):
+        if o is self.widget and e.type() == QtCore.QEvent.MouseMove:
+            self.positionChanged.emit(e.pos())
+        return super().eventFilter(o, e)
+
 class Tree_Advertising(QtWidgets.QStackedWidget):
-    def __init__(self):
+    def __init__(self , name=None, *args, **kwargs ):
         super(Tree_Advertising, self).__init__()
+
         self.login_manger = Login_Manager()
         self.main_manger = Main_manger()
         self.newOrder_manger=NewOrderView_manger()
@@ -46,8 +78,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
 
         # install signals
         self.login_manger.loginAcceptedSignal.connect(self.handle_login_accepted)
-        # self.login_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
-        # self.login_manger.exit_btn.clicked.connect(self.exit_program)
+
         '''
         main view signals
         '''
@@ -61,9 +92,6 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
 
         self.main_manger.logout_signal.connect(self.handle_logOut)
 
-        # self.main_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
-        # self.main_manger.exit_btn.clicked.connect(self.exit_program)
-
         '''
         new order view signals
         '''
@@ -72,9 +100,6 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.newOrder_manger.checkAcceptedSignal.connect(self.handle_clearOrder)
         self.newOrder_manger.end_btn.clicked.connect(self.handle_clearOrder)
 
-        # self.newOrder_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
-        # self.newOrder_manger.exit_btn.clicked.connect(self.exit_program)
-
         '''
         follow Orders screen 
         '''
@@ -82,52 +107,40 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.followOrder_manger.checkAcceptedSignal.connect(self.handle_DetailsFollowOrder)
         self.followOrder_manger.new_btn.clicked.connect(self.handle_workOrder)
         self.followOrder_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(1))
-        # self.followOrder_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
-        # self.followOrder_manger.exit_btn.clicked.connect(self.exit_program)
 
         '''
         followed order detail screen 
         '''
         self.orderDetails_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(1))
-        # self.orderDetails_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
-        # self.orderDetails_manger.exit_btn.clicked.connect(self.exit_program)
+
         '''
         finished orders screen
         '''
         self.finishedOrders_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(1))
-        # self.finishedOrders_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
-        # self.finishedOrders_manger.exit_btn.clicked.connect(self.exit_program)
 
         '''
         order Requirement screen
         '''
         self.orderRequirment_manger.bck_btn.clicked.connect(lambda : self.setCurrentIndex(1))
         self.orderRequirment_manger.new_btn.clicked.connect(self.handle_addRequirement)
-        # self.orderRequirment_manger.minimize_btn.clicked.connect(lambda : self.showMinimized())
-        # self.orderRequirment_manger.exit_btn.clicked.connect(self.exit_program)
+
 
         '''
         clients
         '''
         self.clients_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(1))
         self.clients_manger.new_btn.clicked.connect(self.handle_addClient)
-        # self.clients_manger.minimize_btn.clicked.connect(lambda: self.showMinimized())
-        # self.clients_manger.exit_btn.clicked.connect(self.exit_program)
 
         '''
         Add client
         '''
         self.addClient_manger.end_btn.clicked.connect(lambda: self.setCurrentIndex(7))
         self.addClient_manger.checkDataSignal.connect(self.handle_Clients)
-        # self.addClient_manger.add_btn.clicked.connect(lambda: self.setCurrentIndex(8))
-        # self.addClient_manger.minimize_btn.clicked.connect(lambda: self.showMinimized())
-        # self.addClient_manger.exit_btn.clicked.connect(self.exit_program)
 
         '''
         inbox 
         '''
-        # self.inbox_manger.exit_btn.clicked.connect(self.exit_program)
-        # self.inbox_manger.minimize_btn.clicked.connect(lambda: self.showMinimized())
+
         self.inbox_manger.bck_btn.clicked.connect(lambda : self.setCurrentIndex(1))
         self.inbox_manger.details_btn.clicked.connect(self.handle_DetailsOrder)
         '''
@@ -135,12 +148,47 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         '''
         self.addRequirement_manger.end_btn.clicked.connect(lambda: self.setCurrentIndex(6))
         self.addRequirement_manger.checkDataSignal.connect(self.handle_orderRequirment)
-        # self.addClient_manger.add_btn.clicked.connect(lambda: self.setCurrentIndex(8))
-        # self.addRequirement_manger.minimize_btn.clicked.connect(lambda: self.showMinimized())
-        # self.addRequirement_manger.exit_btn.clicked.connect(self.exit_program)
 
+        try :
+            self.thred = RepeatTimer(1, self.start_time)
+            self.thred.start()
+        except Exception as w :
+            print(w)
+        try :
+            tracker = MouseTracker(self)
+            tracker.positionChanged.connect(self.on_positionChanged)
+        except Exception as e :
+            print(e)
 
-        ''' designs  '''
+        self.begin_timer = 0
+        self.session_counter = 0
+
+        try :
+            tracker = MouseTracker(self)
+            tracker.positionChanged.connect(self.on_positionChanged)
+        except Exception as e :
+            print(e)
+
+    @QtCore.pyqtSlot(QtCore.QPoint)
+    def on_positionChanged(self, pos):
+        self.session_counter = time.time()
+        print("(%d, %d)" % (pos.x(), pos.y()))
+    def start_time(self):
+
+        end_time = time.time()
+        lapced_time = end_time - self.begin_timer
+        mins = lapced_time // 60
+        sec = round(lapced_time % 60)
+        hours = mins // 60
+        mins = mins % 60
+        session_time = str("{0}:{1}:{2}".format(int(hours), int(mins), sec))
+        self.main_manger.sessionTime_lbl.setText(session_time)
+        end_time_session = time.time()
+        actuall_session_time = end_time_session - self.session_counter
+        session_mins = actuall_session_time // 60
+        session_mins = session_mins % 60
+        if session_mins == 1 and self.currentIndex() != 0:
+            self.handle_logOut()
 
     def handle_clearOrder(self):
         self.newOrder_manger.clear_data()
@@ -148,7 +196,8 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
 
     def handle_login_accepted(self):
         self.main_manger.username_lbl.setText(self.login_manger.username_lin.text())
-        self.main_manger.start_stopwatch()
+        self.begin_timer = time.time()
+        self.session_counter = time.time()
         self.setCurrentIndex(1)
     def handle_workOrder(self):
         self.newOrder_manger.token = self.login_manger.userToken
@@ -192,11 +241,11 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.setCurrentIndex(9)
 
     def exit_program(self):
-        self.main_manger.thred.cancel()
+        self.thred.cancel()
         print("program closed")
         sys.exit()
     def handle_logOut(self):
-        self.main_manger.thred.cancel()
+        #self.thred.cancel()
         self.login_manger.password_lin.setText("")
         self.setCurrentIndex(0)
 
