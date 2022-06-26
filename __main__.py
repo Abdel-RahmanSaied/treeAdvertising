@@ -91,7 +91,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.main_manger.finishedOrders_btn.clicked.connect(self.handle_finishedOrders)
         self.main_manger.ordersReq_btn.clicked.connect(self.handle_orderRequirment)
         self.main_manger.clients_btn.clicked.connect(self.handle_Clients)
-        self.main_manger.logOut_btn.clicked.connect(lambda : self.setCurrentIndex(0))
+        self.main_manger.logOut_btn.clicked.connect(self.handle_logOut)
         self.main_manger.inbox_btn.clicked.connect(self.handle_inboxManger)
 
         '''
@@ -125,7 +125,6 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         '''
         self.orderRequirment_manger.bck_btn.clicked.connect(lambda : self.setCurrentIndex(1))
         self.orderRequirment_manger.new_btn.clicked.connect(self.handle_addRequirement)
-
 
         '''
         clients

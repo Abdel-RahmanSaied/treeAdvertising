@@ -1,5 +1,6 @@
 from PyQt5 import QtWidgets , QtCore
 from PyQt5.QtGui import QImage, QPixmap
+from PyQt5 import QtGui
 from PyQt5.QtCore import QTimer, QThread, pyqtSignal, pyqtSlot
 from views import inbox_view
 import requests
@@ -28,14 +29,17 @@ class Inbox_manger(QtWidgets.QWidget, inbox_view.Ui_Form):
         self.accept_btn.clicked.connect(self.accept_state)
 
         self.inbox_count = 0
+        self.index = 0
 
     def selectionChanged(self):
         items = self.listWidget.selectedItems()
+        #self.index = self.listWidget.currentIndex().row()
         for item in items:
             self.orderID = int(item.text())
             self.item_selected = True
 
     def run(self):
+        counter = 0
         self.headers = {'Accept': 'application/json; indent=4', 'Content-Type': 'application/json',
                    'Authorization': f'Token {self.token}'}
         try :
@@ -44,8 +48,13 @@ class Inbox_manger(QtWidgets.QWidget, inbox_view.Ui_Form):
             print("ss",s)
         try :
             self.listWidget.clear()
-            for element in  self.reply :
+            for element in self.reply:
                 self.listWidget.addItem(str(element['order_id']))
+                if element['accepted_by'] == "Not Accepted yet" :
+                    item = self.listWidget.item(counter)
+                    item.setForeground(QtGui.QColor("red"))
+                    #item.setBackground(QtGui.QColor("red"))
+                counter +=1
         except Exception as e :
             print(e)
 
@@ -71,6 +80,8 @@ class Inbox_manger(QtWidgets.QWidget, inbox_view.Ui_Form):
                     msg.setText(f"{response}by {self.user_name}")
                     msg.exec_()
                 else:
+                    # item = self.listWidget.item(self.index)
+                    # item.setBackground(QtGui.QColor("red"))
                     msg.setWindowTitle("Warning")
                     msg.setText(response)
                     msg.exec_()
@@ -115,7 +126,6 @@ class Inbox_manger(QtWidgets.QWidget, inbox_view.Ui_Form):
             print("ss",s)
         try :
             reply_count = len(reply_check)
-            print(reply_check)
         except Exception as d :
             print(d)
         try :
