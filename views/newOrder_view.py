@@ -61,6 +61,7 @@ class Ui_Form(object):
 "font: 15pt \"Acumin Pro\";\n"
 "padding-bottom:7px;")
         self.order_ID.setAlignment(QtCore.Qt.AlignCenter)
+        self.order_ID.setMaximum(999999999)
         self.order_ID.setObjectName("order_ID")
         self.gridLayout_3.addWidget(self.order_ID, 1, 7, 1, 1)
         self.horizontalLayout_7 = QtWidgets.QHBoxLayout()

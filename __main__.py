@@ -20,10 +20,14 @@ import time
 import datetime
 from threading import Timer
 
+from playsound import playsound
+
+
 class RepeatTimer(Timer):
     def run(self):
         while not self.finished.wait(self.interval):
             self.function(*self.args, **self.kwargs)
+            # Inbox_manger().check_inbox()
 
 
 class MouseTracker(QtCore.QObject):
@@ -90,8 +94,6 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.main_manger.logOut_btn.clicked.connect(lambda : self.setCurrentIndex(0))
         self.main_manger.inbox_btn.clicked.connect(self.handle_inboxManger)
 
-        self.main_manger.logout_signal.connect(self.handle_logOut)
-
         '''
         new order view signals
         '''
@@ -149,6 +151,8 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.addRequirement_manger.end_btn.clicked.connect(lambda: self.setCurrentIndex(6))
         self.addRequirement_manger.checkDataSignal.connect(self.handle_orderRequirment)
 
+        self.inbox_manger.alert_signal.connect(self.play_sound)
+
         try :
             self.thred = RepeatTimer(1, self.start_time)
             self.thred.start()
@@ -162,19 +166,15 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
 
         self.begin_timer = 0
         self.session_counter = 0
+        self.sound_path = os.path.join(os.getcwd()+'/media/audio.wav')
 
-        try :
-            tracker = MouseTracker(self)
-            tracker.positionChanged.connect(self.on_positionChanged)
-        except Exception as e :
-            print(e)
 
     @QtCore.pyqtSlot(QtCore.QPoint)
     def on_positionChanged(self, pos):
         self.session_counter = time.time()
-        print("(%d, %d)" % (pos.x(), pos.y()))
+        #print("(%d, %d)" % (pos.x(), pos.y()))
     def start_time(self):
-
+        self.inbox_manger.check_inbox()
         end_time = time.time()
         lapced_time = end_time - self.begin_timer
         mins = lapced_time // 60
@@ -190,12 +190,21 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         if session_mins == 1 and self.currentIndex() != 0:
             self.handle_logOut()
 
+    def play_sound(self):
+        self.main_manger.notification_mark_lbl.setVisible(True)
+
+        try :
+            playsound(self.sound_path)
+        except Exception as r :
+            print(r)
+
     def handle_clearOrder(self):
         self.newOrder_manger.clear_data()
         self.setCurrentIndex(1)
 
     def handle_login_accepted(self):
         self.main_manger.username_lbl.setText(self.login_manger.username_lin.text())
+        self.inbox_manger.token = self.login_manger.userToken
         self.begin_timer = time.time()
         self.session_counter = time.time()
         self.setCurrentIndex(1)
@@ -239,10 +248,11 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.inbox_manger.user_name = self.login_manger.username_lin.text()
         self.inbox_manger.run()
         self.setCurrentIndex(9)
+        self.main_manger.notification_mark_lbl.setVisible(False)
 
     def exit_program(self):
         self.thred.cancel()
-        print("program closed")
+        #print("program closed")
         sys.exit()
     def handle_logOut(self):
         #self.thred.cancel()

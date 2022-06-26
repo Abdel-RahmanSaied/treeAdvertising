@@ -7,6 +7,7 @@ import requests
 class Inbox_manger(QtWidgets.QWidget, inbox_view.Ui_Form):
     checkAcceptedSignal = QtCore.pyqtSignal()
     reload_signal = QtCore.pyqtSignal()
+    alert_signal = QtCore.pyqtSignal()
     def __init__(self , name=None, *args, **kwargs ):
         super(Inbox_manger, self).__init__()
         self.setupUi(self)
@@ -25,6 +26,8 @@ class Inbox_manger(QtWidgets.QWidget, inbox_view.Ui_Form):
         self.user_name = ''
 
         self.accept_btn.clicked.connect(self.accept_state)
+
+        self.inbox_count = 0
 
     def selectionChanged(self):
         items = self.listWidget.selectedItems()
@@ -102,6 +105,29 @@ class Inbox_manger(QtWidgets.QWidget, inbox_view.Ui_Form):
             msg.setWindowTitle("Warning")
             msg.setText("you must select the order !")
             msg.exec_()
+
+    def check_inbox(self):
+        self.headers = {'Accept': 'application/json; indent=4', 'Content-Type': 'application/json',
+                   'Authorization': f'Token {self.token}'}
+        try :
+            reply_check = requests.get(self.base_url , headers=self.headers).json()
+        except Exception as s :
+            print("ss",s)
+        try :
+            reply_count = len(reply_check)
+            print(reply_check)
+        except Exception as d :
+            print(d)
+        try :
+            if self.inbox_count == 0 :
+                self.inbox_count = reply_count
+            elif self.inbox_count != reply_count :
+                self.alert_signal.emit()
+                self.inbox_count = reply_count
+        except Exception as r :
+            print(r)
+
+
 
 
 if __name__ == "__main__":

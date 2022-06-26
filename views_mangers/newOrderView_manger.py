@@ -309,7 +309,7 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
             if self.design_checkBox.isChecked() :
                 self.target_dapertment.append("D")
             if self.printing_checkBox.isChecked() :
-                self.target_dapertment.append("D")
+                self.target_dapertment.append("P")
 
             """ Check Input Data """
             if self.design_types == '':
@@ -319,6 +319,7 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
                 self.design_category = []
                 self.printing_type = []
                 self.Post_print_services = []
+                self.target_dapertment = []
             else:
                 if len(self.target_dapertment) == 0:
                     msg.setWindowTitle("warning")
@@ -327,95 +328,102 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
                     self.design_category = []
                     self.printing_type = []
                     self.Post_print_services = []
+                    self.target_dapertment = []
+
                 else:
                     ''' Client cheacker '''
                     if len(self.username_lin_3.text()) != 0:
-                        self.username = self.username_lin_3.text()
+                        if len(self.phone_number_lin.text()) != 0:
+                            self.username = self.username_lin_3.text()
+                            self.phone_number = self.phone_number_lin.text()
+
+                            """-----------------"""
+                            try:
+                                if self.redRadioButton.isChecked():
+                                    self.level = "R"
+                                elif self.blueRadioButton.isChecked():
+                                    self.level = "B"
+                                elif self.greenRadioButton.isChecked():
+                                    self.level = "G"
+                            except Exception as r:
+                                print(r)
+
+                            self.recived_date = self.recived_date_lin.text()
+                            self.post_date = self.post_date_lin.text()
+
+                            client_data = {
+                                "name": self.username,
+                                "phone_number": self.phone_number,
+                                "clientlevel": self.level
+                            }
+
+                            """ Post Order """
+                            orderData = {
+                                "order_id": self.Orderid,
+                                "accepted_by": "Not Accepted yet",
+                                "img_path": self.img_path,
+                                "recived_date": self.recived_date,
+                                "delivery_date": self.post_date,
+                                "design_types": self.design_types,
+                                "design_path": self.design_path,
+                                "design_category": self.design_category,
+                                "printing_type": self.printing_type,
+                                "size_width": self.size_width,
+                                "size_high": self.size_high,
+                                "materials": self.materials,
+                                "color": self.color,
+                                "thickness": self.thickness,
+                                "Post_print_services": self.Post_print_services,
+                                "state": self.state,
+                                "notes": self.notes,
+                                "client_id": self.cliend_id,
+                                "target_dapertment": self.target_dapertment
+
+                            }
+
+                            try:
+                                if self.cliend_id != -1:
+
+                                    self.check_reply = requests.post(self.orders_url, json=orderData,
+                                                                     headers=self.headers).json()
+
+                                    self.checkAcceptedSignal.emit()
+                                    msg.setWindowTitle("successfully")
+                                    msg.setText("your request sent successfully.")
+                                    msg.exec_()
+                                else:
+                                    add_client_reply = requests.post(self.add_client_url, json=client_data,
+                                                                     headers=self.headers).json()
+                                    self.cliend_id = add_client_reply['id']
+                                    orderData["client_id"] = add_client_reply['id']
+                                    # print(orderData)
+                                    self.check_reply = requests.post(self.orders_url, json=orderData,
+                                                                     headers=self.headers).json()
+                                    # print("Respnse : ", self.check_reply)
+                                    self.checkAcceptedSignal.emit()
+                                    msg.setWindowTitle("successfully")
+                                    msg.setText("your request sent successfully.")
+                                    msg.exec_()
+
+                            except (requests.ConnectionError, requests.Timeout) as exception:
+                                msg.setWindowTitle("Warning")
+                                msg.setText("No internet connection.")
+                                msg.exec_()
+                            except Exception as e:
+                                # print(e)
+                                msg.setWindowTitle("Warning")
+                                msg.setText(
+                                    "The phone number is already registered with another client  , you can use search button.")
+                                msg.exec_()
+
+
+                        else:
+                            msg.setWindowTitle("Warning")
+                            msg.setText("You must enter phone number.")
+                            msg.exec_()
                     else:
                         msg.setWindowTitle("Warning")
                         msg.setText("You must enter user name.")
-                        msg.exec_()
-
-                    if len(self.phone_number_lin.text()) != 0:
-                        self.phone_number = self.phone_number_lin.text()
-                    else:
-                        msg.setWindowTitle("Warning")
-                        msg.setText("You must enter phone number.")
-                        msg.exec_()
-                    try:
-                        if self.redRadioButton.isChecked():
-                            self.level = "R"
-                        elif self.blueRadioButton.isChecked():
-                            self.level = "B"
-                        elif self.greenRadioButton.isChecked():
-                            self.level = "G"
-                    except Exception as r:
-                        print(r)
-
-                    self.recived_date = self.recived_date_lin.text()
-                    self.post_date = self.post_date_lin.text()
-
-                    client_data = {
-                        "name": self.username,
-                        "phone_number": self.phone_number,
-                        "clientlevel": self.level
-                    }
-
-                    """ Post Order """
-                    orderData = {
-                            "order_id" : self.Orderid ,
-                            "accepted_by": "Not Accepted yet",
-                            "img_path": self.img_path,
-                            "recived_date": self.recived_date,
-                            "delivery_date": self.post_date,
-                            "design_types": self.design_types,
-                            "design_path": self.design_path,
-                            "design_category": self.design_category,
-                            "printing_type": self.printing_type,
-                            "size_width": self.size_width,
-                            "size_high": self.size_high,
-                            "materials": self.materials,
-                            "color": self.color,
-                            "thickness": self.thickness,
-                            "Post_print_services": self.Post_print_services,
-                            "state": self.state,
-                            "notes": self.notes,
-                            "client_id": self.cliend_id ,
-                            "target_dapertment" : self.target_dapertment
-
-                    }
-
-                    try:
-                        if self.cliend_id != -1 :
-                            print("the order data \n" , orderData)
-
-                            self.check_reply = requests.post(self.orders_url, json=orderData, headers=self.headers).json()
-
-                            self.checkAcceptedSignal.emit()
-                            msg.setWindowTitle("successfully")
-                            msg.setText("your request sent successfully.")
-                            msg.exec_()
-                        else :
-                            add_client_reply = requests.post(self.add_client_url, json=client_data,
-                                                           headers=self.headers).json()
-                            self.cliend_id = add_client_reply['id']
-                            orderData["client_id"] = add_client_reply['id']
-                            # print(orderData)
-                            self.check_reply = requests.post(self.orders_url, json=orderData, headers=self.headers).json()
-                            # print("Respnse : ", self.check_reply)
-                            self.checkAcceptedSignal.emit()
-                            msg.setWindowTitle("successfully")
-                            msg.setText("your request sent successfully.")
-                            msg.exec_()
-
-                    except (requests.ConnectionError, requests.Timeout) as exception:
-                        msg.setWindowTitle("Warning")
-                        msg.setText("No internet connection.")
-                        msg.exec_()
-                    except Exception as e:
-                        #print(e)
-                        msg.setWindowTitle("Warning")
-                        msg.setText("The phone number is already registered with another client  , you can use search button.")
                         msg.exec_()
 
         except Exception as e:
@@ -487,6 +495,12 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
         self.printing_checkBox.setChecked(False)
         self.wire_spinBox.setValue(0)
         self.notes_textEdit.setText("")
+
+        self.design_category = []
+        self.printing_type = []
+        self.Post_print_services = []
+        self.target_dapertment = []
+
 
 
 if __name__ == "__main__":

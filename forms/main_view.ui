@@ -275,7 +275,7 @@ QPushButton:hover {
        </spacer>
       </item>
       <item row="0" column="1" colspan="2">
-       <widget class="QLabel" name="label_4">
+       <widget class="QLabel" name="notification_mark_lbl">
         <property name="minimumSize">
          <size>
           <width>61</width>
