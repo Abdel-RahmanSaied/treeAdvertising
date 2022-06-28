@@ -1,14 +1,16 @@
 from PyQt5 import QtWidgets , QtCore
-from views import newOrder_view
+from PyQt5.QtCore import QDate
+
+from views import editOrder_view
 import json
 import requests
 import os
 
-class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
+class EditOrderView_manger(QtWidgets.QWidget, editOrder_view.Ui_Form):
     checkAcceptedSignal = QtCore.pyqtSignal()
     home_signal = QtCore.pyqtSignal()
     def __init__(self):
-        super(NewOrderView_manger, self).__init__()
+        super(EditOrderView_manger, self).__init__()
         self.setupUi(self)
         self.otherKind_radioButton.toggled.connect(self.other_kind_lineEdit_2.setEnabled)
         self.clientDesign_btn.clicked.connect(self.getdesign_path)
@@ -20,8 +22,82 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
         self.add_client_url = 'https://saied.pythonanywhere.com/clients/'
         self.orders_url = 'https://saied.pythonanywhere.com/orders/'
 
-        self.token = ''
+        self.token = '70d541af9b5dd9b1fb33ce325f0a90743d59f2ab'
         self.headers = {}
+        self.order = {
+        "order_id": 9999,
+        "user_name": "d",
+        "client_name": "saieed",
+        "accepted_by": "Not Accepted yet",
+        "img_path": "no file selected",
+        "date": "2022-06-28",
+        "recived_date": "2027-06-06",
+        "delivery_date": "2025-06-06",
+        "design_types": "O",
+        "design_path": "no file selected",
+        "design_category": [
+            "logo",
+            "business Card",
+            "banner",
+            "brochure",
+            "menu",
+            "flyer",
+            "certificate",
+            "cover",
+            "poster",
+            "RollUp",
+            "label",
+            "wwwwww"
+        ],
+        "printing_type": [
+            "ديجيتال",
+            "اوفسيت",
+            "سلك سكرين",
+            "UV",
+            "ان دور",
+            "اوت دور",
+            "فلكسو",
+            "ليزر",
+            "فايبر",
+            "سيلميشن",
+            "كتر بلوتر",
+            "انك جيت"
+        ],
+        "size_width": 3.0,
+        "size_high": 3.0,
+        "materials": "dddd",
+        "color": "www",
+        "thickness": 3.0,
+        "Post_print_services": [
+            "شرشرة",
+            "ريجه",
+            "تغليف حرارى",
+            "قص",
+            "تجميع خشب",
+            "بشر",
+            "تجليد",
+            "تعبئة و تغليف",
+            "دبوس",
+            "اسبوت",
+            "فرفرية",
+            "بصمة",
+            "كوفراج",
+            "قص روكنه",
+            "تخريم",
+            "شرشرة id",
+            "قص دائرى",
+            " سلك2",
+            "سلوفان لامع "
+        ],
+        "state": "F",
+        "notes": "wwwwwww",
+        "target_dapertment": [
+            "D",
+            "P"
+        ],
+        "user_id": 7,
+        "client_id": 3
+    }
 
         '''
         data
@@ -48,7 +124,179 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
         self.notes = ''
         self.target_dapertment = []
         self.cliend_id = -1
+        self.run()
 
+    def run(self):
+        try :
+            self.username_lin_3.setText(self.order['client_name'])
+            self.recived_date_lin.setDate(QDate.fromString(self.order['recived_date']))
+            self.post_date_lin.setDate(QDate.fromString(self.order['delivery_date']))
+
+            if self.design_types == "O" :
+                self.ofice_design.setChecked(True)
+            elif self.design_types == 'A':
+                self.attatched_design.setChecked(True)
+            self.filaPath_lbl.setText(self.order['design_path'])
+            self.filaPath_lbl_2.setText(self.order['img_path'])
+            if "logo" in self.order['design_category']:
+                self.logo_checkBox.setChecked(True)
+
+            if "business Card" in self.order['design_category']:
+                self.businessCard_checkBox.setChecked(True)
+
+            if "banner" in self.order['design_category']:
+                self.banner_checkBox.setChecked(True)
+
+            if "brochure" in self.order['design_category']:
+                self.brochure_checkBox.setChecked(True)
+
+            if "menu" in self.order['design_category']:
+                self.menu_checkBox.setChecked(True)
+
+            if "flyer" in self.order['design_category']:
+                self.flyer_checkBox.setChecked(True)
+
+            if "certificate" in self.order['design_category']:
+                self.certificate_checkBox.setChecked(True)
+
+            if "cover" in self.order['design_category']:
+                self.cover_checkBox.setChecked(True)
+
+            if "poster" in self.order['design_category']:
+                self.poster_checkBox.setChecked(True)
+
+            if "RollUp" in self.order['design_category']:
+                self.rollUp_checkBox.setChecked(True)
+
+            if "label" in self.order['design_category']:
+                self.label_checkBox.setChecked(True)
+
+            if self.order['design_category'][-1] not in ["logo","business Card","banner","brochure","menu","flyer","certificate","cover","poster","RollUp","label"]:
+                self.other_lineEdit.setText(self.order['design_category'][-1])
+
+            if "ديجيتال" in self.order['printing_type']:
+                self.digital_checkBox.setChecked(True)
+
+            if "اوفسيت" in self.order['printing_type']:
+                self.offset_checkBox.setChecked(True)
+
+            if "سلك سكرين" in self.order['printing_type']:
+                self.silkscreen_checkBox.setChecked(True)
+
+            if "UV" in self.order['printing_type']:
+                self.uv_checkBox.setChecked(True)
+
+            if "ان دور" in self.order['printing_type']:
+                self.indoor_checkBox.setChecked(True)
+
+            if "اوت دور" in self.order['printing_type']:
+                self.outdoor_checkBox.setChecked(True)
+
+            if "فلكسو" in self.order['printing_type']:
+                self.flexo_checkBox.setChecked(True)
+
+            if "ليزر" in self.order['printing_type']:
+                self.laser_checkBox.setChecked(True)
+
+            if "فايبر" in self.order['printing_type']:
+                self.fiber_checkBox.setChecked(True)
+
+            if "سيلميشن" in self.order['printing_type']:
+                self.selmation_checkBox.setChecked(True)
+
+            if "كتر بلوتر" in self.order['printing_type']:
+                self.Cutter_checkBox.setChecked(True)
+
+            if "انك جيت" in self.order['printing_type']:
+                self.inkjet_checkBox.setChecked(True)
+
+            self.high_doubleSpinBox.setValue(self.order['size_high'])
+            self.width_doubleSpinBox.setValue(self.order['size_width'])
+            self.order_ID.setValue(self.order['order_id'])
+
+            if self.order['materials'] == "خشب":
+                self.wood_radioButton.setChecked(True)
+            elif self.order['materials'] =="بلاستيك":
+                self.plastic_radioButton.setChecked(True)
+            elif self.order['materials'] =="ورق":
+                self.paper_radioButton.setChecked(True)
+            else:
+                self.other_kind_lineEdit_2.setText(self.order['materials'])
+                self.otherKind_radioButton.setChecked(True)
+
+            self.thickness_doubleSpinBox.setValue(self.order['thickness'])
+            self.color_lineEdit.setText(self.order['color'])
+
+            for print in self.order['Post_print_services']:
+                if "شرشرة" == print :
+                    self.shriek_checkBox.setChecked(True)
+
+                if "ريجه" == print :
+                    self.rijah_checkBox.setChecked(True)
+
+                if "تغليف حرارى" == print :
+                    self.thermalPackaging_checkBox.setChecked(True)
+
+                if "قص" == print :
+                    self.cut_checkBox.setChecked(True)
+
+                if "تجميع خشب" == print :
+                    self.wood_checkBox_2.setChecked(True)
+
+                if "بشر" == print :
+                    self.Peel_checkBox.setChecked(True)
+
+                if "تجليد" == print :
+                    self.binding_checkBox.setChecked(True)
+
+                if "تعبئة و تغليف" == print :
+                    self.packaging_checkBox.setChecked(True)
+
+                if "دبوس" == print :
+                    self.pin_checkBox.setChecked(True)
+
+                if "اسبوت" == print :
+                    self.Spot_checkBox.setChecked(True)
+
+                if "فرفرية" == print :
+                    self.purpura_checkBox.setChecked(True)
+
+                if "بصمة" == print :
+                    self.fingerprint_checkBox.setChecked(True)
+
+                if "كوفراج" == print :
+                    self.kofrag_checkBox.setChecked(True)
+
+                if "قص روكنه" == print :
+                    self.cutRokneh_checkBox.setChecked(True)
+
+                if "تخريم" == print :
+                    self.perforation_checkBox.setChecked(True)
+
+                if "شرشرة id" == print :
+                    self.idPerforatio_checkBox.setChecked(True)
+
+                if "قص دائرى" == print:
+                    self.circularCut_checkBox.setChecked(True)
+
+                if "سلك" in print :
+                    self.wire_spinBox.setValue(int(''.join(filter(str.isdigit, print)) ))
+
+                if "سلوفان" in print :
+                    if "لامع" in print : self.cellophane_comboBox.setCurrentIndex(1)
+
+            if self.order['state'] == "I" :
+                self.cellophane_comboBox_2.setCurrentIndex(1)
+            elif self.order['state'] == "F" :
+                self.cellophane_comboBox_2.setCurrentIndex(2)
+
+            if "P" in self.order['target_dapertment'] : self.printing_checkBox.setChecked(True)
+            if "D" in self.order['target_dapertment']  : self.design_checkBox.setChecked(True)
+
+            self.notes_textEdit.setText(self.order['notes'])
+
+        except Exception as e:
+            print(e)
     def getdesign_path(self):
         self.fileName, _ = QtWidgets.QFileDialog.getOpenFileName(self, 'تحديد مسار الملف ', '', 'Images (*.png, *.jpeg , *.jpg , *.psd , *.ai , *.eps ) ')
         if len(self.fileName) != 0 :
@@ -525,7 +773,7 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
 if __name__ == "__main__":
     import qdarkstyle
     app = QtWidgets.QApplication([])
-    w = NewOrderView_manger()
+    w = EditOrderView_manger()
     w.show()
     #app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
     app.exec_()

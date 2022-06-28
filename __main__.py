@@ -8,6 +8,7 @@ from views_mangers.add_client_manger import AddClients
 from views_mangers.followOrder_manger import FollowOrder
 from views_mangers.finishedOrders_manger import FinishedOrders
 from views_mangers.orderDetails_manger import OrderDetails
+from views_mangers.editOrder_manger import EditOrderView_manger
 from views_mangers.orderRequirment_view_manger import OrderRequirment
 from views_mangers.add_requirement_manger import AddRequirement
 from views_mangers.inbox_manger import Inbox_manger
@@ -65,6 +66,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.inbox_manger = Inbox_manger()
         self.addRequirement_manger = AddRequirement()
         self.userRegister_manger = Registration_manger()
+        self.editOrder_manger = EditOrderView_manger()
 
         #self.showFullScreen()
 
@@ -82,6 +84,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.addWidget(self.inbox_manger) #9
         self.addWidget(self.addRequirement_manger) # 10
         self.addWidget(self.userRegister_manger) #11
+        self.addWidget(self.editOrder_manger) #12
 
         # install signals
         self.login_manger.loginAcceptedSignal.connect(self.handle_login_accepted)
