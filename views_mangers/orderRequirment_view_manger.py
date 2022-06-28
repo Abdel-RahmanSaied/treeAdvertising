@@ -13,11 +13,15 @@ class OrderRequirment(QtWidgets.QWidget, orderRequirment_view.Ui_Form):
         self.setupUi(self)
         self.base_url = "https://saied.pythonanywhere.com/requirements/"
         self.delete_url = "https://saied.pythonanywhere.com/deleteRequirement/"
+        self.update_link = "https://saied.pythonanywhere.com/updateRequiredItem/"
+        self.accept_url = "https://saied.pythonanywhere.com/acceptRequirement/"
         self.token = ''
+        self.userName = ''
         self.tableWidget.verticalHeader().setVisible(False)
         self.id = -1
         self.tableWidget.selectionModel().selectionChanged.connect(self.selected_order)
         self.delete_btn.clicked.connect(self.delete_requirement)
+        self.details_btn.clicked.connect(self.end_order)
 
     def selected_order(self, selected):
         row = 0
@@ -67,8 +71,29 @@ class OrderRequirment(QtWidgets.QWidget, orderRequirment_view.Ui_Form):
                 self.tableWidget.setItem(0, 1, QTableWidgetItem(rows['product_name']))
                 self.tableWidget.setItem(0, 2, QTableWidgetItem(str(rows['quantity'])))
                 self.tableWidget.setItem(0, 3, QTableWidgetItem(rows['user_name']))
+                self.tableWidget.setItem(0, 4, QTableWidgetItem(rows['acceptable_by']))
             except Exception as e:
                 print(e)
+
+    def end_order(self):
+        msg = QtWidgets.QMessageBox()
+        headers = {'Accept': 'application/json; indent=4', 'Content-Type': 'application/json','Authorization': f'Token {self.token}'}
+        data = {"acceptable_by": self.userName}
+        if self.id != -1:
+            try:
+                reply = requests.put(f"{self.accept_url}{self.id}//", json=data, headers=headers).json()
+                response = reply["Response"]
+                msg.setWindowTitle("Warning")
+                msg.setText(response)
+                msg.exec_()
+                self.id = -1
+                self.run()
+            except Exception as s:
+                print("ss", s)
+        else:
+            msg.setWindowTitle("Warning")
+            msg.setText("you must select the order !")
+            msg.exec_()
 
 
 if __name__ == "__main__":
@@ -84,3 +109,4 @@ if __name__ == "__main__":
 # header.setSectionResizeMode(1, QtWidgets.QHeaderView.Stretch)
 # header.setSectionResizeMode(2, QtWidgets.QHeaderView.Stretch)
 # header.setSectionResizeMode(3, QtWidgets.QHeaderView.Stretch)
+# header.setSectionResizeMode(4, QtWidgets.QHeaderView.Stretch)

@@ -188,6 +188,12 @@ class Ui_Form(object):
         self.label.setObjectName("label")
         self.gridLayout_4.addWidget(self.label, 0, 3, 1, 1)
 
+        header = self.tableWidget.horizontalHeader()
+        header.setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeToContents)
+        header.setSectionResizeMode(1, QtWidgets.QHeaderView.Stretch)
+        header.setSectionResizeMode(2, QtWidgets.QHeaderView.Stretch)
+        header.setSectionResizeMode(3, QtWidgets.QHeaderView.Stretch)
+        header.setSectionResizeMode(4, QtWidgets.QHeaderView.Stretch)
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 

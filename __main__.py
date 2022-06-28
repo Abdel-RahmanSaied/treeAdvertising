@@ -211,7 +211,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         actuall_session_time = end_time_session - self.session_counter
         session_mins = actuall_session_time // 60
         session_mins = session_mins % 60
-        if session_mins == 1 and self.currentIndex() != 0:
+        if session_mins == 10 and self.currentIndex() != 0:
             self.handle_logOut()
 
     def play_sound(self):
@@ -237,6 +237,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.setCurrentIndex(2)
     def handle_orderRequirment(self):
         self.orderRequirment_manger.token = self.login_manger.userToken
+        self.orderRequirment_manger.userName = self.login_manger.username_lin.text()
         self.orderRequirment_manger.run()
         self.setCurrentIndex(6)
     def handle_followOrder(self):

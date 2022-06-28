@@ -392,6 +392,10 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
                                         msg.setWindowTitle("successfully")
                                         msg.setText("order id already exsist !.")
                                         msg.exec_()
+                                        self.design_category = []
+                                        self.printing_type = []
+                                        self.Post_print_services = []
+                                        self.target_dapertment = []
                                     except :
                                         self.checkAcceptedSignal.emit()
                                         msg.setWindowTitle("successfully")
@@ -427,10 +431,18 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
                             msg.setWindowTitle("Warning")
                             msg.setText("You must enter phone number.")
                             msg.exec_()
+                            self.design_category = []
+                            self.printing_type = []
+                            self.Post_print_services = []
+                            self.target_dapertment = []
                     else:
                         msg.setWindowTitle("Warning")
                         msg.setText("You must enter user name.")
                         msg.exec_()
+                        self.design_category = []
+                        self.printing_type = []
+                        self.Post_print_services = []
+                        self.target_dapertment = []
 
         except Exception as e:
             print(e)
