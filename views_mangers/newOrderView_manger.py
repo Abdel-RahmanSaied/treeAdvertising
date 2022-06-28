@@ -386,11 +386,17 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
 
                                     self.check_reply = requests.post(self.orders_url, json=orderData,
                                                                      headers=self.headers).json()
-
-                                    self.checkAcceptedSignal.emit()
-                                    msg.setWindowTitle("successfully")
-                                    msg.setText("your request sent successfully.")
-                                    msg.exec_()
+                                    print(self.check_reply)
+                                    try :
+                                        self.check_reply["Response"] == 'invalid data'
+                                        msg.setWindowTitle("successfully")
+                                        msg.setText("order id already exsist !.")
+                                        msg.exec_()
+                                    except :
+                                        self.checkAcceptedSignal.emit()
+                                        msg.setWindowTitle("successfully")
+                                        msg.setText("your request sent successfully.")
+                                        msg.exec_()
                                 else:
                                     add_client_reply = requests.post(self.add_client_url, json=client_data,
                                                                      headers=self.headers).json()
@@ -410,7 +416,7 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
                                 msg.setText("No internet connection.")
                                 msg.exec_()
                             except Exception as e:
-                                # print(e)
+                                #print(e)
                                 msg.setWindowTitle("Warning")
                                 msg.setText(
                                     "The phone number is already registered with another client  , you can use search button.")

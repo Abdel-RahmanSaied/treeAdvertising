@@ -31,6 +31,7 @@ class Inbox_manger(QtWidgets.QWidget, inbox_view.Ui_Form):
         self.inbox_count = 0
         self.index = 0
 
+        # admin = True
         self.admin_check = False
 
     def selectionChanged(self):
@@ -41,24 +42,32 @@ class Inbox_manger(QtWidgets.QWidget, inbox_view.Ui_Form):
             self.item_selected = True
 
     def run(self):
-        counter = 0
-        self.headers = {'Accept': 'application/json; indent=4', 'Content-Type': 'application/json',
-                   'Authorization': f'Token {self.token}'}
-        try :
-            self.reply = requests.get(self.base_url , headers=self.headers).json()
-        except Exception as s :
-            print("ss",s)
-        try :
-            self.listWidget.clear()
-            for element in self.reply:
-                self.listWidget.addItem(str(element['order_id']))
-                if element['accepted_by'] == "Not Accepted yet" :
-                    item = self.listWidget.item(counter)
-                    item.setForeground(QtGui.QColor("red"))
-                    #item.setBackground(QtGui.QColor("red"))
-                counter +=1
-        except Exception as e :
-            print(e)
+        msg = QtWidgets.QMessageBox()
+        if self.admin_check == False :
+            counter = 0
+            self.headers = {'Accept': 'application/json; indent=4', 'Content-Type': 'application/json',
+                       'Authorization': f'Token {self.token}'}
+            try :
+                self.reply = requests.get(self.base_url , headers=self.headers).json()
+            except Exception as s :
+                print("ss",s)
+            try :
+                self.listWidget.clear()
+                for element in self.reply:
+                    self.listWidget.addItem(str(element['order_id']))
+                    if element['accepted_by'] == "Not Accepted yet" :
+                        item = self.listWidget.item(counter)
+                        item.setForeground(QtGui.QColor("red"))
+                        #item.setBackground(QtGui.QColor("red"))
+                    counter +=1
+                self.checkAcceptedSignal.emit()
+            except Exception as e :
+                print(e)
+        else:
+            msg.setWindowTitle("Warning")
+            msg.setText("you don't have any inbox !")
+            msg.exec_()
+
 
     def orderDetails(self):
         msg = QtWidgets.QMessageBox()
@@ -76,7 +85,7 @@ class Inbox_manger(QtWidgets.QWidget, inbox_view.Ui_Form):
             try :
                 self.reply = requests.put(f"{self.accept_order}{self.orderID}//" , json=data , headers=self.headers).json()
                 response = self.reply['Response']
-                print(response)
+                #print(response)
                 if response == "You don't have permission to update this." :
                     msg.setWindowTitle("Warning")
                     msg.setText(f"{response}by {self.user_name}")

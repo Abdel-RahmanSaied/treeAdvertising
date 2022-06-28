@@ -149,6 +149,8 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.inbox_manger.bck_btn.clicked.connect(lambda : self.setCurrentIndex(1))
         self.inbox_manger.details_btn.clicked.connect(self.handle_DetailsOrder)
         self.inbox_manger.alert_signal.connect(self.play_sound)
+        self.inbox_manger.checkAcceptedSignal.connect(lambda : self.setCurrentIndex(9))
+
 
         '''
         Add Requirement
@@ -194,7 +196,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.session_counter = time.time()
         #print("(%d, %d)" % (pos.x(), pos.y()))
     def start_time(self):
-        if self.inbox_manger.admin_check == True :
+        if self.inbox_manger.admin_check == False :
             self.inbox_manger.check_inbox()
 
         end_time = time.time()
@@ -271,7 +273,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.inbox_manger.token = self.login_manger.userToken
         self.inbox_manger.user_name = self.login_manger.username_lin.text()
         self.inbox_manger.run()
-        self.setCurrentIndex(9)
+        #self.setCurrentIndex(9)
         self.main_manger.notification_mark_lbl.setVisible(False)
 
     def handle_user_registration(self):
