@@ -15,6 +15,9 @@ pyuic5 forms/orderDetails_view.ui -o views/orderDetails_view.py
 
 pyuic5 forms/inbox_view.ui -o views/inbox_view.py
 
+pyuic5 forms/user_registration_view.ui -o views/user_registration_view.py
+
+
 
 
 pyrcc5  forms/app_resources.qrc -o app_resources_rc.py

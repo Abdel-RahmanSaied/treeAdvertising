@@ -11,6 +11,7 @@ from views_mangers.orderDetails_manger import OrderDetails
 from views_mangers.orderRequirment_view_manger import OrderRequirment
 from views_mangers.add_requirement_manger import AddRequirement
 from views_mangers.inbox_manger import Inbox_manger
+from views_mangers.user_registration_manger import Registration_manger
 
 from PyQt5.QtGui import QImage, QPixmap
 from PyQt5.QtCore import QTimer, QThread, pyqtSignal, pyqtSlot
@@ -63,6 +64,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.addClient_manger = AddClients()
         self.inbox_manger = Inbox_manger()
         self.addRequirement_manger = AddRequirement()
+        self.userRegister_manger = Registration_manger()
 
         #self.showFullScreen()
 
@@ -79,6 +81,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.addWidget(self.addClient_manger) #8 done
         self.addWidget(self.inbox_manger) #9
         self.addWidget(self.addRequirement_manger) # 10
+        self.addWidget(self.userRegister_manger) #11
 
         # install signals
         self.login_manger.loginAcceptedSignal.connect(self.handle_login_accepted)
@@ -91,6 +94,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.main_manger.finishedOrders_btn.clicked.connect(self.handle_finishedOrders)
         self.main_manger.ordersReq_btn.clicked.connect(self.handle_orderRequirment)
         self.main_manger.clients_btn.clicked.connect(self.handle_Clients)
+        self.main_manger.addUser_btn.clicked.connect(self.handle_user_registration)
         self.main_manger.logOut_btn.clicked.connect(self.handle_logOut)
         self.main_manger.inbox_btn.clicked.connect(self.handle_inboxManger)
 
@@ -144,13 +148,15 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
 
         self.inbox_manger.bck_btn.clicked.connect(lambda : self.setCurrentIndex(1))
         self.inbox_manger.details_btn.clicked.connect(self.handle_DetailsOrder)
+        self.inbox_manger.alert_signal.connect(self.play_sound)
+
         '''
         Add Requirement
         '''
         self.addRequirement_manger.end_btn.clicked.connect(lambda: self.setCurrentIndex(6))
         self.addRequirement_manger.checkDataSignal.connect(self.handle_orderRequirment)
 
-        self.inbox_manger.alert_signal.connect(self.play_sound)
+        ''' add user '''
 
         try :
             self.thred = RepeatTimer(1, self.start_time)
@@ -248,6 +254,10 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.inbox_manger.run()
         self.setCurrentIndex(9)
         self.main_manger.notification_mark_lbl.setVisible(False)
+
+    def handle_user_registration(self):
+        self.userRegister_manger.token = self.login_manger.userToken
+        self.setCurrentIndex(11)
 
     def exit_program(self):
         self.thred.cancel()
