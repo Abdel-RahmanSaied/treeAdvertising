@@ -1201,9 +1201,9 @@ padding-bottom:7px;</string>
           <property name="font">
            <font>
             <family>Bebas Neue Bold</family>
-            <pointsize>18</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
+            <pointsize>14</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
            </font>
           </property>
           <property name="styleSheet">

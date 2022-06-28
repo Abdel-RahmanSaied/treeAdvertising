@@ -593,9 +593,9 @@ class Ui_Form(object):
         self.department_lbl.setMaximumSize(QtCore.QSize(16777215, 50))
         font = QtGui.QFont()
         font.setFamily("Bebas Neue Bold")
-        font.setPointSize(18)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setWeight(50)
         self.department_lbl.setFont(font)
         self.department_lbl.setStyleSheet("background-color:rgba(0, 0, 0, 0);\n"
 "border:none;\n"
