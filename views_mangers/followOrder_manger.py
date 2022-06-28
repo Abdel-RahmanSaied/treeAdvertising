@@ -122,11 +122,14 @@ class FollowOrder(QtWidgets.QWidget, followOrder_view.Ui_Form):
         try :
             self.reply = requests.get(self.base_url , headers=self.headers).json()
             self.orders = self.reply
+            print(self.reply)
         except Exception as s :
             print("ss",s)
         try :
             self.listWidget.clear()
-            for element in  self.reply:
+            self.reply.reverse()
+            print(self.reply)
+            for element in self.reply:
                 self.listWidget.addItem(str(element['order_id']))
         except Exception as e :
             print(e)

@@ -543,7 +543,7 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
         self.notes = ''
         self.target_dapertment = []
         self.cliend_id = -1
-        print("data cleared")
+        # print("data cleared")
 
 
 
