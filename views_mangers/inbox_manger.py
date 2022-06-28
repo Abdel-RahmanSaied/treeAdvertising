@@ -31,6 +31,8 @@ class Inbox_manger(QtWidgets.QWidget, inbox_view.Ui_Form):
         self.inbox_count = 0
         self.index = 0
 
+        self.admin_check = False
+
     def selectionChanged(self):
         items = self.listWidget.selectedItems()
         #self.index = self.listWidget.currentIndex().row()
@@ -122,6 +124,13 @@ class Inbox_manger(QtWidgets.QWidget, inbox_view.Ui_Form):
                    'Authorization': f'Token {self.token}'}
         try :
             reply_check = requests.get(self.base_url , headers=self.headers).json()
+            print(reply_check)
+            try :
+                if reply_check['Response'] == "You don't have any orders" :
+                    self.admin_check = True
+            except :
+                self.admin_check = False
+
         except Exception as s :
             print("ss",s)
         try :

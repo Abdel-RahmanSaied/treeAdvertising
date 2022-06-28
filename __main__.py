@@ -157,6 +157,21 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.addRequirement_manger.checkDataSignal.connect(self.handle_orderRequirment)
 
         ''' add user '''
+        self.userRegister_manger.end_btn.clicked.connect(lambda : self.setCurrentIndex(1))
+
+        # try :
+        #     dir_path = os.getcwd()
+        #     path_image = os.path.join(dir_path+ r"/views_mangers/3433814.jpg").replace("\\", "/")
+        #     #border-image: url(:/login/images/backgroung/3433814.jpg) 0 0 0 0 stretch stretch;
+        #     print(path_image)
+        #     #qss = f"border-image: url({path_image}) 0 0 0 0 stretch stretch;"
+        #     qss = f"background: url({path_image}) 0 0 0 0 stretch stretch;"
+        #     self.setStyleSheet(qss)
+        #
+        #     #self.setStyleSheet(" border-image: url(E:/@projects/tree Advertising/treeAdvertising/views_mangers/3433814.jpg) 0 0 0 0 stretch stretch; ")
+        # except Exception as f :
+        #     print(f)
+
 
         try :
             self.thred = RepeatTimer(1, self.start_time)
@@ -179,7 +194,9 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.session_counter = time.time()
         #print("(%d, %d)" % (pos.x(), pos.y()))
     def start_time(self):
-        self.inbox_manger.check_inbox()
+        if self.inbox_manger.admin_check == True :
+            self.inbox_manger.check_inbox()
+
         end_time = time.time()
         lapced_time = end_time - self.begin_timer
         mins = lapced_time // 60
@@ -235,6 +252,8 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.addRequirement_manger.token = self.login_manger.userToken
         self.setCurrentIndex(10)
     def handle_finishedOrders(self):
+        self.finishedOrders_manger.token = self.login_manger.userToken
+        self.finishedOrders_manger.run()
         self.setCurrentIndex(4)
     def handle_DetailsFollowOrder(self):
         self.orderDetails_manger.order_id = self.followOrder_manger.orderID
@@ -257,6 +276,7 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
 
     def handle_user_registration(self):
         self.userRegister_manger.token = self.login_manger.userToken
+        self.userRegister_manger.clear()
         self.setCurrentIndex(11)
 
     def exit_program(self):

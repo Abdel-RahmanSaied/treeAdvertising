@@ -12,7 +12,7 @@ class Registration_manger(QtWidgets.QWidget, user_registration_view.Ui_Form):
         super(Registration_manger, self).__init__()
         self.setupUi(self)
         self.base_url = 'https://saied.pythonanywhere.com/register/'
-        self.token = '009ae49af6e4afacec65273b6a97849e3f443792'
+        self.token = '2fe166ac93f173420c50f3fcf27efd76fd8560e8'
 
         self.add_btn.clicked.connect(self.run)
 
@@ -89,18 +89,22 @@ class Registration_manger(QtWidgets.QWidget, user_registration_view.Ui_Form):
         print(data)
         try:
             self.reply = requests.post(self.base_url, json = data,  headers=headers).json()
+            print(self.reply)
             if self.reply['Response'] =='Successful created' :
                 msg.setWindowTitle("Successfully")
-                msg.setText("Successful created ")
+                msg.setText(self.reply['Response'])
                 msg.exec_()
             else:
                 msg.setWindowTitle("Failed")
-                msg.setText("You don't have any permision to do that")
+                msg.setText(self.reply['Response'])
                 msg.exec_()
         except Exception as s:
             print("ss", s)
     def clear(self):
-        pass
+        self.name_lin.setText('')
+        self.username_lin.setText('')
+        self.password_1_lin.setText('')
+        self.password_2_lin.setText('')
 
 
 if __name__ == "__main__":

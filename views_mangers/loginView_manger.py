@@ -2,20 +2,25 @@ from PyQt5 import QtWidgets , QtCore
 from views import login_view
 import json
 import requests
-
+import os
 class Login_Manager(QtWidgets.QWidget, login_view.Ui_Form):
     loginAcceptedSignal = QtCore.pyqtSignal()
     def __init__(self):
         super(Login_Manager, self).__init__()
         self.setupUi(self)
+
+
+
         self.login_btn.clicked.connect(self.handle_login)
         self.base_url = "https://saied.pythonanywhere.com/login/"
         self.userToken = ''
 
-        self.setStyleSheet("\n"
-                           "#Form {\n"
-                           r"border-image: url(:E:\@projects\tree Advertising\treeAdvertising\forms\images\backgroung\3433814.jpg 0 0 0 0 stretch stretch;\n"
-                           "}")
+        # self.setStyleSheet("\n"
+        #                    "#Form {\n"
+        #                    r"border-image: url(:E:\@projects\tree Advertising\treeAdvertising\forms\images\backgroung\3433814.jpg 0 0 0 0 stretch stretch;\n"
+        #                    "}")
+
+
 
     def handle_login(self):
         msg = QtWidgets.QMessageBox()

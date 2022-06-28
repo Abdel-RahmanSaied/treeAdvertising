@@ -16,7 +16,7 @@ class FollowOrder(QtWidgets.QWidget, followOrder_view.Ui_Form):
         super(FollowOrder, self).__init__()
         self.setupUi(self)
 
-        self.base_url = "https://saied.pythonanywhere.com/orders/"
+        self.base_url = "https://saied.pythonanywhere.com/getUnfinishedOrders/"
         self.update_link = "https://saied.pythonanywhere.com/updateItem/"
         self.delete_link = "https://saied.pythonanywhere.com/deleteitem/"
         self.searchByDate_url = "https://saied.pythonanywhere.com/searchByDate/"
