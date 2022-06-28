@@ -85,9 +85,14 @@ class FollowOrder(QtWidgets.QWidget, followOrder_view.Ui_Form):
                             format.setFontWeight(QFont.Bold)
                             for row, col in df.iterrows():
                                 for value in [row, col[0]]:
-                                    cursor.setCharFormat(format)
-                                    cursor.insertText(str(value))
-                                    cursor.movePosition(QtGui.QTextCursor.NextCell)
+                                    if type(value) == list:
+                                        cursor.setCharFormat(format)
+                                        cursor.insertText(str(' | '.join(value)))
+                                        cursor.movePosition(QtGui.QTextCursor.NextCell)
+                                    else:
+                                        cursor.setCharFormat(format)
+                                        cursor.insertText(str(value))
+                                        cursor.movePosition(QtGui.QTextCursor.NextCell)
 
                             cell = table.cellAt(1, 0)
 

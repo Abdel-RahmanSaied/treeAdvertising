@@ -190,6 +190,12 @@ class Ui_Form(object):
         self.horizontalLayout.addWidget(self.details_btn)
         self.gridLayout_4.addLayout(self.horizontalLayout, 2, 1, 1, 3)
 
+        header = self.tableWidget.horizontalHeader()
+        header.setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeToContents)
+        header.setSectionResizeMode(1, QtWidgets.QHeaderView.Stretch)
+        header.setSectionResizeMode(2, QtWidgets.QHeaderView.Stretch)
+        header.setSectionResizeMode(3, QtWidgets.QHeaderView.Stretch)
+
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 

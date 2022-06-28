@@ -69,6 +69,7 @@ class Ui_Form(object):
 "font: 11pt \"Acumin Pro\";\n"
 "padding-bottom:7px;")
         self.dateEdit_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.dateEdit_2.setDateTime(QtCore.QDateTime(QtCore.QDate(2022, 6, 6), QtCore.QTime(0, 0, 0)))
         self.dateEdit_2.setObjectName("dateEdit_2")
         self.gridLayout.addWidget(self.dateEdit_2, 0, 3, 1, 1)
         self.label_3 = QtWidgets.QLabel(self.frame)
@@ -95,6 +96,7 @@ class Ui_Form(object):
 "font: 11pt \"Acumin Pro\";\n"
 "padding-bottom:7px;")
         self.dateEdit.setAlignment(QtCore.Qt.AlignCenter)
+        self.dateEdit.setDateTime(QtCore.QDateTime(QtCore.QDate(2022, 6, 6), QtCore.QTime(0, 0, 0)))
         self.dateEdit.setObjectName("dateEdit")
         self.gridLayout.addWidget(self.dateEdit, 0, 6, 1, 1)
         self.label_2 = QtWidgets.QLabel(self.frame)
@@ -223,7 +225,6 @@ class Ui_Form(object):
         header.setSectionResizeMode(17, QtWidgets.QHeaderView.ResizeToContents)
         header.setSectionResizeMode(18, QtWidgets.QHeaderView.ResizeToContents)
         header.setSectionResizeMode(19, QtWidgets.QHeaderView.Stretch)
-
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
@@ -232,7 +233,9 @@ class Ui_Form(object):
         Form.setWindowTitle(_translate("Form", "Form"))
         self.label.setText(_translate("Form", "اوامر الشغل المنتهيه"))
         self.next_btn.setText(_translate("Form", "بحث"))
+        self.dateEdit_2.setDisplayFormat(_translate("Form", "yyyy-M-d"))
         self.label_3.setText(_translate("Form", "الي"))
+        self.dateEdit.setDisplayFormat(_translate("Form", "yyyy-M-d"))
         self.label_2.setText(_translate("Form", "من"))
         self.search_lineEdit.setPlaceholderText(_translate("Form", "    بحث . . ."))
         item = self.tableWidget.horizontalHeaderItem(0)

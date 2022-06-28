@@ -294,10 +294,10 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
             if self.circularCut_checkBox.isChecked():
                 self.Post_print_services.append("قص دائرى")
 
-            if len(self.wire_spinBox.text()) != 0:
-                self.Post_print_services.append(f"سلك ({self.wire_spinBox.text()})")
+            if int(self.wire_spinBox.text()) != 0:
+                self.Post_print_services.append(f" سلك{self.wire_spinBox.text()}")
 
-            self.Post_print_services.append(f"سلوفان ({self.cellophane_comboBox.currentText()})")
+            self.Post_print_services.append(f"سلوفان {self.cellophane_comboBox.currentText()} ")
 
             self.state = 'D'
 
@@ -500,6 +500,7 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
         self.printing_type = []
         self.Post_print_services = []
         self.target_dapertment = []
+
 
 
 
