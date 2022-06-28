@@ -410,20 +410,22 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
                                     self.check_reply = requests.post(self.orders_url, json=orderData,
                                                                      headers=self.headers).json()
                                     # print("Respnse : ", self.check_reply)
+
                                     self.checkAcceptedSignal.emit()
                                     msg.setWindowTitle("successfully")
                                     msg.setText("your request sent successfully.")
                                     msg.exec_()
+
 
                             except (requests.ConnectionError, requests.Timeout) as exception:
                                 msg.setWindowTitle("Warning")
                                 msg.setText("No internet connection.")
                                 msg.exec_()
                             except Exception as e:
-                                #print(e)
+                                # print(e)
                                 msg.setWindowTitle("Warning")
                                 msg.setText(
-                                    "The phone number is already registered with another client  , you can use search button.")
+                                    "Check client phone and level .")
                                 msg.exec_()
 
 
@@ -518,6 +520,30 @@ class NewOrderView_manger(QtWidgets.QWidget, newOrder_view.Ui_Form):
         self.printing_type = []
         self.Post_print_services = []
         self.target_dapertment = []
+
+        self.username = ''
+        self.Orderid = 0
+        self.level = ''
+        self.recived_date = ''
+        self.post_date = ''
+        self.phone_number = ''
+
+        self.design_types = ''
+        self.img_path = ''
+        self.design_path = ''
+        self.design_category = []
+        self.printing_type = []
+        self.size_width = 0.0
+        self.size_high = 0.0
+        self.materials = ''
+        self.color = ''
+        self.thickness = 0.0
+        self.Post_print_services = []
+        self.state = ''
+        self.notes = ''
+        self.target_dapertment = []
+        self.cliend_id = -1
+        print("data cleared")
 
 
 
