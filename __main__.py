@@ -8,11 +8,11 @@ from views_mangers.add_client_manger import AddClients
 from views_mangers.followOrder_manger import FollowOrder
 from views_mangers.finishedOrders_manger import FinishedOrders
 from views_mangers.orderDetails_manger import OrderDetails
-from views_mangers.editOrder_manger import EditOrderView_manger
 from views_mangers.orderRequirment_view_manger import OrderRequirment
 from views_mangers.add_requirement_manger import AddRequirement
 from views_mangers.inbox_manger import Inbox_manger
 from views_mangers.user_registration_manger import Registration_manger
+from views_mangers.editOrder_manger import EditOrderView_manger
 
 from PyQt5.QtGui import QImage, QPixmap
 from PyQt5.QtCore import QTimer, QThread, pyqtSignal, pyqtSlot
@@ -164,6 +164,11 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         ''' add user '''
         self.userRegister_manger.end_btn.clicked.connect(lambda : self.setCurrentIndex(1))
 
+        ''' edit order '''
+        self.followOrder_manger.edit_btn.clicked.connect(self.handle_editOrder)
+        self.editOrder_manger.save_btn.clicked.connect(self.handle_Update_Product)
+        self.editOrder_manger.bck_btn.clicked.connect(lambda: self.setCurrentIndex(1))
+
         # try :
         #     dir_path = os.getcwd()
         #     path_image = os.path.join(dir_path+ r"/views_mangers/3433814.jpg").replace("\\", "/")
@@ -284,6 +289,18 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.userRegister_manger.token = self.login_manger.userToken
         self.userRegister_manger.clear()
         self.setCurrentIndex(11)
+
+    def handle_editOrder(self):
+        try :
+            self.editOrder_manger.token = self.login_manger.userToken
+            self.editOrder_manger.Orderid = self.followOrder_manger.orderID
+            self.editOrder_manger.clear()
+            self.editOrder_manger.run()
+            self.setCurrentIndex(12)
+        except Exception as rr :
+            print(rr)
+    def handle_Update_Product(self):
+        self.editOrder_manger.add_new_order()
 
     def exit_program(self):
         self.thred.cancel()

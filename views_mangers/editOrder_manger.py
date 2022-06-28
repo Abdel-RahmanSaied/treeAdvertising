@@ -15,89 +15,88 @@ class EditOrderView_manger(QtWidgets.QWidget, editOrder_view.Ui_Form):
         self.otherKind_radioButton.toggled.connect(self.other_kind_lineEdit_2.setEnabled)
         self.clientDesign_btn.clicked.connect(self.getdesign_path)
         self.upload_photo_btn.clicked.connect(self.getphoto_path)
-        self.search_btn.clicked.connect(self.check_client)
-        self.save_btn.clicked.connect(self.add_new_order)
 
-        self.client_check_url = 'https://saied.pythonanywhere.com/clientPhone/'
-        self.add_client_url = 'https://saied.pythonanywhere.com/clients/'
+        #self.save_btn.clicked.connect(self.add_new_order)
+
         self.orders_url = 'https://saied.pythonanywhere.com/orders/'
+        self.update_link = "https://saied.pythonanywhere.com/updateItem/"
 
         self.token = '70d541af9b5dd9b1fb33ce325f0a90743d59f2ab'
         self.headers = {}
-        self.order = {
-        "order_id": 9999,
-        "user_name": "d",
-        "client_name": "saieed",
-        "accepted_by": "Not Accepted yet",
-        "img_path": "no file selected",
-        "date": "2022-06-28",
-        "recived_date": "2027-06-06",
-        "delivery_date": "2025-06-06",
-        "design_types": "O",
-        "design_path": "no file selected",
-        "design_category": [
-            "logo",
-            "business Card",
-            "banner",
-            "brochure",
-            "menu",
-            "flyer",
-            "certificate",
-            "cover",
-            "poster",
-            "RollUp",
-            "label",
-            "wwwwww"
-        ],
-        "printing_type": [
-            "ديجيتال",
-            "اوفسيت",
-            "سلك سكرين",
-            "UV",
-            "ان دور",
-            "اوت دور",
-            "فلكسو",
-            "ليزر",
-            "فايبر",
-            "سيلميشن",
-            "كتر بلوتر",
-            "انك جيت"
-        ],
-        "size_width": 3.0,
-        "size_high": 3.0,
-        "materials": "dddd",
-        "color": "www",
-        "thickness": 3.0,
-        "Post_print_services": [
-            "شرشرة",
-            "ريجه",
-            "تغليف حرارى",
-            "قص",
-            "تجميع خشب",
-            "بشر",
-            "تجليد",
-            "تعبئة و تغليف",
-            "دبوس",
-            "اسبوت",
-            "فرفرية",
-            "بصمة",
-            "كوفراج",
-            "قص روكنه",
-            "تخريم",
-            "شرشرة id",
-            "قص دائرى",
-            " سلك2",
-            "سلوفان لامع "
-        ],
-        "state": "F",
-        "notes": "wwwwwww",
-        "target_dapertment": [
-            "D",
-            "P"
-        ],
-        "user_id": 7,
-        "client_id": 3
-    }
+    #     self.order = {
+    #     "order_id": 9999,
+    #     "user_name": "d",
+    #     "client_name": "saieed",
+    #     "accepted_by": "Not Accepted yet",
+    #     "img_path": "no file selected",
+    #     "date": "2022-06-28",
+    #     "recived_date": "2027-06-06",
+    #     "delivery_date": "2025-06-06",
+    #     "design_types": "O",
+    #     "design_path": "no file selected",
+    #     "design_category": [
+    #         "logo",
+    #         "business Card",
+    #         "banner",
+    #         "brochure",
+    #         "menu",
+    #         "flyer",
+    #         "certificate",
+    #         "cover",
+    #         "poster",
+    #         "RollUp",
+    #         "label",
+    #         "wwwwww"
+    #     ],
+    #     "printing_type": [
+    #         "ديجيتال",
+    #         "اوفسيت",
+    #         "سلك سكرين",
+    #         "UV",
+    #         "ان دور",
+    #         "اوت دور",
+    #         "فلكسو",
+    #         "ليزر",
+    #         "فايبر",
+    #         "سيلميشن",
+    #         "كتر بلوتر",
+    #         "انك جيت"
+    #     ],
+    #     "size_width": 3.0,
+    #     "size_high": 3.0,
+    #     "materials": "dddd",
+    #     "color": "www",
+    #     "thickness": 3.0,
+    #     "Post_print_services": [
+    #         "شرشرة",
+    #         "ريجه",
+    #         "تغليف حرارى",
+    #         "قص",
+    #         "تجميع خشب",
+    #         "بشر",
+    #         "تجليد",
+    #         "تعبئة و تغليف",
+    #         "دبوس",
+    #         "اسبوت",
+    #         "فرفرية",
+    #         "بصمة",
+    #         "كوفراج",
+    #         "قص روكنه",
+    #         "تخريم",
+    #         "شرشرة id",
+    #         "قص دائرى",
+    #         " سلك2",
+    #         "سلوفان لامع "
+    #     ],
+    #     "state": "F",
+    #     "notes": "wwwwwww",
+    #     "target_dapertment": [
+    #         "D",
+    #         "P"
+    #     ],
+    #     "user_id": 7,
+    #     "client_id": 3
+    # }
 
         '''
         data
@@ -124,10 +123,27 @@ class EditOrderView_manger(QtWidgets.QWidget, editOrder_view.Ui_Form):
         self.notes = ''
         self.target_dapertment = []
         self.cliend_id = -1
-        self.run()
+        self.order = {}
 
     def run(self):
+        msg = QtWidgets.QMessageBox()
         try :
+            self.headers = {'Accept': 'application/json; indent=4', 'Content-Type': 'application/json',
+                            'Authorization': f'Token {self.token}'}
+        except Exception as j :
+            print("j",j)
+        try:
+            self.reply = requests.get(self.orders_url,  headers=self.headers).json()
+            for item in self.reply :
+                if item["order_id"] == self.Orderid :
+                    self.order = item
+                    break
+
+        except Exception as d:
+            print("dd",d)
+
+        try :
+            self.cliend_id = self.order["client_id"]
             self.username_lin_3.setText(self.order['client_name'])
             self.recived_date_lin.setDate(QDate.fromString(self.order['recived_date']))
             self.post_date_lin.setDate(QDate.fromString(self.order['delivery_date']))
@@ -227,63 +243,63 @@ class EditOrderView_manger(QtWidgets.QWidget, editOrder_view.Ui_Form):
             self.thickness_doubleSpinBox.setValue(self.order['thickness'])
             self.color_lineEdit.setText(self.order['color'])
 
-            for print in self.order['Post_print_services']:
-                if "شرشرة" == print :
+            for element in self.order['Post_print_services']:
+                if "شرشرة" == element :
                     self.shriek_checkBox.setChecked(True)
 
-                if "ريجه" == print :
+                if "ريجه" == element :
                     self.rijah_checkBox.setChecked(True)
 
-                if "تغليف حرارى" == print :
+                if "تغليف حرارى" == element :
                     self.thermalPackaging_checkBox.setChecked(True)
 
-                if "قص" == print :
+                if "قص" == element :
                     self.cut_checkBox.setChecked(True)
 
-                if "تجميع خشب" == print :
+                if "تجميع خشب" == element :
                     self.wood_checkBox_2.setChecked(True)
 
-                if "بشر" == print :
+                if "بشر" == element :
                     self.Peel_checkBox.setChecked(True)
 
-                if "تجليد" == print :
+                if "تجليد" == element :
                     self.binding_checkBox.setChecked(True)
 
-                if "تعبئة و تغليف" == print :
+                if "تعبئة و تغليف" == element :
                     self.packaging_checkBox.setChecked(True)
 
-                if "دبوس" == print :
+                if "دبوس" == element :
                     self.pin_checkBox.setChecked(True)
 
-                if "اسبوت" == print :
+                if "اسبوت" == element :
                     self.Spot_checkBox.setChecked(True)
 
-                if "فرفرية" == print :
+                if "فرفرية" == element :
                     self.purpura_checkBox.setChecked(True)
 
-                if "بصمة" == print :
+                if "بصمة" == element :
                     self.fingerprint_checkBox.setChecked(True)
 
-                if "كوفراج" == print :
+                if "كوفراج" == element :
                     self.kofrag_checkBox.setChecked(True)
 
-                if "قص روكنه" == print :
+                if "قص روكنه" == element :
                     self.cutRokneh_checkBox.setChecked(True)
 
-                if "تخريم" == print :
+                if "تخريم" == element :
                     self.perforation_checkBox.setChecked(True)
 
-                if "شرشرة id" == print :
+                if "شرشرة id" == element :
                     self.idPerforatio_checkBox.setChecked(True)
 
-                if "قص دائرى" == print:
+                if "قص دائرى" == element:
                     self.circularCut_checkBox.setChecked(True)
 
-                if "سلك" in print :
-                    self.wire_spinBox.setValue(int(''.join(filter(str.isdigit, print)) ))
+                if "سلك" in element :
+                    self.wire_spinBox.setValue(int(''.join(filter(str.isdigit, element)) ))
 
-                if "سلوفان" in print :
-                    if "لامع" in print : self.cellophane_comboBox.setCurrentIndex(1)
+                if "سلوفان" in element :
+                    if "لامع" in element : self.cellophane_comboBox.setCurrentIndex(1)
 
             if self.order['state'] == "I" :
                 self.cellophane_comboBox_2.setCurrentIndex(1)
@@ -311,72 +327,6 @@ class EditOrderView_manger(QtWidgets.QWidget, editOrder_view.Ui_Form):
             #self.checkAcceptedSignal.emit()
         else :
             self.filaPath_lbl_2.setText('مسار الملف')
-
-    def check_client(self):
-        msg = QtWidgets.QMessageBox()
-        self.headers = {'Accept': 'application/json; indent=4', 'Content-Type': 'application/json',
-                   'Authorization': f'Token {self.token}'}
-        self.username = self.username_lin_3.text()
-        try:
-            if self.redRadioButton.isChecked():
-                self.level = "R"
-            elif self.blueRadioButton.isChecked():
-                self.level = "B"
-            elif self.greenRadioButton.isChecked():
-                self.level = "G"
-        except Exception as r :
-            print(r)
-
-        self.recived_date = self.recived_date_lin.text()
-        self.post_date = self.post_date_lin.text()
-        self.phone_number = self.phone_number_lin.text()
-
-        phone_number = {
-                "phone": self.phone_number
-                            }
-
-
-
-        client_data = {
-                "name": self.username,
-                "phone_number": self.phone_number,
-                "clientlevel": self.level
-            }
-        if self.phone_number == '':
-            msg.setWindowTitle("Alarm")
-            msg.setText("please enter phone number ")
-            msg.exec_()
-        else:
-            try :
-                check_reply = requests.post(self.client_check_url, json = phone_number, headers=self.headers).json()
-                print(check_reply)
-            except Exception as s :
-                print("ss",s)
-
-            try :
-                if check_reply['Response'] == "client does not exist":
-                        #add_user_reply = requests.post(self.add_client_url, json=client_data, headers=self.headers).json()
-                        msg.setWindowTitle("Alarm")
-                        msg.setText("client does not exist please enter all data")
-                        msg.exec_()
-                        #print(add_user_reply)
-                elif check_reply['Response'] == "successful":
-                    self.username_lin_3.setText(check_reply['name'])
-                    # print(check_reply)
-                    if check_reply['clientlevel'] == 'R':
-                        self.redRadioButton.setChecked(True)
-                    elif check_reply['clientlevel'] == 'B' :
-                        self.blueRadioButton.setChecked(True)
-                    elif check_reply['clientlevel'] == 'G' :
-                        self.greenRadioButton.setChecked(True)
-                    self.cliend_id = check_reply['id']
-
-                    msg.setWindowTitle("Alarm")
-                    msg.setText("client data imported successfully")
-                    msg.exec_()
-
-            except Exception as e :
-                print(e)
 
     def add_new_order(self):
         try:
@@ -581,193 +531,91 @@ class EditOrderView_manger(QtWidgets.QWidget, editOrder_view.Ui_Form):
                 else:
                     ''' Client cheacker '''
                     if len(self.username_lin_3.text()) != 0:
-                        if len(self.phone_number_lin.text()) != 0:
-                            self.username = self.username_lin_3.text()
-                            self.phone_number = self.phone_number_lin.text()
-
-                            """-----------------"""
-                            try:
-                                if self.redRadioButton.isChecked():
-                                    self.level = "R"
-                                elif self.blueRadioButton.isChecked():
-                                    self.level = "B"
-                                elif self.greenRadioButton.isChecked():
-                                    self.level = "G"
-                            except Exception as r:
-                                print(r)
-
-                            self.recived_date = self.recived_date_lin.text()
-                            self.post_date = self.post_date_lin.text()
-
-                            client_data = {
-                                "name": self.username,
-                                "phone_number": self.phone_number,
-                                "clientlevel": self.level
-                            }
-
-                            """ Post Order """
-                            orderData = {
-                                "order_id": self.Orderid,
-                                "accepted_by": "Not Accepted yet",
-                                "img_path": self.img_path,
-                                "recived_date": self.recived_date,
-                                "delivery_date": self.post_date,
-                                "design_types": self.design_types,
-                                "design_path": self.design_path,
-                                "design_category": self.design_category,
-                                "printing_type": self.printing_type,
-                                "size_width": self.size_width,
-                                "size_high": self.size_high,
-                                "materials": self.materials,
-                                "color": self.color,
-                                "thickness": self.thickness,
-                                "Post_print_services": self.Post_print_services,
-                                "state": self.state,
-                                "notes": self.notes,
-                                "client_id": self.cliend_id,
-                                "target_dapertment": self.target_dapertment
-
-                            }
-
-                            try:
-                                if self.cliend_id != -1:
-
-                                    self.check_reply = requests.post(self.orders_url, json=orderData,
-                                                                     headers=self.headers).json()
-                                    print(self.check_reply)
-                                    try :
-                                        self.check_reply["Response"] == 'invalid data'
-                                        msg.setWindowTitle("successfully")
-                                        msg.setText("order id already exsist !.")
-                                        msg.exec_()
-                                        self.design_category = []
-                                        self.printing_type = []
-                                        self.Post_print_services = []
-                                        self.target_dapertment = []
-                                    except :
-                                        self.checkAcceptedSignal.emit()
-                                        msg.setWindowTitle("successfully")
-                                        msg.setText("your request sent successfully.")
-                                        msg.exec_()
-                                else:
-                                    add_client_reply = requests.post(self.add_client_url, json=client_data,
-                                                                     headers=self.headers).json()
-                                    self.cliend_id = add_client_reply['id']
-                                    orderData["client_id"] = add_client_reply['id']
-                                    # print(orderData)
-                                    self.check_reply = requests.post(self.orders_url, json=orderData,
-                                                                     headers=self.headers).json()
-                                    # print("Respnse : ", self.check_reply)
-                                    self.checkAcceptedSignal.emit()
-                                    msg.setWindowTitle("successfully")
-                                    msg.setText("your request sent successfully.")
-                                    msg.exec_()
-
-                            except (requests.ConnectionError, requests.Timeout) as exception:
-                                msg.setWindowTitle("Warning")
-                                msg.setText("No internet connection.")
-                                msg.exec_()
-                            except Exception as e:
-                                #print(e)
-                                msg.setWindowTitle("Warning")
-                                msg.setText(
-                                    "The phone number is already registered with another client  , you can use search button.")
-                                msg.exec_()
+                        # if len(self.phone_number_lin.text()) != 0:
+                        self.username = self.username_lin_3.text()
+                        self.phone_number = self.phone_number_lin.text()
+                        print("xcxcxcxcxc")
+                        """-----------------"""
+                        try:
+                            if self.redRadioButton.isChecked():
+                                self.level = "R"
+                            elif self.blueRadioButton.isChecked():
+                                self.level = "B"
+                            elif self.greenRadioButton.isChecked():
+                                self.level = "G"
+                        except Exception as r:
+                            print(r)
 
 
-                        else:
-                            msg.setWindowTitle("Warning")
-                            msg.setText("You must enter phone number.")
+
+                        self.recived_date = self.recived_date_lin.text()
+                        self.post_date = self.post_date_lin.text()
+
+                        client_data = {
+                            "name": self.username,
+                            "phone_number": self.phone_number,
+                            "clientlevel": self.level
+                        }
+
+                        """ Post Order """
+                        orderData = {
+                            "order_id": self.Orderid,
+                            "img_path": self.img_path,
+                            "recived_date": self.recived_date,
+                            "delivery_date": self.post_date,
+                            "design_types": self.design_types,
+                            "design_path": self.design_path,
+                            "design_category": self.design_category,
+                            "printing_type": self.printing_type,
+                            "size_width": self.size_width,
+                            "size_high": self.size_high,
+                            "materials": self.materials,
+                            "color": self.color,
+                            "thickness": self.thickness,
+                            "Post_print_services": self.Post_print_services,
+                            "state": self.state,
+                            "notes": self.notes,
+                            "client_id": self.cliend_id,
+                            "target_dapertment": self.target_dapertment
+                        }
+
+                        try:
+
+                            self.update_reply = requests.put(f"{self.update_link}{self.Orderid}//" , json=orderData , headers=self.headers).json()
+
+                            msg.setWindowTitle("Succesfully")
+                            msg.setText(self.update_reply["Response"])
                             msg.exec_()
-                            self.design_category = []
-                            self.printing_type = []
-                            self.Post_print_services = []
-                            self.target_dapertment = []
-                    else:
-                        msg.setWindowTitle("Warning")
-                        msg.setText("You must enter user name.")
-                        msg.exec_()
-                        self.design_category = []
-                        self.printing_type = []
-                        self.Post_print_services = []
-                        self.target_dapertment = []
+                        except Exception as rrr :
+                            print(rrr)
 
-        except Exception as e:
+        except Exception as e :
             print(e)
 
+    def clear(self):
+        self.username = ''
+        self.Orderid = 0
+        self.level = ''
+        self.recived_date = ''
+        self.post_date = ''
+        self.phone_number = ''
 
-    def clear_data(self):
-        self.username_lin_3.setText("")
-        self.phone_number_lin.setText("")
-        # self.redRadioButton.setChecked(False)
-        # self.blueRadioButton.setChecked(False)
-        # self.greenRadioButton.setChecked(False)
-        self.recived_date_lin.date()
-        self.post_date_lin.date()
-        # self.ofice_design.setChecked(False)
-        # self.attatched_design.setChecked(False)
-        self.filaPath_lbl.setText("مسار الملف")
-        self.filaPath_lbl_2.setText("مسار الملف")
-        self.certificate_checkBox.setChecked(False)
-        self.cover_checkBox.setChecked(False)
-        self.poster_checkBox.setChecked(False)
-        self.rollUp_checkBox.setChecked(False)
-        self.label_checkBox.setChecked(False)
-        self.brochure_checkBox.setChecked(False)
-        self.menu_checkBox.setChecked(False)
-        self.flyer_checkBox.setChecked(False)
-        self.logo_checkBox.setChecked(False)
-        self.businessCard_checkBox.setChecked(False)
-        self.banner_checkBox.setChecked(False)
-        self.other_lineEdit.setText("")
-
-        self.digital_checkBox.setChecked(False)
-        self.indoor_checkBox.setChecked(False)
-        self.outdoor_checkBox.setChecked(False)
-        self.fiber_checkBox.setChecked(False)
-        self.offset_checkBox.setChecked(False)
-        self.selmation_checkBox.setChecked(False)
-        self.silkscreen_checkBox.setChecked(False)
-        self.flexo_checkBox.setChecked(False)
-        self.Cutter_checkBox.setChecked(False)
-        self.uv_checkBox.setChecked(False)
-        self.laser_checkBox.setChecked(False)
-        self.inkjet_checkBox.setChecked(False)
-
-        self.high_doubleSpinBox.setValue(0.0)
-        self.width_doubleSpinBox.setValue(0.0)
-        self.thickness_doubleSpinBox.setValue(0.0)
-        self.other_kind_lineEdit_2.setText("")
-        self.color_lineEdit.setText("")
-
-        self.shriek_checkBox.setChecked(False)
-        self.wood_checkBox_2.setChecked(False)
-        self.pin_checkBox.setChecked(False)
-        self.cutRokneh_checkBox.setChecked(False)
-        self.rijah_checkBox.setChecked(False)
-        self.Peel_checkBox.setChecked(False)
-        self.Spot_checkBox.setChecked(False)
-        self.perforation_checkBox.setChecked(False)
-        self.thermalPackaging_checkBox.setChecked(False)
-        self.binding_checkBox.setChecked(False)
-        self.purpura_checkBox.setChecked(False)
-        self.idPerforatio_checkBox.setChecked(False)
-        self.cut_checkBox.setChecked(False)
-        self.packaging_checkBox.setChecked(False)
-        self.fingerprint_checkBox.setChecked(False)
-        self.circularCut_checkBox.setChecked(False)
-        self.kofrag_checkBox.setChecked(False)
-        self.design_checkBox.setChecked(False)
-        self.printing_checkBox.setChecked(False)
-        self.wire_spinBox.setValue(0)
-        self.notes_textEdit.setText("")
-
+        self.design_types = ''
+        self.img_path = ''
+        self.design_path = ''
         self.design_category = []
         self.printing_type = []
+        self.size_width = 0.0
+        self.size_high = 0.0
+        self.materials = ''
+        self.color = ''
+        self.thickness = 0.0
         self.Post_print_services = []
+        self.state = ''
+        self.notes = ''
         self.target_dapertment = []
-
-
+        self.cliend_id = -1
+        self.order = {}
 
 
 if __name__ == "__main__":
