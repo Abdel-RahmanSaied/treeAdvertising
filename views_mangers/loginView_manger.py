@@ -54,7 +54,6 @@ class Login_Manager(QtWidgets.QWidget, login_view.Ui_Form):
                         msg.exec_()
                     elif loginStatus == "token" :
                         self.userToken = self.user_check[loginStatus]
-                        print(self.userToken)
                         self.loginAcceptedSignal.emit()
             except Exception as x :
                 print(x)

@@ -240,6 +240,11 @@ class Tree_Advertising(QtWidgets.QStackedWidget):
         self.begin_timer = time.time()
         self.session_counter = time.time()
         self.setCurrentIndex(1)
+        try :
+            if self.inbox_manger.admin_check == True:
+                self.inbox_manger.check_inbox()
+        except Exception as error_check :
+            print(error_check)
     def handle_workOrder(self):
         self.newOrder_manger.token = self.login_manger.userToken
         self.setCurrentIndex(2)
